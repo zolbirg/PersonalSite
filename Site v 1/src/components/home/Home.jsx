@@ -1,9 +1,10 @@
-import React from 'react';
+ import React from 'react';
 import'./home.css'
 
 import { FaInstagram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { FaVk } from "react-icons/fa";
+import { MdAlternateEmail } from "react-icons/md";
 import TextTransition, { presets } from 'react-text-transition';
 
 
@@ -24,7 +25,7 @@ export default function Home(){
     return (
         <section id="home" className="section hero-section">
         <div className="container">
-          <div className="hero-content text-center">
+          <div className="hero-content">
             <h1>KANIN ROMAN</h1>
             <h2>
               {/* https://www.npmjs.com/package/react-text-transition */}
@@ -42,15 +43,20 @@ export default function Home(){
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="https://vk.com/zolbirg">
                 <FaVk />
                 </a>
               </li>
               <li>
-                <a href="#">
+                <a href="https://github.com/zolbirg">
                 <FaGithub />
                 </a>
               </li>
+              <li>
+                <a href="mailto:kaninroman@mail.ru">
+                <MdAlternateEmail />
+                </a>
+              </li> 
             </ul>
           </div>
         </div>
