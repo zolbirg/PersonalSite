@@ -10,7 +10,7 @@ export default function About(){
          <section className="about section" id="about">
             <h2 className="section__title">About Me</h2>
             {/* <span className="section__subtitle">My Introduction</span> */}
-            <div className="about__container container grid">
+            <div className="about__container container ">
                 <img src={photo} alt="" className="about__img" />
                 <div className="about__data">
                 <p className="about__description">
@@ -42,9 +42,9 @@ export default function About(){
                     </div>
                 </div>
                 <div className="about__buttons">
-                    <a download="" href="packages/pdf/" className="button button--flex">
-                    Download CV/pdf
-                    <i className="uil uil-download-alt button__icon" />
+                    <a download="#" href="#" className="button">
+                    Download CV.pdf
+            
                     </a>
                 </div>
                 </div>

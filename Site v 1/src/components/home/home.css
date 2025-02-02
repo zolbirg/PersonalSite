@@ -13,12 +13,12 @@
 
 .hero-content{
   text-align:left;
-  margin-top: 10rem;
-  margin-left: 10rem;
+  margin-top: 5%;
+  margin-left: 5%;
 }
 .hero-content h1{
-    font-size: 7rem;
-    color:var(--main-color);
+    font-size: var(--big-font-size);
+    color:var(--hex4);
     text-transform: uppercase;
 }
 .hero-content h2{
@@ -28,7 +28,7 @@
 
 .hero-content p{
     color: var(--color-white);
-    margin-bottom: 50px;
+    margin-bottom: 3rem;
     
 }
 .social-link{}
