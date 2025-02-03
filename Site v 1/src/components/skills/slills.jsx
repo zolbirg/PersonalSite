@@ -9,7 +9,6 @@ import { TbCamper} from "react-icons/tb";
 // import Collapsible from 'react-collapsible';
 
 export default function Skills(){
-    
 
 
     return(

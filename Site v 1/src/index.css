@@ -13,9 +13,6 @@
    --color-white:#fff;
   
    /* ==============plate================ */
-
-
-
    /* color green */
     --green1:#33ffc2;
     --green2:#33ff66;
@@ -118,6 +115,7 @@
   max-width: 768px;
   margin-left: auto;
   margin-right: auto;
+  
 }
 
 .grid {
