@@ -1,5 +1,5 @@
 import './qualification.css'
-
+import { PiBriefcaseDuotone,PiCertificateDuotone} from "react-icons/pi";
 
 export default function Qualification() {
             
@@ -32,11 +32,13 @@ export default function Qualification() {
             className="qualification__button button--flex qualification__active"
             data-target="#education"
         >
-            {/* <i className="uil uil-graduation-cap qualification__icon" /> */}
-            Education
+            
+             Education
+            <PiCertificateDuotone />
         </div>
         <div className="qualification__button button--flex" data-target="#work">
-            {/* <i className="uil uil-briefcase-alt qualification__icon" /> */}
+            
+        <PiBriefcaseDuotone />
             Work
         </div>
         </div>
