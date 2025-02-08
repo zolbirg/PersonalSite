@@ -14,7 +14,7 @@
   
    /* ==============plate================ */
    /* color green */
-    --green1:#33ffc2;
+      --green1:#33ffc2;
     --green2:#33ff66;
     --green3:#7af17a;
       --green4:#dbf059;
@@ -123,12 +123,4 @@
   gap: 1.5rem;
 }
 
-.header {
-  width: 100%;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: var(--z-fixed);
-  background-color: var(--body-color);
-}
 

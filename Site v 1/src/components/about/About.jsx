@@ -1,10 +1,19 @@
 import'./about.css'
+import photo from '../../assets/img/photo.jpg'
 
- import photo from '../../assets/img/photo.jpg'
+import Button from '../../assets/components/button/Button'
+
+import { useState } from 'react'
 
 
 export default function About(){
 
+    const [contentDownload, setContentDownload] = useState(null);
+
+    function handleClick(type){
+        setContentDownload(type)
+       
+    }
 
     return(
          <section className="about section" id="about">
@@ -42,10 +51,12 @@ export default function About(){
                     </div>
                 </div>
                 <div className="about__buttons">
-                    <a download="#" href="#" className="button">
-                    Download CV.pdf
-            
+
+                    <a download={contentDownload} href={contentDownload} >
+                    <Button onClick={() => handleClick('#')}>Download CV.pdf</Button>
+
                     </a>
+                    
                 </div>
                 </div>
             </div>

@@ -7,11 +7,12 @@ const Header = ()=>{
     return(
       <header className="header">
       <a href="#" className="logo">.Kanin</a>
-      {/* <i className='bx bx-menu' id="menu-icon"></i> */}
       <nav className="navbar">
           <a href="#home" className="active">Home</a>
-          <a href="#portfolio">PORTFOLIO</a>
-          <a href="#contact">CONTACT</a>
+          <a href="#about">Me</a>
+          <a href="#skills">Skills</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#contact">Contact</a>
       </nav>
   </header>
 

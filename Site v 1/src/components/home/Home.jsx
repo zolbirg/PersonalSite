@@ -1,9 +1,9 @@
  import React from 'react';
 import'./home.css'
 
-import { FaInstagram } from "react-icons/fa";
+import { FaInstagram, FaVk } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
-import { FaVk } from "react-icons/fa";
+
 import { MdAlternateEmail } from "react-icons/md";
 import TextTransition, { presets } from 'react-text-transition';
 

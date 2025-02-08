@@ -1,26 +1,9 @@
 import './qualification.css'
 import { PiBriefcaseDuotone,PiCertificateDuotone} from "react-icons/pi";
+import { IoCalendarOutline } from "react-icons/io5";
 
 export default function Qualification() {
-            
-            const tabs = document.querySelectorAll("[data-target]"),
-        tabContents = document.querySelectorAll("[data-content]");
-
-        tabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-            const target = document.querySelector(tab.dataset.target);
-
-            tabContents.forEach((tabContent) => {
-            tabContent.classList.remove("qualification__active");
-            });
-            target.classList.add("qualification__active");
-
-            tabs.forEach((tab) => {
-            tab.classList.remove("qualification__active");
-            });
-            tab.classList.add("qualification__active");
-        });
-        });
+        
 
     return (
 <section className="qualification__section">
@@ -52,12 +35,12 @@ export default function Qualification() {
             {/*==================== QUALIFICATION 1 ====================*/}
             <div className="qualification__data">
             <div  className='qualification__left'>
-                <h3 className="qualification__title">Diploma in English </h3>
+                <h3 className="qualification__title">Школа №174</h3>
                 <span className="qualification__subtitle">
-                British Council, Kandy
+                Спб. центр ра-н
                 </span>
                 <div className="qualification__calendar">
-                {/* <i className="uil uil-calendar-alt" /> */}
+                <IoCalendarOutline />
                 2011 - 2012
                 </div>
             </div>
@@ -74,12 +57,12 @@ export default function Qualification() {
                 <span className="qualification__line" />
             </div>
             <div className='qualification__right'>
-                <h3 className="qualification__title">GCE Adavance Level</h3>
+                <h3 className="qualification__title">КСИиГХ</h3>
                 <span className="qualification__subtitle">
-                St.Anthonys College, Kandy
+                СПБ колледж 
                 </span>
                 <div className="qualification__calendar">
-                {/* <i className="uil uil-calendar-alt" /> */}
+                <IoCalendarOutline />
                 2012 - 2014
                 </div>
             </div>
@@ -88,13 +71,13 @@ export default function Qualification() {
             <div className="qualification__data">
             <div className='qualification__left'>
                 <h3 className="qualification__title">
-                BSc Management Information System
+                СЗТУ
                 </h3>
                 <span className="qualification__subtitle">
-                NSBM Green University
+                СПБ.тех универ
                 </span>
                 <div className="qualification__calendar">
-                {/* <i className="uil uil-calendar-alt" /> */}
+                <IoCalendarOutline />
                 2015 - 2018
                 </div>
             </div>
@@ -112,13 +95,13 @@ export default function Qualification() {
             </div>
             <div className='qualification__right'>
                 <h3 className="qualification__title">
-                Data Analyst Professional Certification
+                хз тут чет про доп курсы
                 </h3>
                 <span className="qualification__subtitle">
-                Google | Coursera - Online
+                бла бла
                 </span>
                 <div className="qualification__calendar">
-                {/* <i className="uil uil-calendar-alt" /> */}
+                <IoCalendarOutline />
                 2021
                 </div>
             </div>
@@ -129,12 +112,12 @@ export default function Qualification() {
             {/*==================== QUALIFICATION 1 ====================*/}
             <div className="qualification__data">
             <div className='qualification__left'>
-                <h3 className="qualification__title">Trainee Banking Assistant</h3>
+                <h3 className="qualification__title">ИП Канин Р.И.</h3>
                 <span className="qualification__subtitle">
-                DFCC Head Office - Colombo
+                LabDecor-пр-во дверей
                 </span>
                 <div className="qualification__calendar">
-                {/* <i className="uil uil-calendar-alt" /> */}
+                <IoCalendarOutline />
                 2017 - 2019
                 </div>
             </div>
@@ -151,12 +134,12 @@ export default function Qualification() {
                 <span className="qualification__line" />
             </div>
             <div >
-                <h3 className="qualification__title">Banking Assistant</h3>
+                <h3 className="qualification__title">ИП Канин Р.И.</h3>
                 <span className="qualification__subtitle">
-                DFCC Head Office - Colombo
+                MacroWood -лазерная резка пр-во детских игрушек
                 </span>
                 <div className="qualification__calendar">
-                {/* <i className="uil uil-calendar-alt" /> */}
+                <IoCalendarOutline />
                 2019 - 2020
                 </div>
             </div>
@@ -165,19 +148,57 @@ export default function Qualification() {
             <div className="qualification__data">
             <div className='qualification__left'>
                 <h3 className="qualification__title">
-                Data Analyst - Digital banking
+                ИП Канин Р.И.
                 </h3>
                 <span className="qualification__subtitle">
-                DFCC Head Office - Colombo
+                Кафе Kit 
                 </span>
                 <div className="qualification__calendar">
-                {/* <i className="uil uil-calendar-alt" /> */}
+                <IoCalendarOutline />
                 2020 - Present
                 </div>
             </div>
             <div>
                 <span className="qualification__rounder" />
-                {/* <span class="qualification__line"></span> */}
+                <span className="qualification__line" />
+            </div>
+            </div>
+            {/*==================== QUALIFICATION 4 ====================*/}
+            <div className="qualification__data">
+            <div />
+            <div className='qualification__right'>
+                <span className="qualification__rounder" />
+                <span className="qualification__line" />
+            </div>
+            <div >
+                <h3 className="qualification__title">ооо Best-Quest </h3>
+                <span className="qualification__subtitle">
+                рук проектов
+                </span>
+                <div className="qualification__calendar">
+                <IoCalendarOutline />
+                2019 - 2020
+                </div>
+            </div>
+            </div>
+
+             {/*==================== QUALIFICATION 5 ====================*/}
+             <div className="qualification__data">
+            <div className='qualification__left'>
+                <h3 className="qualification__title">
+                ИП Канин Р.И.
+                </h3>
+                <span className="qualification__subtitle">
+                еще варианты пакмман контейнеры 
+                </span>
+                <div className="qualification__calendar">
+                <IoCalendarOutline />
+                2020 - Present
+                </div>
+            </div>
+            <div>
+                <span className="qualification__rounder" />
+                <span className="qualification__line" />
             </div>
             </div>
         </div>

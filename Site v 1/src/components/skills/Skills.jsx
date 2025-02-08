@@ -6,9 +6,22 @@ import { SiTypescript,SiRedux, SiBootstrap, SiTailwindcss,SiAutocad, SiCoreldraw
 import { VscVscode } from "react-icons/vsc";
 import { TbCamper} from "react-icons/tb";
 
-// import Collapsible from 'react-collapsible';
+import { useState } from 'react';
+
+
+
 
 export default function Skills(){
+
+const [content, setContent] = useState(null);
+
+function handleClick(type){
+    setContent(type)
+    content
+    
+   
+}
+
 
 
     return(
@@ -22,15 +35,15 @@ export default function Skills(){
         {/*==================== SKILL-1 ====================*/}
         
         <div className="skills__content skills__open " >
-            <div className="skills__header">
-            {/* <i className="uil uil-analytics skills__icon" /> */}
+            <div onClick={() => handleClick('open')} className="skills__header">
+            
             <div>
                 <h1 className="skills__title">Web Developer</h1>
                 <span className="skills__subtitle">Более 2х лет</span>
             </div>
             <HiMiniArrowsUpDown className='skills__arrow ' />
             </div>
-            <div className="skills__list grid">
+            <div  className="skills__list grid">
             <div className="skills__data">
                 <div className="skills__titles">
                 <h3 className="skills__name">HTML</h3>
@@ -96,7 +109,7 @@ export default function Skills(){
         {/*==================== SKILLS 2 ====================*/}
         <div className="skills__content  skills__open">
             <div className="skills__header">
-            {/* <i className="uil uil-money-bill skills__icon" /> */}
+            
             <div>
                 <h1 className="skills__title">Engineer</h1>
                 <span className="skills__subtitle">Более 10 лет. </span>
