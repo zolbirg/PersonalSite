@@ -1,0 +1,116 @@
+/* https://coreui.io/react/docs/components/collapse/ */
+
+
+  .skills__icon {
+    margin-right: var(--mb-0-75);
+  }
+
+  .skills__list {
+    row-gap: 1.5rem;
+    padding-left: 2.7rem;
+    margin-bottom: var(--mb-1-5);
+  }
+  
+  .skills__titles {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--mb-0-5);
+  }
+  
+  .skills__name {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-medium);
+    color: var(--main-color);
+  }
+  
+  .skills__bar,
+  .skills__percentage {
+    height: 5px;
+    border-radius: 0.25rem;
+  }
+  
+  .skills__bar {
+    background-color: var(--main-color)
+  }
+  
+  .skills__percentage {
+    display: block;
+    background-color: var(--text-color-active-soft);
+  }
+  
+  .skills__HTML {
+    width: 60%;
+  }
+  
+  .skills__CSS {
+    width: 70%;
+  }
+  
+  .skills__JavaScript{
+    width: 60%;
+  }
+  .skills__TypeScript{
+    width: 40%;
+  }
+  .skills__React{
+    width: 40%;
+  }
+  
+  /* ---------- */
+  .skills__AutoCad {
+    width: 80%;
+  }
+  
+  .skills__kompas {
+    width: 90%;
+  }
+  
+  .skills__Coreldraw {
+    width: 80%;
+  }
+  
+  .skills__PhotoShop {
+    width: 60%;
+  }
+  /* ---------- */
+  
+  
+  .skills__km {
+    width: 60%;
+  }
+  
+  
+  
+  .skills__close .skills__list {
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .skills__open .skills__list {
+    height: max-content;
+  }
+  
+  .skills__open .skills__arrow {
+    transform: rotate(-180deg);
+  }
+  
+  .skills__logo{
+    font-size: 1.8rem;
+    padding: 0 15% ;
+    color: var(--text-color-medium);
+    display: flex;
+    justify-content: space-around;
+   
+  }
+  
+  .skills__travel{
+    padding: 0 5% ;
+  }
+  
+  
+  
+  
+  
+  
+  
+  

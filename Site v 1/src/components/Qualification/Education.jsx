@@ -1,4 +1,5 @@
 import { IoCalendarOutline } from "react-icons/io5";
+import classes from "./qualification.module.css";
 
 export default function Education(){
     return(
@@ -7,74 +8,72 @@ export default function Education(){
            
         >
             {/*==================== QUALIFICATION 1 ====================*/}
-            <div className="qualification__data">
-            <div  className='qualification__left'>
-                <h3 className="qualification__title">Школа №174</h3>
-                <span className="qualification__subtitle">
+            <div className={classes.qualification__data}>
+            <div  className={classes.qualification__left}>
+                <h3 className={classes.qualification__title}>Школа №174</h3>
+                <span className={classes.qualification__subtitle}>
                 Спб. центр ра-н
                 </span>
-                <div className="qualification__calendar">
+                <div className={classes.qualification__calendar}>
                 <IoCalendarOutline />
                 2011 - 2012
                 </div>
             </div>
             <div>
-                <span className="qualification__rounder" />
-                <span className="qualification__line" />
+                <span className={classes.qualification__rounder} />
+                <span className={classes.qualification__line} />
             </div>
             </div>
             {/*==================== QUALIFICATION 2 ====================*/}
-            <div className="qualification__data">
+            <div className={classes.qualification__data}>
             <div />
             <div>
-                <span className="qualification__rounder" />
-                <span className="qualification__line" />
+                <span className={classes.qualification__rounder} />
+                <span className={classes.qualification__line} />
             </div>
-            <div className='qualification__right'>
-                <h3 className="qualification__title">КСИиГХ</h3>
-                <span className="qualification__subtitle">
+            <div className={classes.qualification__right}>
+                <h3 className={classes.qualification__title}>КСИиГХ</h3>
+                <span className={classes.qualification__subtitle}>
                 СПБ колледж 
                 </span>
-                <div className="qualification__calendar">
+                <div className={classes.qualification__calendar}>
                 <IoCalendarOutline />
                 2012 - 2014
                 </div>
             </div>
             </div>
             {/*==================== QUALIFICATION 3 ====================*/}
-            <div className="qualification__data">
-            <div className='qualification__left'>
-                <h3 className="qualification__title">
-                СЗТУ
-                </h3>
-                <span className="qualification__subtitle">
-                СПБ.тех универ
+            <div className={classes.qualification__data}>
+            <div  className={classes.qualification__left}>
+                <h3 className={classes.qualification__title}>СЗТУ</h3>
+                <span className={classes.qualification__subtitle}>
+                Спб.тех универ
                 </span>
-                <div className="qualification__calendar">
+                <div className={classes.qualification__calendar}>
                 <IoCalendarOutline />
-                2015 - 2018
+                2011 - 2012
                 </div>
             </div>
             <div>
-                <span className="qualification__rounder" />
-                <span className="qualification__line" />
+                <span className={classes.qualification__rounder} />
+                <span className={classes.qualification__line} />
             </div>
             </div>
             {/*==================== QUALIFICATION 4 ====================*/}
-            <div className="qualification__data">
+            <div className={classes.qualification__data}>
             <div />
             <div>
-                <span className="qualification__rounder" />
+                <span className={classes.qualification__rounder} />
                 {/* <span class="qualification__line"></span> */}
             </div>
-            <div className='qualification__right'>
-                <h3 className="qualification__title">
+            <div className={classes.qualification__right}>
+                <h3 className={classes.qualification__title}>
                 хз тут чет про доп курсы
                 </h3>
-                <span className="qualification__subtitle">
+                <span className={classes.qualification__subtitle}>
                 бла бла
                 </span>
-                <div className="qualification__calendar">
+                <div className={classes.qualification__calendar}>
                 <IoCalendarOutline />
                 2021
                 </div>

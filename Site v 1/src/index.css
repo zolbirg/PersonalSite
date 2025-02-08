@@ -89,27 +89,12 @@
  }
 
 
- .section {
-   padding: 2rem 0 4rem;
-   min-height: 100vh;
-   
- }
- 
- .section__title {
-   font-size: var(--h1-font-size);
- }
- 
- .section__subtitle {
-   display: block;
-   font-size: var(--normal-font-size);
-   margin-bottom: var(--mb-2);
- }
- 
- .section__title,
- .section__subtitle {
-   text-align: center;
- }
  /*==================== LAYOUT ====================*/
+ .section {
+  padding: 2rem 0 4rem;
+  min-height: 100vh;
+ 
+}
 
 .container {
   max-width: 768px;
@@ -123,4 +108,18 @@
   gap: 1.5rem;
 }
 
+.section__title {
+  font-size: var(--h1-font-size);
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--normal-font-size);
+  margin-bottom: var(--mb-2);
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
 

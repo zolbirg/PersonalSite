@@ -1,14 +1,14 @@
-import'./header.css'
+import classes from './header.module.css'
 
 
 const Header = ()=>{
 
 
     return(
-      <header className="header">
-      <a href="#" className="logo">.Kanin</a>
-      <nav className="navbar">
-          <a href="#home" className="active">Home</a>
+      <header className={classes.header}>
+      <a href="#home" className={classes.logo}>.Kanin</a>
+      <nav className={classes.navbar}>
+          <a href="#home" className={classes.active}>Home</a>
           <a href="#about">Me</a>
           <a href="#skills">Skills</a>
           <a href="#portfolio">Portfolio</a>

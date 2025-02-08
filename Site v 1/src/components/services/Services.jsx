@@ -32,7 +32,7 @@ modalCloses.forEach((modalClose) => {
             {/*==================== SERVICES 1 ====================*/}
             <div className="services__content">
             <div>
-                {/* <i className="uil uil-analytics skills__icon" /> */}
+                
                 <h3 className="services__title">
                 Data Analyst
                 <br />
@@ -40,7 +40,7 @@ modalCloses.forEach((modalClose) => {
             </div>
             <span className="button button--flex button--small button--link services__button">
                 View more
-                {/* <i className="uil uil-arrow-right button__icon" /> */}
+                
             </span>
             <div className="services__modal">
                 <div className="services__modal-content">
@@ -50,19 +50,17 @@ modalCloses.forEach((modalClose) => {
                 <i className="uil uil-times services__modal-close" />
                 <ul className="services__modal-services grid">
                     <li className="services__modal-service">
-                    {/* <i className="uil uil-check-circle services__modal-icon" /> */}
+                    
                     <p>I analize data systems.</p>
                     </li>
                     <li className="services__modal-service">
-                    {/* <i className="uil uil-check-circle services__modal-icon" /> */}
+                    
                     <p>Automating information retrieval.</p>
                     </li>
                     <li className="services__modal-service">
-                    {/* <i className="uil uil-check-circle services__modal-icon" /> */}
                     <p>Systematically applying statistical and logical techniques.</p>
                     </li>
                     <li className="services__modal-service">
-                    {/* <i className="uil uil-check-circle services__modal-icon" /> */}
                     <p>
                         Visualizing graphs, charts and preparing reports and dashboards.
                     </p>
@@ -74,7 +72,6 @@ modalCloses.forEach((modalClose) => {
             {/*==================== SERVICES 2 ====================*/}
             <div className="services__content">
             <div>
-                {/* <i className="uil uil-money-bill skills__icon" /> */}
                 <h3 className="services__title">
                 Banker
                 <br />{" "}
@@ -82,7 +79,6 @@ modalCloses.forEach((modalClose) => {
             </div>
             <span className="button button--flex button--small button--link services__button">
                 View more
-                {/* <i className="uil uil-arrow-right button__icon" /> */}
             </span>
             <div className="services__modal">
                 <div className="services__modal-content">
@@ -90,27 +86,22 @@ modalCloses.forEach((modalClose) => {
                     Banker
                     <br />
                 </h4>
-                {/* <i className="uil uil-times services__modal-close" /> */}
                 <ul className="services__modal-services grid">
                     <li className="services__modal-service">
-                    {/* <i className="uil uil-check-circle services__modal-icon" /> */}
                     <p>
                         Assiting both personal and commercial clients with financial
                         questions and needs.
                     </p>
                     </li>
                     <li className="services__modal-service">
-                    {/* <i className="uil uil-check-circle services__modal-icon" /> */}
-                    <p>Maintain customer acoounts and help resolve disputes.</p>
+                   <p>Maintain customer acoounts and help resolve disputes.</p>
                     </li>
                     <li className="services__modal-service">
-                    {/* <i className="uil uil-check-circle services__modal-icon" /> */}
                     <p>
                         Refer customers to loan officers or other financial specialist.
                     </p>
                     </li>
                     <li className="services__modal-service">
-                    {/* <i className="uil uil-check-circle services__modal-icon" /> */}
                     <p>Systematically applying statistical and logical techniques.</p>
                     </li>
                 </ul>
@@ -120,7 +111,6 @@ modalCloses.forEach((modalClose) => {
             {/*==================== SERVICES 3 ====================*/}
             <div className="services__content">
             <div>
-                {/* <i className="uil uil-arrow services__icon" /> */}
                 <h3 className="services__title">
                 Web Developer
                 <br />
@@ -128,7 +118,6 @@ modalCloses.forEach((modalClose) => {
             </div>
             <span className="button button--flex button--small button--link services__button">
                 View more
-                {/* <i className="uil uil-arrow-right button__icon" /> */}
             </span>
             <div className="services__modal">
                 <div className="services__modal-content">
@@ -139,19 +128,15 @@ modalCloses.forEach((modalClose) => {
                 <i className="uil uil-times services__modal-close" />
                 <ul className="services__modal-services grid">
                     <li className="services__modal-service">
-                    {/* <i className="uil uil-check-circle services__modal-icon" /> */}
                     <p>I develop the user interface.</p>
                     </li>
                     <li className="services__modal-service">
-                    {/* <i className="uil uil-check-circle services__modal-icon" /> */}
                     <p>Webpage development.</p>
                     </li>
                     <li className="services__modal-service">
-                    {/* <i className="uil uil-check-circle services__modal-icon" /> */}
                     <p>I create Ux element interactions.</p>
                     </li>
                     <li className="services__modal-service">
-                    {/* <i className="uil uil-check-circle services__modal-icon" /> */}
                     <p>Well trained in WordPress.</p>
                     </li>
                 </ul>
