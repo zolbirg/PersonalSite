@@ -1,8 +1,6 @@
 /* https://coreui.io/react/docs/components/collapse/ */
 
-.skills__content{
-  margin-bottom: 3rem;
-}
+
 .skills__container {
   row-gap: 0;
   width: 55%;
@@ -11,7 +9,7 @@
 .skills__header {
   display: flex;
   align-items: center;
-  margin-bottom: var(--mb-2-5);
+  margin-bottom: var(--mb-0-5);
   cursor: pointer;
 }
 
