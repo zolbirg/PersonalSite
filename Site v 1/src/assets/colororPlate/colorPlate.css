@@ -1,0 +1,106 @@
+
+.block{
+    height: 40px;
+    color:black;
+    font-size: 2rem;
+    
+    }
+    .green1{
+     background:var( --green1);
+    }
+    .green2{
+     background:var( --green2);
+    }
+    .green3{
+     background:var( --green3);
+    }
+    .green4{
+     background:var( --green4);
+    }
+    .green5{
+     background:var( --green5);
+    }
+    .green6{
+     background:var( --green6);
+    }
+    .green7{
+     background:var( --green7);
+    }
+    .green8{
+     background:var( --green8);
+    }
+    .green9{
+     background:var( --green9);
+    }
+    .green10{
+     background:var( --green10);
+    }
+    .green11{
+     background:var( --green11);
+    }
+    .green12{
+     background:var( --green12);
+    }
+    .green13{
+     background:var( --green13);
+    }
+    .green14{
+     background:var( --green14);
+    }
+    .green15{
+     background:var( --green15);
+    }
+    .green16{
+     background:var( --green16);
+    }
+    .green17{
+     background:var( --green17);
+    }
+    .green18{
+     background:var( --green18);
+    }
+    .green19{
+     background:var( --green19);
+    }
+    .green20{
+     background:var( --green20);
+    }
+    
+    /* -------------------------------------- */
+    
+    .gray1{
+      background:var( --gray1);
+    }
+    .gray2{
+      background: var( --gray2);
+    }
+    .gray3{
+      background:var( --gray3);
+    }
+    .gray4{
+      background: var( --gray4);
+    }
+    .gray5{
+      background: var( --gray5);
+    }
+    .gray6{
+      background: var( --gray6);
+    }
+    .gray7{
+      background:var( --gray7);
+    }
+    .gray8{
+      background:var( --gray8);
+    }
+    .gray9{
+      background:var( --gray9);
+    }
+    .gray10{
+      background: var( --gray10);
+    }
+    .gray11{
+      background:var( --gray11);
+    }
+    .gray12{
+      background: var( --gray12);
+    }

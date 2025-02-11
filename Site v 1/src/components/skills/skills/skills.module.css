@@ -15,18 +15,19 @@
 
 .skills__title {
   font-size: var(--h3-font-size);
+  color:var(--color-title)
 }
 
 .skills__subtitle {
   font-size: var(--small-font-size);
-  color: var(--main-color);
+  color: var(--color-white);
 }
 
 .skills__arrow {
   margin-left: auto;
   transition: 0.4s;
   font-size: 2rem;
-  color:var(--text-color-active)
+  color:var(--color-active)
 }
 
 

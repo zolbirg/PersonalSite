@@ -20,7 +20,7 @@
   .skills__name {
     font-size: var(--normal-font-size);
     font-weight: var(--font-medium);
-    color: var(--main-color);
+    color: var(--color-white);
   }
   
   .skills__bar,
@@ -30,16 +30,16 @@
   }
   
   .skills__bar {
-    background-color: var(--main-color)
+    background-color: var(--bg-first)
   }
   
   .skills__percentage {
     display: block;
-    background-color: var(--text-color-active-soft);
+    background-color: var(--color-title);
   }
   
   .skills__HTML {
-    width: 60%;
+    width: 80%;
   }
   
   .skills__CSS {
@@ -97,7 +97,7 @@
   .skills__logo{
     font-size: 1.8rem;
     padding: 0 15% ;
-    color: var(--text-color-medium);
+    color: var(--color-title);
     display: flex;
     justify-content: space-around;
    

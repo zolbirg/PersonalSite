@@ -14,12 +14,17 @@
   justify-content: center;
   column-gap: 5rem;
   margin-top: 4rem;
+  background: var(--bg-block);
+  padding: 3rem;
+
+  border-radius: 30px;
 }
 .about__img {
   width: 30%;
   height: 25%;
   border-radius: 15% 30%;
-  margin: 3rem;
+  
+  /* box-shadow: 7px 8px 30px var(--bg-shadow);; */
 }
 .about__data {
   margin-top: 15%;
@@ -28,7 +33,7 @@
 .about__description {
   text-align: initial;
   margin-bottom: var(--mb-2-5);
-  color: var(--main-color);
+  color: var(--color-white);
 }
 
 .about__info {
@@ -43,7 +48,7 @@
 
 .about__info_name {
   font-size: var(--smaller-font-size);
-  color: var(--main-color);
+  color: var(--color-white);
 }
 
 .about__info_title,

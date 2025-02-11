@@ -30,7 +30,7 @@ export default function Developer(){
                         <div className="skills__titles">
                           <h3 className="skills__name">HTML</h3>
                           <span className="skills__number">
-                            60%
+                            80%
                           </span>
                         </div>
                         <div className="skills__bar">

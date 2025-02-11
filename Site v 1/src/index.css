@@ -2,34 +2,83 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700|Oswald:400,500,600,700');
 
 :root {
-   --bg-color:#45484d;
-   --second-bg-color:#323946;
+   /* --bg-color:#45484d;
+   --second-bg-color:#323946; */
 
-   --text-color:#6cce88;
+   /* --text-color:#6cce88;
    --text-color-medium:rgb(44, 218, 160);
    --text-color-active:rgb(157, 218, 67);
    --text-color-active-soft:#dbf059;
    --main-color:rgb(208, 236, 229); 
    --color-white:#fff;
+   */
+
+  --color-main:#aaeba8;
+  --color-white:#d0ece5;
+  --color-title:#6cce88;
+  --color-first:#2cdaa0;
+  --color-second:#7af17a;
+
+  --color-btn:#01C38D;
+  --color-active:#7eaa5b;
+  --color-hover:#dbf059;
   
+  --bg-main:#4b4a4e;
+  --bg-main:#3e3d38ec;
+  /* --bg-main:#45484d; */
+  --bg-first:#45484d;
+  --bg-second:#323946;
+  --bg-block:#3e3d38ec;
+  --bg-shadow:rgba(11, 209, 126, 0.25);
+
+    /* --gRADIENT:#bcdc49 #1b5cfd; */
+  
+
+
+
    /* ==============plate================ */
    /* color green */
-      --green1:#33ffc2;
+    --green1:#33ffc2;
     --green2:#33ff66;
-    --green3:#7af17a;
+      --green3:#7af17a;
       --green4:#dbf059;
       --green5:#6cce88;
-      --green6:rgb(44, 218, 160);
-      --green7:rgb(157, 218, 67);
+      --green6:#2cdaa0;
+    --green7:#9dda43;
+    --green8:#B2FFC6;
+    --green9:#87F8AE;
+    --green10:#42D49C;
+      --green11:#01C38D;
+      --green12:#aaeba8;
+    --green13:#00A68A;
+    --green14:#aaafff;
+    --green15:#5c6b3d;
+    --green16:#3c5148;
+    --green17:#6b8e4e;
+    --green18:#b4ddb4;
+    --green19:#aaafff;
+    --green20:#aaafff;
+
+
+
+    /* --gRADIENT:#bcdc49 #1b5cfd; */
+    
     
     /* color gray */
 
-    --gray1:#0d2f2b;
+    --gray1:#6b6e70;
       --gray2:#45484d;
     --gray3:#23272A;
     --gray4:#1f242d;
       --gray5:#323946;
-      --gray6:rgb(208, 236, 229); 
+    --gray6:#d0ece5; 
+    --gray7:#6b6e70;
+      --gray8:#4b4a4e;
+    --gray9: #9fa1ad;
+    --gray10:#5c5e60;
+    --gray11:#5b595b;
+      --gray12:#3e3d38;
+    
     
    
 /*========== Font and typography ==========*/
@@ -84,8 +133,8 @@
  }
 
  body{
-    background: var(--bg-color);
-    color: var(--text-color);
+    background: var(--bg-main);
+    color: var(--color-main);
  }
 
 
@@ -116,6 +165,7 @@
   display: block;
   font-size: var(--normal-font-size);
   margin-bottom: var(--mb-2);
+  color: var(--color-white);
 }
 
 .section__title,
