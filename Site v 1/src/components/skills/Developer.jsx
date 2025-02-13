@@ -1,4 +1,4 @@
-
+import classes from "./skills/skills.module.css";
 import {
   IoLogoNodejs
 } from "react-icons/io";
@@ -25,68 +25,59 @@ export default function Developer(){
 
     return(
     <>
-        <div className="skills__list grid">
-                      <div className="skills__data">
-                        <div className="skills__titles">
-                          <h3 className="skills__name">HTML</h3>
-                          <span className="skills__number">
+        <div className={` ${classes.skills__list} grid `}>
+                      <div>
+                        <div className={classes.skills__titles}>
+                          <h3 className={classes.skills__name}>HTML</h3>
+                          <span className={classes.skills__number}>
                             80%
                           </span>
                         </div>
-                        <div className="skills__bar">
-                          <span className="skills__percentage skills__HTML" />
-                        </div>
+                        <progress className="progress progress-success  " value={80} max="100"></progress>
+
                       </div>
-                      <div className="skills__data">
-                        <div className="skills__titles">
-                          <h3 className="skills__name">CSS</h3>
-                          <span className="skills__number">
+                      <div >
+                        <div className={classes.skills__titles}>
+                          <h3 className={classes.skills__name}>CSS</h3>
+                          <span className={classes.skills__number}>
                             70%
                           </span>
                         </div>
-                        <div className="skills__bar">
-                          <span className="skills__percentage skills__CSS" />
-                        </div>
+                        <progress className="progress progress-success  " value={70} max="100"></progress>
                       </div>
-                      <div className="skills__data">
-                        <div className="skills__titles">
-                          <h3 className="skills__name">
+                      <div >
+                        <div className={classes.skills__titles}>
+                          <h3 className={classes.skills__name}>
                             JavaScript
                           </h3>
-                          <span className="skills__number">
+                          <span className={classes.skills__number}>
                             60%
                           </span>
                         </div>
-                        <div className="skills__bar">
-                          <span className="skills__percentage skills__JavaScript" />
-                        </div>
+                        <progress className="progress progress-success  " value={60} max="100"></progress>
                       </div>
-                      <div className="skills__data">
-                        <div className="skills__titles">
-                          <h3 className="skills__name">
+                      <div >
+                        <div className={classes.skills__titles}>
+                          <h3 className={classes.skills__name}>
                             TypeScript
                           </h3>
-                          <span className="skills__number">
+                          <span className={classes.skills__number}>
                             40%
                           </span>
                         </div>
-                        <div className="skills__bar">
-                          <span className="skills__percentage skills__TypeScript" />
-                        </div>
+                        <progress className="progress progress-success  " value={40} max="100"></progress>
                       </div>
-                      <div className="skills__data">
-                        <div className="skills__titles">
-                          <h3 className="skills__name">React</h3>
-                          <span className="skills__number">
+                      <div >
+                        <div className={classes.skills__titles}>
+                          <h3 className={classes.skills__name}>React</h3>
+                          <span className={classes.skills__number}>
                             40%
                           </span>
                         </div>
-                        <div className="skills__bar">
-                          <span className="skills__percentage skills__React" />
-                        </div>
+                        <progress className="progress progress-success  " value={40} max="100"></progress>
                       </div>
                     </div>
-                    <div className="skills__logo">
+                    <div className={classes.skills__logo}>
                       <FaHtml5 />
                       <FaCss3Alt />
                       <IoLogoNodejs />

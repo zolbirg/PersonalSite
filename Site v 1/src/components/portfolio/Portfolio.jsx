@@ -1,56 +1,80 @@
-import './portfolio.css'
+import "./portfolio.css";
 
+export default function Portfolio() {
+  return (
+    <>
+      <section className="section" id="portfolio">
+        <div className="container">
+          <div className="hero bg-base-200">
+            <div className="hero-content flex-col lg:flex-row-reverse">
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+                className="max-w-sm rounded-lg shadow-2xl"
+              />
+              <div>
+                <h1 className="text-5xl font-bold">
+                  Box Office News!
+                </h1>
+                <p className="py-6">
+                  Provident cupiditate voluptatem et in.
+                  Quaerat fugiat ut assumenda excepturi
+                  exercitationem quasi. In deleniti eaque
+                  aut repudiandae et a id nisi.
+                </p>
+                <button className="btn btn-primary">
+                  Get Started
+                </button>
+              </div>
+            </div>
+          </div>
 
+          <div className="hero bg-base-200 ">
+            <div className="hero-content flex-col lg:flex-row">
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+                className="max-w-sm rounded-lg shadow-2xl"
+              />
+              <div>
+                <h1 className="text-5xl font-bold">
+                  Box Office News!
+                </h1>
+                <p className="py-6">
+                  Provident cupiditate voluptatem et in.
+                  Quaerat fugiat ut assumenda excepturi
+                  exercitationem quasi. In deleniti eaque
+                  aut repudiandae et a id nisi.
+                </p>
+                <button className="btn btn-primary">
+                  Get Started
+                </button>
+              </div>
+            </div>
+          </div>
 
-export default function Portfolio (){
-    
-  
-
-    return(
-      
-      
-      <>
-  {/*
-  Please note: this code is in no way ready to be used as is in production on your website. It will need to be adapted to be cross browser compliant & accessible. I just wanted to share how one might go about this effect with CSS & JS and no other dependencies
-*/}
-  <div className="container">
-    <div className="card-column column-0">
-      <div className="card card-color-0">
-        <div className="border" />
-        
-        <h1>Hey now, you're an allstar</h1>
-      </div>
-      <div className="card card-color-2">
-        <div className="border" />
-       
-        <h1>Hey now, you're a rock star</h1>
-      </div>
-    </div>
-    <div className="card-column column-1">
-      <div className="card card-color-1">
-        <div className="border" />
-        
-        <h1>Get your game on, go play</h1>
-      </div>
-      <div className="card card-color-3">
-        <div className="border" />
-        
-        <h1>Get the show on, get paid</h1>
-      </div>
-    </div>
-  </div>
-  <div id="cover" className="cover" />
-  <div id="open-content" className="open-content">
-    <a href="#" id="close-content" className="close-content">
-      <span className="x-1" />
-      <span className="x-2" />
-    </a>
-    <img id="open-content-image" src="" />
-    <div className="text" id="open-content-text"></div>
-  </div>
-</>
-
-
-      
-    )
+          <div className="hero bg-base-200">
+            <div className="hero-content flex-col lg:flex-row-reverse">
+              <img
+                src="https://img.daisyui.com/images/stock/photo-1635805737707-575885ab0820.webp"
+                className="max-w-sm rounded-lg shadow-2xl"
+              />
+              <div>
+                <h1 className="text-5xl font-bold">
+                  Box Office News!
+                </h1>
+                <p className="py-6">
+                  Provident cupiditate voluptatem et in.
+                  Quaerat fugiat ut assumenda excepturi
+                  exercitationem quasi. In deleniti eaque
+                  aut repudiandae et a id nisi.
+                </p>
+                <button className="btn btn-primary">
+                  Get Started
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
 }

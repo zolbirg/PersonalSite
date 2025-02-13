@@ -1,5 +1,5 @@
 import classes from "./Skills.module.css";
-import './skills.css'
+// import './skills.css'
 
 import Developer from "../Developer";
 import Engineer from "../Engineer";

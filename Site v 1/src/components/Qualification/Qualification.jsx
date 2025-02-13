@@ -14,7 +14,7 @@ export default function Qualification() {
   const [tab, setTab] = useState("education");
 
   return (
-    <section className={classes.qualification__section}>
+    <section className={` ${classes.qualification__section} section`}>
       <h2 className="section__title">Qualification</h2>
       <span className="section__subtitle">Мой путь</span>
       <div className="container">
@@ -42,7 +42,7 @@ export default function Qualification() {
             Work
           </div>
         </div>
-        <div className={classes.qualification__section}>
+        <div>
           {tab === "education" && <Education />}
           {tab === "work" && <Work />}
         </div>

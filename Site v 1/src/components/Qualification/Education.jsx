@@ -1,4 +1,4 @@
-import { IoCalendarOutline } from "react-icons/io5";
+// import { IoCalendarOutline } from "react-icons/io5";
 import classes from "./qualification.module.css";
 
 export default function Education(){
@@ -14,8 +14,8 @@ export default function Education(){
                 <span className={classes.qualification__subtitle}>
                 Спб. центр ра-н
                 </span>
-                <div className={classes.qualification__calendar}>
-                <IoCalendarOutline />
+                <div className={classes.qualification__calendar }>
+                {/* <IoCalendarOutline /> */}
                 2011 - 2012
                 </div>
             </div>
@@ -37,7 +37,7 @@ export default function Education(){
                 СПБ колледж 
                 </span>
                 <div className={classes.qualification__calendar}>
-                <IoCalendarOutline />
+                {/* <IoCalendarOutline /> */}
                 2012 - 2014
                 </div>
             </div>
@@ -50,7 +50,7 @@ export default function Education(){
                 Спб.тех универ
                 </span>
                 <div className={classes.qualification__calendar}>
-                <IoCalendarOutline />
+                {/* <IoCalendarOutline /> */}
                 2011 - 2012
                 </div>
             </div>
@@ -74,7 +74,7 @@ export default function Education(){
                 бла бла
                 </span>
                 <div className={classes.qualification__calendar}>
-                <IoCalendarOutline />
+                {/* <IoCalendarOutline /> */}
                 2021
                 </div>
             </div>

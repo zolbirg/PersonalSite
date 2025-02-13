@@ -1,7 +1,8 @@
-
 .qualification__section{
-    height: 80vh;
+  background: var(--bg-block);
+  height: 40lh;
 }
+
 .qualification__tabs {
     display: flex;
     justify-content: space-evenly;

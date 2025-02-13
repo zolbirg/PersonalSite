@@ -1,6 +1,6 @@
 import classes from "./qualification.module.css";
 
-import { IoCalendarOutline } from "react-icons/io5";
+// import { IoCalendarOutline } from "react-icons/io5";
 
 
 export default function Work(){
@@ -15,7 +15,7 @@ export default function Work(){
                 LabDecor-пр-во дверей
                 </span>
                 <div className={classes.qualification__calendar}>
-                <IoCalendarOutline />
+                {/* <IoCalendarOutline /> */}
                 2017 - 2019
                 </div>
             </div>
@@ -37,7 +37,7 @@ export default function Work(){
                 MacroWood -лазерная резка пр-во детских игрушек
                 </span>
                 <div className={classes.qualification__calendar}>
-                <IoCalendarOutline />
+                {/* <IoCalendarOutline /> */}
                 2019 - 2020
                 </div>
             </div>
@@ -52,7 +52,7 @@ export default function Work(){
                 Кафе Kit 
                 </span>
                 <div className={classes.qualification__calendar}>
-                <IoCalendarOutline />
+                {/* <IoCalendarOutline /> */}
                 2020 - Present
                 </div>
             </div>
@@ -74,7 +74,7 @@ export default function Work(){
                 рук проектов
                 </span>
                 <div className={classes.qualification__calendar}>
-                <IoCalendarOutline />
+                {/* <IoCalendarOutline /> */}
                 2019 - 2020
                 </div>
             </div>
@@ -90,7 +90,7 @@ export default function Work(){
                 еще варианты пакмман контейнеры 
                 </span>
                 <div className={classes.qualification__calendar}>
-                <IoCalendarOutline />
+                {/* <IoCalendarOutline /> */}
                 2020 - Present
                 </div>
             </div>

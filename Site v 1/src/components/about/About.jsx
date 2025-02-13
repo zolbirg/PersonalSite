@@ -1,7 +1,7 @@
 import classes from './about.module.css'
 // import photo from '../../assets/img/photo.jpg'
-import photo2 from '../../assets/img/photo2.png'
-// import photo1 from '../../assets/img/perfil.png'
+// import photo2 from '../../assets/img/photo2.png'
+import photo1 from '../../assets/img/perfil.png'
 
 import Button from '../../assets/components/button/Button'
 
@@ -24,8 +24,8 @@ export default function About(){
             <div className={`${classes.about__container} container `}>
            
                 {/* <img src={photo} alt="" className={classes.about__img} /> */}
-                <img src={photo2} alt="" className={classes.about__img} />
-                {/* <img src={photo1} alt="" className={classes.about__img} /> */}
+                {/* <img src={photo2} alt="" className={classes.about__img} /> */}
+                <img src={photo1} alt="" className={classes.about__img} />
                 <div className={classes.about__data}>
                 <p className={classes.about__description}>
                     Пердприниматель более 4 бизнесов в различных направвлениях.
@@ -41,13 +41,13 @@ export default function About(){
                     </span>
                     </div>
                     <div>
-                    <span className={classes.about__info_title}>03+</span>
+                    <span className={classes.about__info_title}>3+</span>
                     <span className={classes.about__info_name}>
                         лет <br /> путешествий
                     </span>
                     </div>
                     <div>
-                    <span className={classes.about__info_title}>02+</span>
+                    <span className={classes.about__info_title}>2+</span>
                     <span className={classes.about__info_name}>
                         лет
                         <br />

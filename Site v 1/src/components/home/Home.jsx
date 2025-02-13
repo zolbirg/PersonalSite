@@ -62,8 +62,8 @@ export default function Home(){
         </div>
         <div className={classes.down__arrow}>
           <a data-scroll="" href="#about" className={classes.arrow__animated}>
-            Down 
-            <FaArrowCircleDown  className={classes.arrow__fa}/>
+          
+            <FaArrowCircleDown  className={classes.arrow__fa} />
           </a>
         </div>
       </section>

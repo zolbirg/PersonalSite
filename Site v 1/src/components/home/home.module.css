@@ -1,7 +1,7 @@
 
 
 .hero__section{
-    background-image: url(/src/assets/img/hero-background2.jpeg);
+    background-image: url(/src/assets/img/fon3.jpg);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -14,16 +14,19 @@
 .hero__content{
   text-align:left;
   margin-top: 5%;
-  margin-left: 5%;
+  margin-left: -5%;
 }
 .hero__content h1{
     font-size: var(--big-font-size);
     color:var(--color-title);
-    text-transform: uppercase;
+    font-weight: bold;
+    text-transform: uppercase; 
 }
+
 .hero__content h2{
-    color:var(--color-title);
+    color:var(--color-hover);
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 .hero__content p{
@@ -46,6 +49,11 @@
 .social__link li a:hover{
     color: var(--color-hover);
 }
+
+.down__arrow{
+    display: flex;
+    justify-content: space-around;
+}
 .down__arrow a {
     position: absolute;
     width: 5rem;
@@ -66,6 +74,7 @@
 }
 .arrow__fa{
     color:var(--color-hover);
+    font-size: var(--h2-font-size);
 }
 
 /* Down Arrow Animation */

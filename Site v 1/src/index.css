@@ -1,5 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700|Oswald:400,500,600,700');
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700|Oswald:400,500,600,700'); */
+
 
 :root {
    /* --bg-color:#45484d;
@@ -23,9 +28,8 @@
   --color-active:#7eaa5b;
   --color-hover:#dbf059;
   
-  --bg-main:#4b4a4e;
-  --bg-main:#3e3d38ec;
-  /* --bg-main:#45484d; */
+  
+  --bg-main:#494a4d;
   --bg-first:#45484d;
   --bg-second:#323946;
   --bg-block:#3e3d38ec;
@@ -85,7 +89,7 @@
 --body-font: "Poppins", sans-serif;
 
 
---big-font-size: 7rem;
+--big-font-size: 6rem;
 --h1-font-size: 3rem;
 --h2-font-size: 2rem;
 --h3-font-size: 1.125rem;
@@ -129,7 +133,7 @@
  html{
     font-size: 62.5%;
     overflow-x:hidden;
-
+    font-family: var(--font-se);
  }
 
  body{
@@ -141,7 +145,7 @@
  /*==================== LAYOUT ====================*/
  .section {
   padding: 2rem 0 4rem;
-  min-height: 100vh;
+  min-height: 40lh;
  
 }
 
@@ -159,6 +163,7 @@
 
 .section__title {
   font-size: var(--h1-font-size);
+  font-weight: bold;
 }
 
 .section__subtitle {
