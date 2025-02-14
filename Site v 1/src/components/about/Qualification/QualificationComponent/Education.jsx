@@ -1,5 +1,5 @@
 // import { IoCalendarOutline } from "react-icons/io5";
-import classes from "./qualification.module.css";
+import classes from "../qualification.module.css";
 
 export default function Education(){
     return(

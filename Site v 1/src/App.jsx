@@ -1,15 +1,17 @@
 import Header from "./components/header/Header.jsx";
 import Home from "./components/home/Home.jsx";
-import About from "./components/about/About.jsx";
-import Skills from "./components/skills/skills/Skills.jsx";
-import Qualification from "./components/Qualification/Qualification.jsx";
+// import About from "./components/aboutComponent/About.jsx";
+// import Skills from "./components/about/skills/Skills.jsx";
+// import Qualification from "./components/about/Qualification/Qualification.jsx";
 import Achievements from "./components/achievements/Achievements.jsx";
 import Portfolio from "./components/portfolio/Portfolio.jsx";
+import Services from "./components/services/Services.jsx";
 import Footer from "./components/footer/Footer.jsx";
 
-import Services from "./components/services/Services.jsx";
+import TestComp from "./components/testcomp/TestComp.jsx";
 // import Contact from "./components/contact/Contact.jsx";
-// import ColorPalete from './assets/colororPlate/ColorPlate.jsx'
+import ColorPalete from './assets/colororPlate/ColorPlate.jsx'
+import AboutSection from "./components/about/AboutSection.jsx";
 
 
 
@@ -22,16 +24,17 @@ const App = ()=>{
       <Header />
       <main>
           <Home />
-          <About />
-          <Skills />
-          <Qualification />
+          {/* <About /> */}
+          <AboutSection />
+          {/* <Skills /> */}
+          {/* <Qualification /> */}
           <Achievements />
           <Services />
           <Portfolio />
-
+          <TestComp />
           {/* <Contact /> */}
           <Footer />
-    {/* <ColorPalete /> */}
+    <ColorPalete />
       </main>
         
     </>

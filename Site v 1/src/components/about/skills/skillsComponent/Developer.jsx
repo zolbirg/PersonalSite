@@ -1,4 +1,4 @@
-import classes from "./skills/skills.module.css";
+import classes from "../skills.module.css";
 import {
   IoLogoNodejs
 } from "react-icons/io";
@@ -33,7 +33,7 @@ export default function Developer(){
                             80%
                           </span>
                         </div>
-                        <progress className="progress progress-success  " value={80} max="100"></progress>
+                        <progress className={` ${classes.progress__color} progress `} value={80} max="100"></progress>
 
                       </div>
                       <div >
@@ -43,7 +43,7 @@ export default function Developer(){
                             70%
                           </span>
                         </div>
-                        <progress className="progress progress-success  " value={70} max="100"></progress>
+                        <progress className={` ${classes.progress__color} progress `} value={70} max="100"></progress>
                       </div>
                       <div >
                         <div className={classes.skills__titles}>
@@ -54,7 +54,7 @@ export default function Developer(){
                             60%
                           </span>
                         </div>
-                        <progress className="progress progress-success  " value={60} max="100"></progress>
+                        <progress className={` ${classes.progress__color} progress `} value={60} max="100"></progress>
                       </div>
                       <div >
                         <div className={classes.skills__titles}>
@@ -65,7 +65,7 @@ export default function Developer(){
                             40%
                           </span>
                         </div>
-                        <progress className="progress progress-success  " value={40} max="100"></progress>
+                        <progress className={` ${classes.progress__color} progress `} value={40} max="100"></progress>
                       </div>
                       <div >
                         <div className={classes.skills__titles}>
@@ -74,7 +74,7 @@ export default function Developer(){
                             40%
                           </span>
                         </div>
-                        <progress className="progress progress-success  " value={40} max="100"></progress>
+                        <progress className={` ${classes.progress__color} progress `} value={40} max="100"></progress>
                       </div>
                     </div>
                     <div className={classes.skills__logo}>

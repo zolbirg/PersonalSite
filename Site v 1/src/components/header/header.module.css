@@ -19,15 +19,15 @@
   cursor: default;
 }
 .navbar a {
-  font-size: 1.7rem;
+  font-size: 1.3rem;
   color: var(--color-main);
   margin-left: 1.5rem;
   transition: 0.3s;
 }
 
-.navbar a:hover{
+/* .navbar a:hover{
   color: var(--color-hover);
 }
 .navbar a.active {
   color: var(--color-active);
-}
+} */

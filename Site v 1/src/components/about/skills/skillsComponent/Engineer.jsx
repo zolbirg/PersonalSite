@@ -1,4 +1,4 @@
-import classes from "./skills/skills.module.css";
+import classes from "../skills.module.css";
 
 
 import {
@@ -21,7 +21,7 @@ export default function Engineer(){
                     80%
                   </span>
                 </div>
-                <progress className="progress progress-success  " value={80} max="100"></progress>
+                <progress className={` ${classes.progress__color} progress `} value={80} max="100"></progress>
               </div>
               <div >
                 <div className={classes.skills__titles}>
@@ -30,7 +30,7 @@ export default function Engineer(){
                     90%
                   </span>
                 </div>
-                <progress className="progress progress-success  " value={90} max="100"></progress>
+                <progress className={` ${classes.progress__color} progress `} value={90} max="100"></progress>
               </div>
               <div >
                 <div className={classes.skills__titles}>
@@ -39,7 +39,7 @@ export default function Engineer(){
                     80%
                   </span>
                 </div>
-                <progress className="progress progress-success  " value={80} max="100"></progress>
+                <progress className={` ${classes.progress__color} progress `} value={80} max="100"></progress>
               </div>
               <div >
                 <div className={classes.skills__titles}>
@@ -48,7 +48,7 @@ export default function Engineer(){
                     60%
                   </span>
                 </div>
-                <progress className="progress progress-success  " value={60} max="100"></progress>
+                <progress className={` ${classes.progress__color} progress `} value={60} max="100"></progress>
               </div>
             </div>
             <div className={classes.skills__logo}>

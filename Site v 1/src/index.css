@@ -2,10 +2,9 @@
 @plugin "daisyui";
 
 
-/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700|Oswald:400,500,600,700'); */
-
-
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700|Oswald:400,500,600,700');
+@import url('https://fonts.googleapis.com/css2?family=Chango&display=swap');
 :root {
    /* --bg-color:#45484d;
    --second-bg-color:#323946; */
@@ -30,12 +29,14 @@
   
   
   --bg-main:#494a4d;
-  --bg-first:#45484d;
-  --bg-second:#323946;
+  --bg-first:red;
+  --bg-second:red;
   --bg-block:#3e3d38ec;
+  --bg-block-first:#3a3934f8;
   --bg-shadow:rgba(11, 209, 126, 0.25);
 
-    /* --gRADIENT:#bcdc49 #1b5cfd; */
+    /* --gr-progress:#bcdc49 #1b5cfd; */
+    --gr-progress: linear-gradient(#222518,  #1b5cfd );
   
 
 
@@ -73,9 +74,9 @@
     --gray1:#6b6e70;
       --gray2:#45484d;
     --gray3:#23272A;
-    --gray4:#1f242d;
-      --gray5:#323946;
-    --gray6:#d0ece5; 
+    --gray4:#292F36;
+    --gray5:#1A1E23;
+    --gray6:#43454D; 
     --gray7:#6b6e70;
       --gray8:#4b4a4e;
     --gray9: #9fa1ad;
@@ -87,9 +88,11 @@
    
 /*========== Font and typography ==========*/
 --body-font: "Poppins", sans-serif;
+--font-home: "Poppins", sans-serif;
 
 
---big-font-size: 6rem;
+
+--big-font-size: 5rem;
 --h1-font-size: 3rem;
 --h2-font-size: 2rem;
 --h3-font-size: 1.125rem;
@@ -126,7 +129,7 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--body-font)
 
  }
 
@@ -145,7 +148,7 @@
  /*==================== LAYOUT ====================*/
  .section {
   padding: 2rem 0 4rem;
-  min-height: 40lh;
+  min-height: 35vh;
  
 }
 
@@ -176,5 +179,19 @@
 .section__title,
 .section__subtitle {
   text-align: center;
+}
+
+.button {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+}
+
+.button:hover {
+  color: var(--color-hover);
+}
+
+.button.button__active {
+color:var( --color-active);
 }
 

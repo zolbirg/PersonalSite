@@ -1,4 +1,4 @@
-import classes from "./skills/skills.module.css";
+import classes from "../skills.module.css";
 
 import {IoIosAirplane} from "react-icons/io";
 
@@ -26,7 +26,7 @@ export default function Travelers() {
                   </div>
                   
                 </div>
-                <progress className="progress progress-success  " value={50} max="100"></progress>
+                <progress className={` ${classes.progress__color} progress `} value={3} max="100"></progress>
               </div>
               <div>
                 <p>

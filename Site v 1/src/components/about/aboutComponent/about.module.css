@@ -8,6 +8,7 @@
     position:relative;
 } */
 
+
 .about__container {
   max-width: 70%;
   display: flex;
@@ -19,6 +20,14 @@
 
   border-radius: 30px;
 }
+
+.about__list{
+  margin: 1rem;
+}
+.about__list li{
+  list-style: disc inside;
+}
+
 .about__img {
   width: 30%;
   height: 25%;
