@@ -1,42 +1,98 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700|Oswald:400,500,600,700');
-
+@import url('https://fonts.googleapis.com/css2?family=Chango&display=swap');
 :root {
-   --bg-color:#45484d;
-   --second-bg-color:#323946;
+   /* --bg-color:#45484d;
+   --second-bg-color:#323946; */
 
-   --text-color:#6cce88;
+   /* --text-color:#6cce88;
    --text-color-medium:rgb(44, 218, 160);
    --text-color-active:rgb(157, 218, 67);
    --text-color-active-soft:#dbf059;
    --main-color:rgb(208, 236, 229); 
    --color-white:#fff;
+   */
+
+  --color-main:#aaeba8;
+  --color-white:#d0ece5;
+  --color-title:#6cce88;
+  --color-first:#2cdaa0;
+  --color-second:#7af17a;
+
+  --color-btn:#01C38D;
+  --color-active:#7eaa5b;
+  --color-hover:#dbf059;
   
+  
+  --bg-main:#494a4d;
+  --bg-first:red;
+  --bg-second:red;
+  --bg-block:#3e3d38ec;
+  --bg-block-first:#3a3934f8;
+  --bg-shadow:rgba(11, 209, 126, 0.25);
+
+    /* --gr-progress:#bcdc49 #1b5cfd; */
+    --gr-progress: linear-gradient(#222518,  #1b5cfd );
+  
+
+
+
    /* ==============plate================ */
    /* color green */
-      --green1:#33ffc2;
+    --green1:#33ffc2;
     --green2:#33ff66;
-    --green3:#7af17a;
+      --green3:#7af17a;
       --green4:#dbf059;
       --green5:#6cce88;
-      --green6:rgb(44, 218, 160);
-      --green7:rgb(157, 218, 67);
+      --green6:#2cdaa0;
+    --green7:#9dda43;
+    --green8:#B2FFC6;
+    --green9:#87F8AE;
+    --green10:#42D49C;
+      --green11:#01C38D;
+      --green12:#aaeba8;
+    --green13:#00A68A;
+    --green14:#aaafff;
+    --green15:#5c6b3d;
+    --green16:#3c5148;
+    --green17:#6b8e4e;
+    --green18:#b4ddb4;
+    --green19:#aaafff;
+    --green20:#aaafff;
+
+
+
+    /* --gRADIENT:#bcdc49 #1b5cfd; */
+    
     
     /* color gray */
 
-    --gray1:#0d2f2b;
+    --gray1:#6b6e70;
       --gray2:#45484d;
     --gray3:#23272A;
-    --gray4:#1f242d;
-      --gray5:#323946;
-      --gray6:rgb(208, 236, 229); 
+    --gray4:#292F36;
+    --gray5:#1A1E23;
+    --gray6:#43454D; 
+    --gray7:#6b6e70;
+      --gray8:#4b4a4e;
+    --gray9: #9fa1ad;
+    --gray10:#5c5e60;
+    --gray11:#5b595b;
+      --gray12:#3e3d38;
+    
     
    
 /*========== Font and typography ==========*/
 --body-font: "Poppins", sans-serif;
+--font-home: "Poppins", sans-serif;
 
 
---big-font-size: 7rem;
+
+--big-font-size: 5rem;
 --h1-font-size: 3rem;
 --h2-font-size: 2rem;
 --h3-font-size: 1.125rem;
@@ -73,43 +129,28 @@
     border: none;
     outline: none;
     scroll-behavior: smooth;
-    font-family: 'Poppins', sans-serif;
+    font-family: var(--body-font)
 
  }
 
  html{
     font-size: 62.5%;
     overflow-x:hidden;
-
+    font-family: var(--font-se);
  }
 
  body{
-    background: var(--bg-color);
-    color: var(--text-color);
+    background: var(--bg-main);
+    color: var(--color-main);
  }
 
 
- .section {
-   padding: 2rem 0 4rem;
-   min-height: 100vh;
-   
- }
- 
- .section__title {
-   font-size: var(--h1-font-size);
- }
- 
- .section__subtitle {
-   display: block;
-   font-size: var(--normal-font-size);
-   margin-bottom: var(--mb-2);
- }
- 
- .section__title,
- .section__subtitle {
-   text-align: center;
- }
  /*==================== LAYOUT ====================*/
+ .section {
+  padding: 2rem 0 4rem;
+  min-height: 35vh;
+ 
+}
 
 .container {
   max-width: 768px;
@@ -123,4 +164,34 @@
   gap: 1.5rem;
 }
 
+.section__title {
+  font-size: var(--h1-font-size);
+  font-weight: bold;
+}
+
+.section__subtitle {
+  display: block;
+  font-size: var(--normal-font-size);
+  margin-bottom: var(--mb-2);
+  color: var(--color-white);
+}
+
+.section__title,
+.section__subtitle {
+  text-align: center;
+}
+
+.button {
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-medium);
+  cursor: pointer;
+}
+
+.button:hover {
+  color: var(--color-hover);
+}
+
+.button.button__active {
+color:var( --color-active);
+}
 

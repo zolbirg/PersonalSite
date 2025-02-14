@@ -1,10 +1,10 @@
  import React from 'react';
-import'./home.css'
+import classes from'./home.module.css'
 
-import { FaInstagram, FaVk } from "react-icons/fa";
+import { FaInstagram, FaVk, FaArrowCircleDown } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
-
 import { MdAlternateEmail } from "react-icons/md";
+
 import TextTransition, { presets } from 'react-text-transition';
 
 
@@ -23,9 +23,9 @@ export default function Home(){
   }, []);
 
     return (
-        <section id="home" className="section hero-section">
+        <section className={` ${classes.hero__section} section`} id="home">
         <div className="container">
-          <div className="hero-content">
+          <div className={classes.hero__content}>
             <h1>KANIN ROMAN</h1>
             <h2>
               {/* https://www.npmjs.com/package/react-text-transition */}
@@ -35,7 +35,7 @@ export default function Home(){
               Инженер и WEB разработчик, делаю вещи и заставляю их работать.
               <br /> Воплощая ваши мечты в реальность.
             </p>
-            <ul className="social-link">
+            <ul className={classes.social__link}>
               <li>
                 <a href="#">
                   {/* <https://react-icons.github.io/react-icons/ */}
@@ -60,9 +60,10 @@ export default function Home(){
             </ul>
           </div>
         </div>
-        <div className="down-arrow">
-          <a data-scroll="" href="#about" className="arrow-animated">
-            Scroll Down <i className="ti-arrow-down" />
+        <div className={classes.down__arrow}>
+          <a data-scroll="" href="#about" className={classes.arrow__animated}>
+          
+            <FaArrowCircleDown  className={classes.arrow__fa} />
           </a>
         </div>
       </section>

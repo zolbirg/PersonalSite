@@ -1,0 +1,68 @@
+/* https://coreui.io/react/docs/components/collapse/ */
+
+
+
+.skills__header {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--mb-0-5);
+  cursor: pointer;
+  background: var(--bg-block-first);
+  padding: 1rem;
+  border-radius: 2rem;
+}
+
+.skills__title {
+  font-size: var(--h3-font-size);
+  color:var(--color-title)
+}
+
+.skills__subtitle {
+  font-size: var(--small-font-size);
+  color: var(--color-white);
+}
+
+.skills__arrow {
+  margin-left: auto;
+  transition: 0.4s;
+  font-size: 2rem;
+  color:var(--color-active)
+}
+
+.skills__list {
+  row-gap: 1.5rem;
+  padding: 1rem 1rem 0 3rem;
+  margin-bottom: var(--mb-1-5);
+}
+.skills__titles {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--mb-0-5);
+}
+
+.skills__name {
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-medium);
+  color: var(--color-white);
+}
+
+.skills__logo {
+  font-size: 1.8rem;
+  padding: 0 15% 1rem;
+  color: var(--color-title);
+  display: flex;
+  justify-content: space-around;
+}
+
+.skills__travel {
+  padding: 0 5%;
+}
+
+.progress__color{
+  color: var(--color-title);
+  background: linear-gradient(-30deg,  #5a5c44, #5f25e7);
+}
+
+
+
+

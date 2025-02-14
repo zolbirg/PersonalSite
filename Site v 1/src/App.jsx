@@ -1,18 +1,20 @@
-
-import { Fragment } from "react";
-import About from "./components/about/About.jsx";
-import Contact from "./components/contact/Contact.jsx";
 import Header from "./components/header/Header.jsx";
 import Home from "./components/home/Home.jsx";
+// import About from "./components/aboutComponent/About.jsx";
+// import Skills from "./components/about/skills/Skills.jsx";
+// import Qualification from "./components/about/Qualification/Qualification.jsx";
+import Achievements from "./components/achievements/Achievements.jsx";
 import Portfolio from "./components/portfolio/Portfolio.jsx";
-import Qualification from "./components/Qualification/Qualification.jsx";
 import Services from "./components/services/Services.jsx";
-import Skills from "./components/skills/Skills.jsx";
+import Footer from "./components/footer/Footer.jsx";
 
-// import { Fragment } from "react";
+import TestComp from "./components/testcomp/TestComp.jsx";
+// import Contact from "./components/contact/Contact.jsx";
+import ColorPalete from './assets/colororPlate/ColorPlate.jsx'
+import AboutSection from "./components/about/AboutSection.jsx";
 
 
-// 2:07
+
 
 const App = ()=>{
 
@@ -22,13 +24,17 @@ const App = ()=>{
       <Header />
       <main>
           <Home />
-          <About />
-          <Skills />
-          <Qualification />
+          {/* <About /> */}
+          <AboutSection />
+          {/* <Skills /> */}
+          {/* <Qualification /> */}
+          <Achievements />
           <Services />
           <Portfolio />
-
-          <Contact />
+          <TestComp />
+          {/* <Contact /> */}
+          <Footer />
+    <ColorPalete />
       </main>
         
     </>
