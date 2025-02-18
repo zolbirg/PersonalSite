@@ -5,20 +5,20 @@
 .skills__header {
   display: flex;
   align-items: center;
-  margin-bottom: var(--mb-0-5);
+  margin-bottom: .5rem;
   cursor: pointer;
   background: var(--bg-block-first);
-  padding: 1rem;
+  padding: .1rem 1rem .1rem 2rem;
   border-radius: 2rem;
 }
 
 .skills__title {
-  font-size: var(--h3-font-size);
-  color:var(--color-title)
+  font-size: var(--font-size-subtitle);
+ 
 }
 
 .skills__subtitle {
-  font-size: var(--small-font-size);
+  font-size: var(--font-size-sm);
   color: var(--color-white);
 }
 
@@ -32,22 +32,21 @@
 .skills__list {
   row-gap: 1.5rem;
   padding: 1rem 1rem 0 3rem;
-  margin-bottom: var(--mb-1-5);
+  margin-bottom: 1rem;
 }
 .skills__titles {
   display: flex;
   justify-content: space-between;
-  margin-bottom: var(--mb-0-5);
+  margin-bottom: .2rem;
 }
 
 .skills__name {
-  font-size: var(--normal-font-size);
-  font-weight: var(--font-medium);
+  font-size: var(--font-size-sm);
   color: var(--color-white);
 }
 
-.skills__logo {
-  font-size: 1.8rem;
+.skills__logo_fa {
+  font-size: var(--font-size-title);
   padding: 0 15% 1rem;
   color: var(--color-title);
   display: flex;
@@ -60,7 +59,7 @@
 
 .progress__color{
   color: var(--color-title);
-  background: linear-gradient(-30deg,  #5a5c44, #5f25e7);
+  background: linear-gradient(-30deg,  #4c4d46, #168ec5);
 }
 
 

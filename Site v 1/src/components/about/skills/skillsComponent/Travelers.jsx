@@ -19,7 +19,7 @@ export default function Travelers() {
                     Более 120т.км на машине и еще больше
                     самолетом
                   </h3>
-                  <div className={classes.skills__logo}>
+                  <div className={classes.skills__logo_fa}>
                     <TbCamper />
                     ---
                     <IoIosAirplane />

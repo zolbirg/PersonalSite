@@ -20,7 +20,7 @@ export default function About() {
             <ul>
               <li >
               {" "}
-                <strong> Birthday:</strong>{" "}
+                <strong > Birthday:</strong>{" "}
                 <span>11 May 1991</span>
               </li>
               <li >

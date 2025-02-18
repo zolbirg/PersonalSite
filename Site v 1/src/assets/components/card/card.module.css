@@ -1,0 +1,57 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  width:100%;
+  height: 100%;
+  background: var(--bg-block);
+  border-radius: 1.7rem;
+  border: 1px solid var(--color-title);
+}
+.card:hover{
+    box-shadow: -5px  5px 40px var(--color-first);
+} 
+
+.card__logo {
+  background-image: url(../../img/fon1.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 25vh;
+  border-radius: 2rem;
+   
+}
+
+
+.card__body {
+  display: grid;
+  align-content: space-around;
+  text-align: center;
+  height: 100%;
+  padding: .6rem;
+ 
+}
+
+
+.card__title {
+ 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    #44bd72 27%,
+    #4893e4 55%,
+    #3edbb4
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 4.6rem;
+  font-weight: bold;
+}
+
+.card__text{
+  margin: 1rem;
+}
+

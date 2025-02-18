@@ -16,13 +16,16 @@ export default function Skills() {
     <section className="section" id="skills">
       {/*==================== SKILL-1 ====================*/}
 
-      <div  onClick={() => setContentType("Developer")}>
+      <div onClick={() => setContentType("Developer")}>
         <div className={classes.skills__header}>
           <div>
-            {/* <h1 className={classes.skills__title}> */}
-            <h1 className= {contentType === "Developer"
-                 ? "button button__active "
-                  : "button"}>
+            <h1
+              className={
+                contentType === "Developer"
+                   ? ` ${classes.skills__title} button button__active `
+                : ` ${classes.skills__title} button`
+              }
+            >
               Web Developer
             </h1>
             <span className={classes.skills__subtitle}>
@@ -40,9 +43,13 @@ export default function Skills() {
       <div onClick={() => setContentType("Engineer")}>
         <div className={classes.skills__header}>
           <div>
-            <h1 className={contentType === "Engineer"
-                 ? "button button__active "
-                  : "button"}>
+            <h1
+              className={
+                contentType === "Engineer"
+                ? ` ${classes.skills__title} button button__active `
+                : ` ${classes.skills__title} button`
+              }
+            >
               Engineer
             </h1>
             <span className={classes.skills__subtitle}>
@@ -61,9 +68,13 @@ export default function Skills() {
       <div onClick={() => setContentType("Travelers")}>
         <div className={classes.skills__header}>
           <div>
-            <h1 className={contentType === "Travelers"
-                 ? "button button__active "
-                  : "button"}>
+            <h1
+              className={
+                contentType === "Travelers"
+                   ? ` ${classes.skills__title} button button__active `
+                : ` ${classes.skills__title} button`
+              }
+            >
               Travelers
             </h1>
             <span className={classes.skills__subtitle}>

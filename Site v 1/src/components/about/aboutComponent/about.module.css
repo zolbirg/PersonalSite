@@ -26,6 +26,7 @@
 }
 .about__list li{
   list-style: disc inside;
+  color: var(--color-white);
 }
 
 .about__img {
@@ -41,22 +42,23 @@
 
 .about__description {
   text-align: initial;
-  margin-bottom: var(--mb-2-5);
+  margin-bottom: 2.5rem;
   color: var(--color-white);
 }
 
 .about__info {
   display: flex;
   justify-content: space-between;
-  margin-bottom: var(--mb-2-5);
+  margin-bottom: 2.5rem;
 }
 
 .about__info_title {
-  font-size: var(--h2-font-size);
+  font-size: var(--font-size-subtitle-big);
+  color: var(--color-title);
 }
 
 .about__info_name {
-  font-size: var(--smaller-font-size);
+  font-size: var(--font-size-sm);
   color: var(--color-white);
 }
 

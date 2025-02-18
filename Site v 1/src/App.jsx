@@ -1,4 +1,4 @@
-import Header from "./components/header/Header.jsx";
+import NavBar from "./components/navBar/NavBar.jsx";
 import Home from "./components/home/Home.jsx";
 // import About from "./components/aboutComponent/About.jsx";
 // import Skills from "./components/about/skills/Skills.jsx";
@@ -15,17 +15,16 @@ import AboutSection from "./components/about/AboutSection.jsx";
 
 
 
-
 const App = ()=>{
-
  
   return(
     < >
-      <Header />
+      <NavBar />
       <main>
           <Home />
           {/* <About /> */}
           <AboutSection />
+          
           {/* <Skills /> */}
           {/* <Qualification /> */}
           <Achievements />
@@ -37,6 +36,7 @@ const App = ()=>{
     <ColorPalete />
       </main>
         
+          
     </>
   )
 }

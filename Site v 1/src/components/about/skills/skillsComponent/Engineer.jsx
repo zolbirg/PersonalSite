@@ -51,7 +51,7 @@ export default function Engineer(){
                 <progress className={` ${classes.progress__color} progress `} value={60} max="100"></progress>
               </div>
             </div>
-            <div className={classes.skills__logo}>
+            <div className={classes.skills__logo_fa}>
               <SiAutocad />
               <SiCoreldraw />
               <SiAdobephotoshop />
