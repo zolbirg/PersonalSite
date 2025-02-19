@@ -1,0 +1,55 @@
+.services__main {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50vw;
+  padding: 2rem 0;
+  background: url(../../assets/img/fon6.jpg) no-repeat center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.services__body {
+  
+  display: grid;
+  grid-template-columns: 60% 15px 40% ;
+}
+.services__logo{
+display: flex;
+align-items: center;
+/* background-color: #33322fcb; */
+
+}
+.services__story {
+  background: url("../../assets/img/fon4.jpg");
+  background-size: cover;
+  font-size: 11.3vw;
+  font-weight: bold;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* .services__content:hover{
+  box-shadow: -5px  5px 40px var(--color-first);
+} */
+.services__content{
+  display: flex;
+  align-items: center;
+  text-align: center;  
+  background-color: #33322fcb;
+  color: var(--color-title);
+  font-size:var(--font-size-subtitle);
+  border-radius: 2rem;
+  padding: 2rem;
+  
+}
+
+.services__clider{
+  margin-top: 3rem;
+}
+
+
+
+
+
+

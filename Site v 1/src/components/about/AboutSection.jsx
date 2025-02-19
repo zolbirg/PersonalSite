@@ -1,7 +1,7 @@
 import classes from "./aboutSection.module.css";
 // import photo from '../../assets/img/photo.jpg'
 // import photo2 from '../../assets/img/photo2.png'
-import photo1 from "../../assets/img/perfil.png";
+import photo1 from "../../assets/img/personalFoto2.png";
 
 import About from "./aboutComponent/About.jsx";
 import Skills from "./skills/Skills.jsx";

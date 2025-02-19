@@ -14,8 +14,7 @@
 
 .hero__content{
   text-align:left;
-  margin-top: 8%;
-  margin-left: -5%;
+ 
 }
 .hero__content h1{
     color:var(--color-title);

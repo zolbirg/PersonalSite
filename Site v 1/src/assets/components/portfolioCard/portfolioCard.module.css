@@ -1,0 +1,31 @@
+.pt__body{
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    gap: 1rem;
+    padding:1rem;
+    background: var(--bg-block);
+    margin-bottom: 1rem;
+    border-radius: 2rem;
+   
+}
+
+.pt__img{
+    max-width: 40%;
+    border-radius: 1rem;
+}
+.pt__block{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.pt__title{
+    font-size: var(--font-size-title-big);
+    font-weight:bold;
+}
+
+.pt__content{
+    min-height: 20vh;
+}

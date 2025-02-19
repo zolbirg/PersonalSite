@@ -11,8 +11,8 @@
 .about__container {
   max-width: 85%;
   display: flex;
-  justify-content: flex-start;
-  column-gap: 5rem;
+  justify-content:space-around;
+  align-items: center;
   margin: 1rem;
   background: var(--bg-block);
   padding: 2rem;
@@ -23,13 +23,16 @@
   font-size: var(--font-size-title);
 }
 .about__img_container {
-  max-width: 30%;
+  
+ max-width: 35%;
+
 }
 .about__img {
-  border-radius: 15% 30%;
+  
+  border-radius: 40%;
 
-  /* box-shadow: 7px 8px 30px var(--bg-shadow);; */
-}
+ 
+} 
 .about__data {
   width: 100%;
   padding: 0 2rem;

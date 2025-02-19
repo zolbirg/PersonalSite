@@ -25,6 +25,10 @@ export default function Card({ text, cardId ,contentType,title}) {
             <div className='modal__block'>
             <ul>
             
+            <li>{contentType [0]}</li>
+            <li>{contentType [1]}</li>
+            <li>{contentType [2]}</li>
+            <li>{contentType [3]}</li>
             <li>{contentType [4]}</li>
             
             </ul>
