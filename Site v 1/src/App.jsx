@@ -6,7 +6,7 @@ import Portfolio from "./components/portfolio/Portfolio.jsx";
 import Footer from "./components/footer/Footer.jsx";
 
 import TestComp from "./components/testcomp/TestComp.jsx";
-// import Contact from "./components/contact/Contact.jsx";
+import Contact from "./components/contact/Contact.jsx";
 // import ColorPalete from './assets/colororPlate/ColorPlate.jsx'
 import AboutSection from "./components/about/AboutSection.jsx";
 
@@ -21,8 +21,8 @@ const App = () => {
         <Portfolio />
 
         {/* <TestComp /> */}
-        {/* <Contact /> */}
-        <Footer />
+        <Contact />
+        {/* <Footer /> */}
         {/* <ColorPalete /> */}
       </main>
     </>
