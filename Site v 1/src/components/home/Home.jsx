@@ -47,12 +47,7 @@ export default function Home(){
                 <FaVk />
                 </a>
               </li>
-              <li>
-                <a href="#">
-                  
-                  <FaInstagram />
-                </a>
-              </li>
+              
               <li>
                 <a href="https://github.com/zolbirg">
                 <FaGithub />
