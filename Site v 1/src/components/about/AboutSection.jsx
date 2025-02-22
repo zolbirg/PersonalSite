@@ -3,7 +3,7 @@ import classes from "./aboutSection.module.css";
 // import photo2 from '../../assets/img/photo2.png'
 import photo1 from "../../assets/img/personalFoto2.png";
 
-import About from "./aboutComponent/About.jsx";
+import AboutComponetn from "./aboutComponent/AboutComponetn.jsx";
 import Skills from "./skills/Skills.jsx";
 import Qualification from "./Qualification/Qualification.jsx";
 
@@ -61,7 +61,7 @@ export default function AboutSection() {
             </div>
           </div>
           <div className="cont">
-            {tab === "About" && <About />}
+            {tab === "About" && <AboutComponetn />}
             {tab === "Skills" && <Skills />}
             {tab === "Qualification" && <Qualification />}
           </div>

@@ -1,16 +1,9 @@
 
-  .contact__container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    /* background: url("https://anadea.info/uploads/image_attachment/image/2878/route_map_in_uber_like_app.jpg"); */
-
-   
-    }
+ 
   .contact__block{
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2 , 30%);
+    justify-content: space-around;
     margin: 2rem;
   }
  
@@ -52,6 +45,13 @@
 }
 
 
-  
-  
+
+@media (max-width: 768px) {
+  .contact__block{
+    
+    grid-template-columns: repeat(1 , 100%);
+   justify-items: center;
+  }
+}
+
   

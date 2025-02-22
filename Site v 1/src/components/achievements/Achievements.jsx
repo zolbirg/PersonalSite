@@ -9,19 +9,15 @@ export default function Achievements() {
     <>
       <section className={`${classes.achievements__section} section`}>
         <h2 className="section__title">Achievements</h2>
-        <span className="section__subtitle">
-          достижения
-        </span>
-       
-        <div className='container'>
-          <div className="grid grid-cols-4 gap-6 md:grid-cols-8 lg:grid-cols-12">
-            <div className="col-span-4">
+        <div className="container">
+          <div className={classes.achievements__block}>
+            <div className={classes.achievements__card}>
             <Card keys={ways.cardId} {...ways} />
             </div>
-            <div className="col-span-4">
+            <div className={classes.achievements__card}>
             <Card keys={ways2.cardId} {...ways2}  />
             </div>
-            <div className="col-span-4">
+            <div className={classes.achievements__card}>
             <Card keys={ways3.cardId} {...ways3}/>
             </div>
 

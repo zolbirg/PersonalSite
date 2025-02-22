@@ -13,7 +13,7 @@ export default function Skills() {
     useState("Developer");
 
   return (
-    <section className="section" id="skills">
+    <section  id="skills">
       {/*==================== SKILL-1 ====================*/}
 
       <div onClick={() => setContentType("Developer")}>

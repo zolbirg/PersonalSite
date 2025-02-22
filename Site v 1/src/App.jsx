@@ -20,11 +20,13 @@ const App = () => {
         <Achievements />
         <Portfolio />
 
-        {/* <TestComp /> */}
+        <TestComp />
+        
         <Contact />
         {/* <Footer /> */}
         {/* <ColorPalete /> */}
       </main>
+    
     </>
   );
 };

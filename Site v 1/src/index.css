@@ -6,20 +6,49 @@
 /* @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700|Oswald:400,500,600,700'); */
 @import url('https://fonts.googleapis.com/css2?family=Chango&display=swap');
 :root {
-  
-  /* --color-main:#aaeba8;
-  --color-white:#d0ece5;
-  --color-title:#6cce88;
-  --color-first:#2cdaa0;
-  --color-second:#7af17a;
 
-  --color-btn:#01C38D;
-  --color-active:#565f4f;
-  --color-hover:#dbf059;
-  
-   */
+   /* ==============plate================ */
+   /* color green */
+   --green1:#33ffc2;
+   --green2:#33ff66;
+     --green3:#7af17a;
+     --green4:#dbf059;
+     --green5:#6cce88;
+     --green6:#2cdaa0;
+   --green7:#9dda43;
+   --green8:#B2FFC6;
+   --green9:#87F8AE;
+   --green10:#42D49C;
+     --green11:#01C38D;
+     --green12:#aaeba8;
+   --green13:#00A68A;
+   --green14:#aaafff;
+   --green15:#5c6b3d;
+   --green16:#3c5148;
+   --green17:#6b8e4e;
+   --green18:#b4ddb4;
+   --green19:#aaafff;
+   --green20:#aaafff;
 
-  
+   /* --gRADIENT:#bcdc49 #1b5cfd; */
+   
+   /* color gray */
+
+   --gray1:#6b6e70;
+     --gray2:#45484d;
+   --gray3:#23272A;
+   --gray4:#292F36;
+   --gray5:#1A1E23;
+   --gray6:#43454D; 
+   --gray7:#6b6e70;
+     --gray8:#4b4a4e;
+   --gray9: #9fa1ad;
+   --gray10:#5c5e60;
+   --gray11:#5b595b;
+     --gray12:#3e3d38;
+   
+/* ==============color================ */
+
     --color-main:#8e958e;
     --color-white:#e0e9e7;
     --color-title:#aaeba8;
@@ -43,55 +72,7 @@
 
     /* --gr-progress:#bcdc49 #1b5cfd; */
   --gr-progress: linear-gradient(#222518,  #1b5cfd );
-  
-
-
-
-   /* ==============plate================ */
-   /* color green */
-    --green1:#33ffc2;
-    --green2:#33ff66;
-      --green3:#7af17a;
-      --green4:#dbf059;
-      --green5:#6cce88;
-      --green6:#2cdaa0;
-    --green7:#9dda43;
-    --green8:#B2FFC6;
-    --green9:#87F8AE;
-    --green10:#42D49C;
-      --green11:#01C38D;
-      --green12:#aaeba8;
-    --green13:#00A68A;
-    --green14:#aaafff;
-    --green15:#5c6b3d;
-    --green16:#3c5148;
-    --green17:#6b8e4e;
-    --green18:#b4ddb4;
-    --green19:#aaafff;
-    --green20:#aaafff;
-
-
-
-    /* --gRADIENT:#bcdc49 #1b5cfd; */
-    
-    
-    /* color gray */
-
-    --gray1:#6b6e70;
-      --gray2:#45484d;
-    --gray3:#23272A;
-    --gray4:#292F36;
-    --gray5:#1A1E23;
-    --gray6:#43454D; 
-    --gray7:#6b6e70;
-      --gray8:#4b4a4e;
-    --gray9: #9fa1ad;
-    --gray10:#5c5e60;
-    --gray11:#5b595b;
-      --gray12:#3e3d38;
-    
-    
-   
+ 
 /*========== Font and typography ==========*/
 --body-font: "Poppins", sans-serif;
 --font-home-title: "Poppins", sans-serif;
@@ -116,6 +97,8 @@
 --z-fixed: 100;
 --z-modal: 1000;
 }
+
+/*========== all ==========*/
 
 *{
     margin: 0;
@@ -143,9 +126,8 @@
 
  /*==================== LAYOUT ====================*/
  .section {
-  /* padding: 2rem 0 ; */
   padding: 3rem 0;
-  min-height: 70vh;
+  /* min-height: 80vh; */
  
 }
 
@@ -164,22 +146,12 @@
 .section__title {
   font-size: var(--font-size-title-big);
   font-weight: bold;
-}
-
-.section__subtitle {
-  display: block;
-  font-size: var(--font-size-subtitle);
   margin-bottom: 2rem;
-  color: var(--color-white);
-}
-
-.section__title,
-.section__subtitle {
   text-align: center;
 }
+ /*==================== btn ====================*/
 
 .button {
-  
   font-weight: var(--font-medium);
   cursor: pointer;
 }
@@ -198,4 +170,15 @@ color:var( --color-active);
   text-align: center;
   height: 86%;
   margin: 1rem;
+}
+
+
+@media (max-width: 1000px) {
+ 
+}
+@media (max-width: 768px) {
+ 
+}
+@media (max-width: 480px) {
+ 
 }

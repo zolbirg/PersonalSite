@@ -12,7 +12,7 @@ export default function Qualification() {
   const [tab, setTab] = useState("education");
 
   return (
-    <section className={classes.qualification__section}>
+    <section >
       <div className={classes.qualification__tabs}>
         <div
           onClick={() => setTab("education")}

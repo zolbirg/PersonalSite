@@ -19,7 +19,7 @@ export default function PortfolioCard({img,title,content,link}) {
             </p>
           </div>
           <div>
-            <Button>Get Started</Button>
+            <Button >Get Started</Button>
           </div>
         </div>
       </div>

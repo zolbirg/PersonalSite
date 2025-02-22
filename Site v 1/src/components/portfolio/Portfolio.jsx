@@ -1,21 +1,21 @@
 // https://react-slick.neostack.com/docs/get-started#installation
 
-
 import classes from "./portfolio.module.css";
 import PortfolioCard from "../../assets/components/portfolioCard/PortfolioCard";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import {pet1, pet2 ,pet3 ,pet4,pet5,pet6} from "./portfolioData.js";
-
+import {
+  pet1,
+  pet2,
+  pet3,
+  pet4,
+  pet5,
+  pet6,
+} from "./portfolioData.js";
 
 export default function Portfolio() {
-  const title = "Box Office News!";
-  const img =
-    "https://i.pinimg.com/originals/cd/a5/a2/cda5a288883071b783cd97d68195df5f.jpg";
-  const content =
-    "dflng    nfjng jfngjnf jgjlslkf nsl lsnflgn lsnlf lsfnlgn sg slnflgnrlinrin ri sli nlir li  nslin l sn l isnlrngliw peokok[owh[j";
-
+  
   var settings = {
     dots: true,
     infinite: true,
@@ -29,7 +29,6 @@ export default function Portfolio() {
       className={`${classes.services__main} section `}
       id="portfolio"
     >
-      
       <div
         className={`${classes.services__container} container `}
       >
@@ -39,7 +38,7 @@ export default function Portfolio() {
               STORY
             </h1>
           </div>
-          <div></div>
+          
 
           <div className={classes.services__content}>
             <p>
@@ -63,7 +62,8 @@ export default function Portfolio() {
               <h3>
                 {" "}
                 <PortfolioCard
-                  keys={pet1.title} {...pet1}
+                  keys={pet1.title}
+                  {...pet1}
                 />
               </h3>
             </div>
@@ -71,7 +71,8 @@ export default function Portfolio() {
               <h3>
                 {" "}
                 <PortfolioCard
-                keys={pet2.title} {...pet2}
+                  keys={pet2.title}
+                  {...pet2}
                 />
               </h3>
             </div>
@@ -79,7 +80,8 @@ export default function Portfolio() {
               <h3>
                 {" "}
                 <PortfolioCard
-                 keys={pet3.title} {...pet3}
+                  keys={pet3.title}
+                  {...pet3}
                 />
               </h3>
             </div>
@@ -87,7 +89,8 @@ export default function Portfolio() {
               <h3>
                 {" "}
                 <PortfolioCard
-                  keys={pet4.title} {...pet4}
+                  keys={pet4.title}
+                  {...pet4}
                 />
               </h3>
             </div>
@@ -95,7 +98,8 @@ export default function Portfolio() {
               <h3>
                 {" "}
                 <PortfolioCard
-                 keys={pet5.title} {...pet5}
+                  keys={pet5.title}
+                  {...pet5}
                 />
               </h3>
             </div>
@@ -103,7 +107,8 @@ export default function Portfolio() {
               <h3>
                 {" "}
                 <PortfolioCard
-                 keys={pet6.title} {...pet6}
+                  keys={pet6.title}
+                  {...pet6}
                 />
               </h3>
             </div>
