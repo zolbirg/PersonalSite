@@ -2,7 +2,7 @@
 import classes from'./home.module.css'
 
 import { FaInstagram, FaVk, FaArrowCircleDown } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa6";
+import { FaGithub,FaTelegram } from "react-icons/fa6";
 import { MdAlternateEmail } from "react-icons/md";
 
 import TextTransition, { presets } from 'react-text-transition';
@@ -36,10 +36,10 @@ export default function Home(){
               <br /> Воплощая ваши мечты в реальность.
             </p>
             <ul className={classes.social__link}>
-              <li>
-                <a href="#">
+            <li>
+                <a href="https://t.me/zolbirg">
                   {/* <https://react-icons.github.io/react-icons/ */}
-                  <FaInstagram />
+                  <FaTelegram />
                 </a>
               </li>
               <li>
@@ -47,6 +47,7 @@ export default function Home(){
                 <FaVk />
                 </a>
               </li>
+              
               <li>
                 <a href="https://github.com/zolbirg">
                 <FaGithub />
@@ -63,7 +64,7 @@ export default function Home(){
         <div className={classes.down__arrow}>
           <a data-scroll="" href="#about" className={classes.arrow__animated}>
           
-            <FaArrowCircleDown  className={classes.arrow__fa} />
+            <FaArrowCircleDown  className={`${classes.arrow__fa} button`}/>
           </a>
         </div>
       </section>

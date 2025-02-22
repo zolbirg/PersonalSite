@@ -1,28 +1,13 @@
-import { createPortal } from "react-dom";
-import "./Modal.css";
-import { useRef, useEffect } from "react";
+import classes from "./modal.module.css";
 
-export default function Modal({ children, open }) {
-  const dialog = useRef();
-
-  useEffect(() => {
-    if (open) {
-      dialog.current.showModal();
-    } else {
-      dialog.current.close();
-    }
-  }, [open]);
-
-  // return <dialog open={open}>{children}</dialog>
-  return createPortal(
-    <>
-    <dialog
-      ref={dialog}
-      //open={open}
-    >
-      {children}
-    </dialog>,
-    {/* document.getElementById("modal"); */}
-    </>
-  );
-}
+export default function Modal({ active, setActive , children }) {
+  return (
+    
+       <div className={active ? `${classes.modal__body} ${classes.active}`: classes.modal__body }onClick={()=> setActive(false)}>
+        <div className={active ? `${classes.modal__content} ${classes.active}`: classes.modal__content} onClick={e => e.stopPropagation()} >
+            {children}
+        </div>
+      </div>
+    
+  )
+};

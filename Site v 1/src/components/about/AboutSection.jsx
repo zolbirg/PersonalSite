@@ -1,9 +1,9 @@
 import classes from "./aboutSection.module.css";
 // import photo from '../../assets/img/photo.jpg'
 // import photo2 from '../../assets/img/photo2.png'
-import photo1 from "../../assets/img/perfil.png";
+import photo1 from "../../assets/img/personalFoto2.png";
 
-import About from "./aboutComponent/About.jsx"
+import AboutComponetn from "./aboutComponent/AboutComponetn.jsx";
 import Skills from "./skills/Skills.jsx";
 import Qualification from "./Qualification/Qualification.jsx";
 
@@ -16,7 +16,9 @@ export default function AboutSection() {
   return (
     <section className="section" id="about">
       <h2 className="section__title">About Me</h2>
-      <div className={`${classes.about__container} container `}>
+      <div
+        className={`${classes.about__container} container `}
+      >
         <div className={classes.about__img_container}>
           <img
             src={photo1}
@@ -31,47 +33,39 @@ export default function AboutSection() {
               onClick={() => setTab("About")}
               className={
                 tab === "About"
-                  ? "button button__active "
-                  : "button"
-              }
-            >
-              About
-            
+                  ? `  ${classes.about__toggle_title} button button__active `
+                  : ` ${classes.about__toggle_title} button`
+              } > About
             </div>
 
             <div
               onClick={() => setTab("Skills")}
               className={
                 tab === "Skills"
-                 ? "button button__active "
-                  : "button"
+                  ? `  ${classes.about__toggle_title} button button__active `
+                  : ` ${classes.about__toggle_title} button`
               }
             >
               Skills
-            
             </div>
 
             <div
               onClick={() => setTab("Qualification")}
               className={
                 tab === "Qualification"
-                 ? "button button__active "
-                  : "button"
+                  ? `  ${classes.about__toggle_title} button button__active `
+                  : ` ${classes.about__toggle_title} button`
               }
             >
               Qualification
-              
             </div>
           </div>
           <div className="cont">
-            
-              {tab === "About" && <About />}
-              {tab === "Skills" && <Skills/>}
-              {tab === "Qualification" && <Qualification />}
-              
+            {tab === "About" && <AboutComponetn />}
+            {tab === "Skills" && <Skills />}
+            {tab === "Qualification" && <Qualification />}
           </div>
         </div>
-        
       </div>
     </section>
   );

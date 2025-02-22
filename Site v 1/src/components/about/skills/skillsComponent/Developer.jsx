@@ -30,7 +30,7 @@ export default function Developer(){
                         <div className={classes.skills__titles}>
                           <h3 className={classes.skills__name}>HTML</h3>
                           <span className={classes.skills__number}>
-                            80%
+                           
                           </span>
                         </div>
                         <progress className={` ${classes.progress__color} progress `} value={80} max="100"></progress>
@@ -40,7 +40,7 @@ export default function Developer(){
                         <div className={classes.skills__titles}>
                           <h3 className={classes.skills__name}>CSS</h3>
                           <span className={classes.skills__number}>
-                            70%
+                            
                           </span>
                         </div>
                         <progress className={` ${classes.progress__color} progress `} value={70} max="100"></progress>
@@ -51,7 +51,7 @@ export default function Developer(){
                             JavaScript
                           </h3>
                           <span className={classes.skills__number}>
-                            60%
+                            
                           </span>
                         </div>
                         <progress className={` ${classes.progress__color} progress `} value={60} max="100"></progress>
@@ -62,7 +62,7 @@ export default function Developer(){
                             TypeScript
                           </h3>
                           <span className={classes.skills__number}>
-                            40%
+                            
                           </span>
                         </div>
                         <progress className={` ${classes.progress__color} progress `} value={40} max="100"></progress>
@@ -71,13 +71,13 @@ export default function Developer(){
                         <div className={classes.skills__titles}>
                           <h3 className={classes.skills__name}>React</h3>
                           <span className={classes.skills__number}>
-                            40%
+                            
                           </span>
                         </div>
                         <progress className={` ${classes.progress__color} progress `} value={40} max="100"></progress>
                       </div>
                     </div>
-                    <div className={classes.skills__logo}>
+                    <div className={classes.skills__logo_fa}>
                       <FaHtml5 />
                       <FaCss3Alt />
                       <IoLogoNodejs />

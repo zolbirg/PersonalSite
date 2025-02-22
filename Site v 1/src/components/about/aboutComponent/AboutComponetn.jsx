@@ -1,11 +1,11 @@
-import classes from "./about.module.css";
+import classes from "./aboutComponetn.module.css";
 
 
 import Button from "../../../assets/components/button/Button";
 
 import { useState } from "react";
 
-export default function About() {
+export default function AboutComponetn() {
   const [contentDownload, setContentDownload] =
     useState(null);
 
@@ -13,14 +13,14 @@ export default function About() {
     setContentDownload(type);
   }
   return (
-    <section className={classes.about__section}>
+    <section >
       <div className={classes.about__data}>
         <div className={classes.about__list} >
           
             <ul>
               <li >
               {" "}
-                <strong> Birthday:</strong>{" "}
+                <strong > Birthday:</strong>{" "}
                 <span>11 May 1991</span>
               </li>
               <li >

@@ -3,123 +3,102 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700|Oswald:400,500,600,700');
+/* @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500,600,700|Oswald:400,500,600,700'); */
 @import url('https://fonts.googleapis.com/css2?family=Chango&display=swap');
 :root {
-   /* --bg-color:#45484d;
-   --second-bg-color:#323946; */
 
-   /* --text-color:#6cce88;
-   --text-color-medium:rgb(44, 218, 160);
-   --text-color-active:rgb(157, 218, 67);
-   --text-color-active-soft:#dbf059;
-   --main-color:rgb(208, 236, 229); 
-   --color-white:#fff;
-   */
+   /* ==============plate================ */
+   /* color green */
+   --green1:#33ffc2;
+   --green2:#33ff66;
+     --green3:#7af17a;
+     --green4:#dbf059;
+     --green5:#6cce88;
+     --green6:#2cdaa0;
+   --green7:#9dda43;
+   --green8:#B2FFC6;
+   --green9:#87F8AE;
+   --green10:#42D49C;
+     --green11:#01C38D;
+     --green12:#aaeba8;
+   --green13:#00A68A;
+   --green14:#aaafff;
+   --green15:#5c6b3d;
+   --green16:#3c5148;
+   --green17:#6b8e4e;
+   --green18:#b4ddb4;
+   --green19:#aaafff;
+   --green20:#aaafff;
 
-  --color-main:#aaeba8;
-  --color-white:#d0ece5;
-  --color-title:#6cce88;
-  --color-first:#2cdaa0;
+   /* --gRADIENT:#bcdc49 #1b5cfd; */
+   
+   /* color gray */
+
+   --gray1:#6b6e70;
+     --gray2:#45484d;
+   --gray3:#23272A;
+   --gray4:#292F36;
+   --gray5:#1A1E23;
+   --gray6:#43454D; 
+   --gray7:#6b6e70;
+     --gray8:#4b4a4e;
+   --gray9: #9fa1ad;
+   --gray10:#5c5e60;
+   --gray11:#5b595b;
+     --gray12:#3e3d38;
+   
+/* ==============color================ */
+
+    --color-main:#8e958e;
+    --color-white:#e0e9e7;
+    --color-title:#aaeba8;
+    --color-first:#2cdaa0;
+  --color-firs2:#18d26e;
   --color-second:#7af17a;
 
-  --color-btn:#01C38D;
-  --color-active:#7eaa5b;
-  --color-hover:#dbf059;
+  --color-btn:#9dd17a;
+  --color-active:#aaeba8;
+  --color-hover:#a2f06e;
   
   
-  --bg-main:#494a4d;
-  --bg-first:red;
+  --bg-main:#141616;
+  --bg-first:#15191e;
+  /* --bg-first:oklch(0.2115 0.012 254.09); */
   --bg-second:red;
-  --bg-block:#3e3d38ec;
+  --bg-block:#33322fec;
+  --bg-navbar:#33322f91;
   --bg-block-first:#3a3934f8;
   --bg-shadow:rgba(11, 209, 126, 0.25);
 
     /* --gr-progress:#bcdc49 #1b5cfd; */
-    --gr-progress: linear-gradient(#222518,  #1b5cfd );
-  
-
-
-
-   /* ==============plate================ */
-   /* color green */
-    --green1:#33ffc2;
-    --green2:#33ff66;
-      --green3:#7af17a;
-      --green4:#dbf059;
-      --green5:#6cce88;
-      --green6:#2cdaa0;
-    --green7:#9dda43;
-    --green8:#B2FFC6;
-    --green9:#87F8AE;
-    --green10:#42D49C;
-      --green11:#01C38D;
-      --green12:#aaeba8;
-    --green13:#00A68A;
-    --green14:#aaafff;
-    --green15:#5c6b3d;
-    --green16:#3c5148;
-    --green17:#6b8e4e;
-    --green18:#b4ddb4;
-    --green19:#aaafff;
-    --green20:#aaafff;
-
-
-
-    /* --gRADIENT:#bcdc49 #1b5cfd; */
-    
-    
-    /* color gray */
-
-    --gray1:#6b6e70;
-      --gray2:#45484d;
-    --gray3:#23272A;
-    --gray4:#292F36;
-    --gray5:#1A1E23;
-    --gray6:#43454D; 
-    --gray7:#6b6e70;
-      --gray8:#4b4a4e;
-    --gray9: #9fa1ad;
-    --gray10:#5c5e60;
-    --gray11:#5b595b;
-      --gray12:#3e3d38;
-    
-    
-   
+  --gr-progress: linear-gradient(#222518,  #1b5cfd );
+ 
 /*========== Font and typography ==========*/
 --body-font: "Poppins", sans-serif;
---font-home: "Poppins", sans-serif;
+--font-home-title: "Poppins", sans-serif;
 
+--font-size-home-title: 6rem;
+--font-size-title-big: 3rem;
+--font-size-title:1.5rem;
+--font-size-subtitle-big:2rem;
+--font-size-subtitle:1.2rem;
+  --font-size-main:1rem;
+--font-size-sm:.8rem;
+--font-size-fa:1.7rem;
 
-
---big-font-size: 5rem;
---h1-font-size: 3rem;
---h2-font-size: 2rem;
---h3-font-size: 1.125rem;
---normal-font-size: 0.938rem;
---small-font-size: 0.813rem;
---smaller-font-size: 0.75rem;
 
 /*========== Font weight ==========*/
 --font-medium: 500;
 --font-semi-bold: 600;
 
-/*========== Margenes  ==========*/
-
---mb-0-25: 0.25rem;
---mb-0-5: 0.5rem;
---mb-0-75: 0.75rem;
---mb-1: 1rem;
---mb-1-5: 1.5rem;
---mb-2: 2rem;
---mb-2-5: 2.5rem;
---mb-3: 3rem;
 
 /*========== z index ==========*/
 --z-tooltip: 10;
 --z-fixed: 100;
 --z-modal: 1000;
 }
+
+/*========== all ==========*/
 
 *{
     margin: 0;
@@ -134,9 +113,9 @@
  }
 
  html{
-    font-size: 62.5%;
+    font-size: 80%;
     overflow-x:hidden;
-    font-family: var(--font-se);
+    font-family: var(--body-font);
  }
 
  body{
@@ -147,13 +126,13 @@
 
  /*==================== LAYOUT ====================*/
  .section {
-  padding: 2rem 0 4rem;
-  min-height: 35vh;
+  padding: 3rem 0;
+  /* min-height: 80vh; */
  
 }
 
-.container {
-  max-width: 768px;
+.container{
+  max-width: 980px;
   margin-left: auto;
   margin-right: auto;
   
@@ -165,24 +144,14 @@
 }
 
 .section__title {
-  font-size: var(--h1-font-size);
+  font-size: var(--font-size-title-big);
   font-weight: bold;
-}
-
-.section__subtitle {
-  display: block;
-  font-size: var(--normal-font-size);
-  margin-bottom: var(--mb-2);
-  color: var(--color-white);
-}
-
-.section__title,
-.section__subtitle {
+  margin-bottom: 2rem;
   text-align: center;
 }
+ /*==================== btn ====================*/
 
 .button {
-  font-size: var(--h2-font-size);
   font-weight: var(--font-medium);
   cursor: pointer;
 }
@@ -195,3 +164,21 @@
 color:var( --color-active);
 }
 
+.modal__block{
+  display: grid;
+  align-content: space-around;
+  text-align: center;
+  height: 86%;
+  margin: 1rem;
+}
+
+
+@media (max-width: 1000px) {
+ 
+}
+@media (max-width: 768px) {
+ 
+}
+@media (max-width: 480px) {
+ 
+}
