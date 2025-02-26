@@ -26,10 +26,11 @@ margin: 0 1%;
   background-size: cover;
   font-size: 9vmax;
   font-weight: bold;
+ 
   /* background: rgba(172, 255, 47, 0.39); */
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  
+ 
 }
 
 /* .services__content:hover{

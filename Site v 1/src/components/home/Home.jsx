@@ -4,6 +4,7 @@ import classes from'./home.module.css'
 import { FaInstagram, FaVk, FaArrowCircleDown } from "react-icons/fa";
 import { FaGithub,FaTelegram } from "react-icons/fa6";
 import { MdAlternateEmail } from "react-icons/md";
+import { SiCodewars } from "react-icons/si";
 
 import TextTransition, { presets } from 'react-text-transition';
 
@@ -47,17 +48,22 @@ export default function Home(){
                 <FaVk />
                 </a>
               </li>
-              
+              <li>
+                <a href="mailto:kaninroman@mail.ru">
+                <MdAlternateEmail />
+                </a>
+              </li> 
               <li>
                 <a href="https://github.com/zolbirg">
                 <FaGithub />
                 </a>
               </li>
               <li>
-                <a href="mailto:kaninroman@mail.ru">
-                <MdAlternateEmail />
+                <a href="https://www.codewars.com/users/Zolbirg">
+                <SiCodewars />
                 </a>
-              </li> 
+              </li>
+             
             </ul>
           </div>
         </div>

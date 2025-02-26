@@ -5,13 +5,14 @@ export default function TestComp() {
 
   return (
     <>
-    <div className="container">
-
-
- 
+    <div>
+      
     </div>
 
 
     </>
   );
 }
+
+
+

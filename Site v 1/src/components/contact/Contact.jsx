@@ -1,6 +1,7 @@
 import "./contact.css";
 
 import { FaInstagram, FaVk } from "react-icons/fa";
+import { SiCodewars } from "react-icons/si";
 import {
   FaGithub,
   FaTelegram,
@@ -65,17 +66,21 @@ export default function Contact() {
                       <FaVk />
                     </a>
                   </li>
-
+                  <li>
+                    <a href="mailto:kaninroman@mail.ru">
+                      <MdAlternateEmail />
+                    </a>
+                  </li>
                   <li>
                     <a href="https://github.com/zolbirg">
                       <FaGithub />
                     </a>
                   </li>
                   <li>
-                    <a href="mailto:kaninroman@mail.ru">
-                      <MdAlternateEmail />
-                    </a>
-                  </li>
+                                  <a href="https://www.codewars.com/users/Zolbirg">
+                                  <SiCodewars />
+                                  </a>
+                                </li>
                 </ul>
               </span>
             </div>

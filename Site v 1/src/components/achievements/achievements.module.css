@@ -2,32 +2,18 @@
   min-height: 80vh;
   height: 100%;
 }
+.achievements__container{
+  display: flex;
+  justify-content: center;
+}
 .achievements__block {
-  display: grid;
-  justify-items: center;
- 
-  grid-template-columns: repeat(3, 1fr);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+
   
 }
 .achievements__card {
-  margin-bottom: 10%;
-  width: 90%
- 
+width: 24rem;
 }
-
-@media (max-width: 1000px) {
-    .achievements__block {
-    
-        grid-template-columns: repeat(2, 1fr);
-      }
-  }
-  @media (max-width: 768px) {
-    .achievements__block {
-    
-        grid-template-columns: 1fr;
-      }
-    
-  }
-  @media (max-width: 480px) {
-   
-  }

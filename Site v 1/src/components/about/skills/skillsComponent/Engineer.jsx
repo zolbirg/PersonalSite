@@ -1,3 +1,5 @@
+import ProgressBar from "../../../../assets/progressBar/ProgressBar";
+import ProgressComponent from "../../../../assets/progressComponent/ProgressComponent";
 import classes from "../skills.module.css";
 
 
@@ -14,42 +16,12 @@ export default function Engineer(){
         <>
         
         <div className={` ${classes.skills__list} grid `}>
-              <div>
-                <div className={classes.skills__titles}>
-                  <h3 className={classes.skills__name}>AutoCad</h3>
-                  <span className={classes.skills__number}>
-                    80%
-                  </span>
-                </div>
-                <progress className={` ${classes.progress__color} progress `} value={80} max="100"></progress>
-              </div>
-              <div >
-                <div className={classes.skills__titles}>
-                  <h3 className={classes.skills__name}>Kompas 3d</h3>
-                  <span className={classes.skills__number}>
-                    90%
-                  </span>
-                </div>
-                <progress className={` ${classes.progress__color} progress `} value={90} max="100"></progress>
-              </div>
-              <div >
-                <div className={classes.skills__titles}>
-                  <h3 className={classes.skills__name}>CorellDrow</h3>
-                  <span className={classes.skills__number}>
-                    80%
-                  </span>
-                </div>
-                <progress className={` ${classes.progress__color} progress `} value={80} max="100"></progress>
-              </div>
-              <div >
-                <div className={classes.skills__titles}>
-                  <h3 className={classes.skills__name}>PhotoShop</h3>
-                  <span className={classes.skills__number}> 
-                    60%
-                  </span>
-                </div>
-                <progress className={` ${classes.progress__color} progress `} value={60} max="100"></progress>
-              </div>
+         
+          <ProgressComponent percent={80}>AutoCad</ProgressComponent>
+          <ProgressComponent percent={90}>Kompas 3d</ProgressComponent>
+          <ProgressComponent percent={80}>CorellDrow</ProgressComponent>
+          <ProgressComponent percent={60}>PhotoShop</ProgressComponent>
+              
             </div>
             <div className={classes.skills__logo_fa}>
               <SiAutocad />

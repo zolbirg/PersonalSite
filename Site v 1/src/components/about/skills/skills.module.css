@@ -28,20 +28,20 @@
   font-size: 2rem;
   color:var(--color-active)
 }
+.skills__arrow:hover {
+
+  transform: rotate(180deg);
+  transition: .5s;
+}
 
 .skills__list {
-  row-gap: 1.5rem;
-  padding: 1rem 1rem 0 3rem;
+  padding: 0 5%;
   margin-bottom: 1rem;
 }
-.skills__titles {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: .2rem;
+.skills__list h3 {
+  color: var(--color-white);
 }
-
-.skills__name {
-  font-size: var(--font-size-sm);
+p{
   color: var(--color-white);
 }
 
@@ -53,14 +53,8 @@
   justify-content: space-around;
 }
 
-.skills__travel {
-  padding: 0 5%;
-}
 
-.progress__color{
-  color: var(--color-title);
-  background: linear-gradient(-30deg,  #4c4d46, #168ec5);
-}
+
 
 
 

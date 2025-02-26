@@ -17,6 +17,8 @@ import {
  
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
+import ProgressBar from "../../../../assets/progressBar/ProgressBar";
+import ProgressComponent from "../../../../assets/progressComponent/ProgressComponent";
 
 
 
@@ -26,56 +28,12 @@ export default function Developer(){
     return(
     <>
         <div className={` ${classes.skills__list} grid `}>
-                      <div>
-                        <div className={classes.skills__titles}>
-                          <h3 className={classes.skills__name}>HTML</h3>
-                          <span className={classes.skills__number}>
-                           
-                          </span>
-                        </div>
-                        <progress className={` ${classes.progress__color} progress `} value={80} max="100"></progress>
-
-                      </div>
-                      <div >
-                        <div className={classes.skills__titles}>
-                          <h3 className={classes.skills__name}>CSS</h3>
-                          <span className={classes.skills__number}>
-                            
-                          </span>
-                        </div>
-                        <progress className={` ${classes.progress__color} progress `} value={70} max="100"></progress>
-                      </div>
-                      <div >
-                        <div className={classes.skills__titles}>
-                          <h3 className={classes.skills__name}>
-                            JavaScript
-                          </h3>
-                          <span className={classes.skills__number}>
-                            
-                          </span>
-                        </div>
-                        <progress className={` ${classes.progress__color} progress `} value={60} max="100"></progress>
-                      </div>
-                      <div >
-                        <div className={classes.skills__titles}>
-                          <h3 className={classes.skills__name}>
-                            TypeScript
-                          </h3>
-                          <span className={classes.skills__number}>
-                            
-                          </span>
-                        </div>
-                        <progress className={` ${classes.progress__color} progress `} value={40} max="100"></progress>
-                      </div>
-                      <div >
-                        <div className={classes.skills__titles}>
-                          <h3 className={classes.skills__name}>React</h3>
-                          <span className={classes.skills__number}>
-                            
-                          </span>
-                        </div>
-                        <progress className={` ${classes.progress__color} progress `} value={40} max="100"></progress>
-                      </div>
+                    <ProgressComponent percent={80}>Html</ProgressComponent>
+                    <ProgressComponent percent={70}>Css</ProgressComponent>
+                    <ProgressComponent percent={60}>JavaScript</ProgressComponent>
+                    <ProgressComponent percent={40}>TypeScript</ProgressComponent>
+                    <ProgressComponent percent={50}>React</ProgressComponent>
+                   
                     </div>
                     <div className={classes.skills__logo_fa}>
                       <FaHtml5 />

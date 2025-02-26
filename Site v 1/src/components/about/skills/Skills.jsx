@@ -7,36 +7,37 @@ import Travelers from "./skillsComponent/Travelers";
 import { HiMiniArrowsUpDown } from "react-icons/hi2";
 
 import { useState } from "react";
+import SkillsComponent from "./skillsComponent/SkillsComponent";
 
 export default function Skills() {
-  const [contentType, setContentType] =
-    useState("Developer");
+  const [contentType, setContentType] = useState("Developer");
+
+  const active = ` ${classes.skills__title} button button__active `;
+  const noActive = ` ${classes.skills__title} button`;
 
   return (
-    <section  id="skills">
-      {/*==================== SKILL-1 ====================*/}
-
+    <section id="skills">
       <div onClick={() => setContentType("Developer")}>
         <div className={classes.skills__header}>
           <div>
             <h1
               className={
                 contentType === "Developer"
-                   ? ` ${classes.skills__title} button button__active `
-                : ` ${classes.skills__title} button`
+                  ? active
+                  : noActive
               }
             >
-              Web Developer
+              Developer
             </h1>
             <span className={classes.skills__subtitle}>
-              Более 2х лет
+              Более 10 лет.{" "}
             </span>
           </div>
           <HiMiniArrowsUpDown
             className={classes.skills__arrow}
           />
         </div>
-        {contentType === "Developer" && <Developer />}
+        {contentType === "Developer" && <Engineer />}
       </div>
 
       {/*==================== SKILLS 2 ====================*/}
@@ -46,8 +47,8 @@ export default function Skills() {
             <h1
               className={
                 contentType === "Engineer"
-                ? ` ${classes.skills__title} button button__active `
-                : ` ${classes.skills__title} button`
+                  ? active
+                  : noActive
               }
             >
               Engineer
@@ -71,8 +72,8 @@ export default function Skills() {
             <h1
               className={
                 contentType === "Travelers"
-                   ? ` ${classes.skills__title} button button__active `
-                : ` ${classes.skills__title} button`
+                  ? active
+                  : noActive
               }
             >
               Travelers

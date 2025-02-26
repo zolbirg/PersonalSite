@@ -5,6 +5,7 @@ import {IoIosAirplane} from "react-icons/io";
 
 
 import { TbCamper } from "react-icons/tb";
+import ProgressBar from "../../../../assets/progressBar/ProgressBar";
 
 
 
@@ -14,8 +15,8 @@ export default function Travelers() {
         <>
         <div className={` ${classes.skills__list} grid `}>
               <div >
-                <div className={` ${classes.skills__list} ${classes.skills__travel}`} >
-                  <h3 className={classes.skills__name}>
+                <div className={classes.skills__list} >
+                  <h3 >
                     Более 120т.км на машине и еще больше
                     самолетом
                   </h3>
@@ -26,7 +27,7 @@ export default function Travelers() {
                   </div>
                   
                 </div>
-                <progress className={` ${classes.progress__color} progress `} value={3} max="100"></progress>
+                <ProgressBar percent={100} > </ProgressBar>
               </div>
               <div>
                 <p>

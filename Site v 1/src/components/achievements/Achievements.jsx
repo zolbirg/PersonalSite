@@ -9,7 +9,7 @@ export default function Achievements() {
     <>
       <section className={`${classes.achievements__section} section`}>
         <h2 className="section__title">Achievements</h2>
-        <div className="container">
+        <div className={`${classes.achievements__container} container`}>
           <div className={classes.achievements__block}>
             <div className={classes.achievements__card}>
             <Card keys={ways.cardId} {...ways} />

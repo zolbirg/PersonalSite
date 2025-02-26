@@ -1,0 +1,17 @@
+
+.skills__titles {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: .2rem;
+  }
+  .skills__titles h3{
+    font-size: 1.2rem;
+    color: var(--color-white);
+  }
+  
+  .skills__name {
+    font-size: var(--font-size-sm);
+    color: var(--color-white);
+  }
+
+ 
