@@ -1,4 +1,4 @@
-import classes from './achievements.module.css'
+import classes from './achievements.module.scss'
 import {ways,ways2 ,ways3} from "./dataAchievements";
 
 

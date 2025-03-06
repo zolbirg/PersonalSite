@@ -1,5 +1,5 @@
 import ProgressBar from "../progressBar/ProgressBar";
-import classes from "./progressComponent.module.css"
+import classes from "./progressComponent.module.scss"
 
 
 export default function ProgressComponent({ percent, children }) {

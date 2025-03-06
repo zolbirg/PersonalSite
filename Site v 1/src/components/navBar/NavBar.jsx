@@ -1,4 +1,4 @@
-import classes from "./navBar.module.css";
+import classes from "./navBar.module.scss";
 import { useState , useEffect } from "react";
 
 export default function NavBar() {

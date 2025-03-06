@@ -1,4 +1,4 @@
-import classes from './card.module.css'
+import classes from './card.module.scss'
 import Button from "../button/Button.jsx";
 import Modal from "../Modal/Modal.jsx";
 import { useState } from "react";

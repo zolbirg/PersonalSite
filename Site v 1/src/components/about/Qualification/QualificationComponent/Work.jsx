@@ -1,4 +1,4 @@
-import classes from "../qualification.module.css";
+import classes from "../qualification.module.scss";
 
 // import { IoCalendarOutline } from "react-icons/io5";
 

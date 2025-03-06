@@ -1,4 +1,4 @@
-import classes from "./skillsComponent.module.css";
+import classes from "./skillsComponent.module.scss";
 import {
   IoLogoNodejs
 } from "react-icons/io";

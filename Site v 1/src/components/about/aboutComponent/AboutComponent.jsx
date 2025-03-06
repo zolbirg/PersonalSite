@@ -1,4 +1,4 @@
-import classes from "./aboutComponent.module.css";
+import classes from "./aboutComponent.module.scss";
 
 
 import Button from "../../../assets/components/button/Button";

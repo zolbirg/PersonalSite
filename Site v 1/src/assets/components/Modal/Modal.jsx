@@ -1,4 +1,4 @@
-import classes from "./modal.module.css";
+import classes from "./modal.module.scss";
 
 export default function Modal({ active, setActive , children }) {
   return (

@@ -1,4 +1,4 @@
-import classes from "./skillsComponent.module.css";
+import classes from "./skillsComponent.module.scss";
 import { HiMiniArrowsUpDown } from "react-icons/hi2";
 
 import Developer from "./Developer";

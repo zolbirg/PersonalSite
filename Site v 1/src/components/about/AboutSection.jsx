@@ -1,4 +1,4 @@
-import classes from "./aboutSection.module.css";
+import classes from "./aboutSection.module.scss";
 // import photo from '../../assets/img/photo.jpg'
 // import photo2 from '../../assets/img/photo2.png'
 import photo1 from "../../assets/img/personalFoto2.png";

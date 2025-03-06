@@ -1,7 +1,7 @@
  import React from 'react';
-import classes from'./home.module.css'
+import classes from'./home.module.scss'
 
-import { FaInstagram, FaVk, FaArrowCircleDown } from "react-icons/fa";
+import { FaVk, FaArrowCircleDown } from "react-icons/fa";
 import { FaGithub,FaTelegram } from "react-icons/fa6";
 import { MdAlternateEmail } from "react-icons/md";
 import { SiCodewars } from "react-icons/si";

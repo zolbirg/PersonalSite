@@ -1,6 +1,6 @@
 // https://react-slick.neostack.com/docs/get-started#installation
 
-import classes from "./portfolio.module.css";
+import classes from "./portfolio.module.scss";
 import PortfolioCard from "../../assets/components/portfolioCard/PortfolioCard";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";

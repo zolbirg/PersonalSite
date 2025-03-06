@@ -1,4 +1,4 @@
-import classes from "./progressBar.module.css";
+import classes from "./progressBar.module.scss";
 
 export default function ProgressBar({percent,children}) {
     let container = {
