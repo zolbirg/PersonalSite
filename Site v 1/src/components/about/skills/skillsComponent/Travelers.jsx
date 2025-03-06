@@ -1,4 +1,4 @@
-import classes from "../skills.module.css";
+import classes from "./skillsComponent.module.css";
 
 import {IoIosAirplane} from "react-icons/io";
 

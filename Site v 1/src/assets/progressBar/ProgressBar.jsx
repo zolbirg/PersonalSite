@@ -6,8 +6,8 @@ export default function ProgressBar({percent,children}) {
     }
   return (
   <>
-        <div class={classes.progress__container}>
-        <div class={classes.progress__bar}  style={container} >{children}</div>
+        <div className={classes.progress__container}>
+        <div className={classes.progress__bar}  style={container} >{children}</div>
     </div>
 
   </>

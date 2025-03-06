@@ -1,6 +1,6 @@
 import ProgressBar from "../../../../assets/progressBar/ProgressBar";
 import ProgressComponent from "../../../../assets/progressComponent/ProgressComponent";
-import classes from "../skills.module.css";
+import classes from "./skillsComponent.module.css";
 
 
 import {

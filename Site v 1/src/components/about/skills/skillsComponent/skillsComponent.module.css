@@ -23,4 +23,27 @@
     font-size: 2rem;
     color:var(--color-active)
   }
+  .skills__arrow:hover {
 
+    transform: rotate(180deg);
+    transition: .5s;
+  }
+
+  .skills__list {
+    padding: 0 5%;
+    margin-bottom: 1rem;
+  }
+  .skills__list h3 {
+    color: var(--color-white);
+  }
+  p{
+    color: var(--color-white);
+  }
+  
+  .skills__logo_fa {
+    font-size: var(--font-size-title);
+    padding: 0 15% 1rem;
+    color: var(--color-title);
+    display: flex;
+    justify-content: space-around;
+  }

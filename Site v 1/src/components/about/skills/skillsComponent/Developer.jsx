@@ -1,4 +1,4 @@
-import classes from "../skills.module.css";
+import classes from "./skillsComponent.module.css";
 import {
   IoLogoNodejs
 } from "react-icons/io";
@@ -17,7 +17,8 @@ import {
  
 } from "react-icons/si";
 import { VscVscode } from "react-icons/vsc";
-import ProgressBar from "../../../../assets/progressBar/ProgressBar";
+
+
 import ProgressComponent from "../../../../assets/progressComponent/ProgressComponent";
 
 

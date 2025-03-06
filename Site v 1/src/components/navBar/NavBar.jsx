@@ -9,7 +9,7 @@ export default function NavBar() {
  
 //navbar scroll changeBackground function
   const changeBackground = () => {
-    console.log(window.scrollY)
+   
     if (window.scrollY >= 66) {
       setNavbar(true)
     } else {

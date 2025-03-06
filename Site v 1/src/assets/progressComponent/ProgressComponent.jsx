@@ -2,7 +2,7 @@ import ProgressBar from "../progressBar/ProgressBar";
 import classes from "./progressComponent.module.css"
 
 
-export default function ProgressComponent({percent,children}) {
+export default function ProgressComponent({ percent, children }) {
   return (
     <>
       <div>
