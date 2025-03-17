@@ -1,0 +1,65 @@
+.services__main {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 2rem 0;
+  background: url(../../../../assets/img/fon6.jpg) no-repeat center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.services__body {
+  display: inline-flex;
+ 
+}
+.services__logo{
+display: flex;
+align-items: center;
+/* background-color: #33322fcb; */
+margin: 0 1%;
+
+}
+.services__story {
+  /* background: url("https://images.wallpaperscraft.com/image/single/smoke_wrinkles_gray_69138_1600x1200.jpg"); */
+  background: url("https://avatars.mds.yandex.net/i?id=0604ed7a2a62902a3ab8169728e3854e_l-4011747-images-thumbs&n=13");
+  background-size: cover;
+  font-size: 9vmax;
+  font-weight: bold;
+ 
+  /* background: rgba(172, 255, 47, 0.39); */
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+ 
+}
+
+/* .services__content:hover{
+  box-shadow: -5px  5px 40px var(--color-first);
+} */
+.services__content{
+  display: flex;
+  align-items: center;
+  text-align: center;  
+  background-color: #33322fcb;
+  color: var(--color-title);
+  font-size:var(--font-size-subtitle);
+  border-radius: 2rem;
+  padding: 1%;
+  margin-right: 1.5%;
+  
+}
+
+.services__clider{
+  margin-top: 3rem;
+}
+
+
+@media (min-width: 1900px) {
+  .services__story {
+  font-size: 14rem;
+}
+
+}
+
+
+

@@ -1,0 +1,27 @@
+.block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background: #696969;
+    // background: url('https://i.pinimg.com/originals/7e/fd/42/7efd42cb4f26d353aa3a793e7819c307.jpg');
+    // background-repeat:no-repeat;
+    // background-position: center center;
+    // background-size:cover; 
+}
+.block h1{
+    color: rgb(0, 233, 144);
+    font-size: 16rem;
+}
+.block h2{
+    color: rgb(0, 233, 144);
+    font-size: 5rem;
+}
+.block img{
+    width: 30%;
+    height: 40%;
+}
+
+

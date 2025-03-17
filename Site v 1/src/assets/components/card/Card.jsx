@@ -19,7 +19,7 @@ export default function Card({ text, cardId ,contentType,title}) {
             <p className={classes.card__text}>{text}</p>
           </div>
           <div >
-          <Button onClick={()=> setModalActive(true)} >PUKENDORF</Button>
+          <Button onClick={()=> setModalActive(true)} >Show more</Button>
 
           <Modal  active={modalActive} setActive={setModalActive} >
             <div className='modal__block'>
