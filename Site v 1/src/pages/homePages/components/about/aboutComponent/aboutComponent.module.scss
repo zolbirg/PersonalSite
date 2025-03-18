@@ -1,0 +1,49 @@
+
+.about__data {
+  margin-top: 3%;
+}
+.about__data h1{
+  font-size: 3rem;
+  color: var(--color-title);
+}
+.about__list{
+  margin-bottom: 7%;
+}
+.about__list li{
+  list-style: disc inside;
+  color: var(--color-white);
+}
+
+
+.about__description {
+  text-align: initial;
+  margin-bottom: 2.5rem;
+  color: var(--color-white);
+}
+
+.about__info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2.5rem;
+}
+
+.about__info_title {
+  font-size: var(--font-size-subtitle-big);
+  color: var(--color-title);
+}
+
+.about__info_name {
+  font-size: var(--font-size-sm);
+  color: var(--color-white);
+}
+
+.about__info_title,
+.about__info_name {
+  display: block;
+  text-align: center;
+}
+
+.about__buttons {
+  display: flex;
+  justify-content: center;
+}

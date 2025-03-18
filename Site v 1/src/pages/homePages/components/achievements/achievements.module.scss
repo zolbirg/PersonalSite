@@ -1,0 +1,19 @@
+.achievements__section {
+  min-height: 80vh;
+  height: 100%;
+}
+.achievements__container{
+  display: flex;
+  justify-content: center;
+}
+.achievements__block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+
+  
+}
+.achievements__card {
+width: 24rem;
+}

@@ -1,4 +1,4 @@
-import classes from "./portfolioCard.module.css";
+import classes from "./portfolioCard.module.scss";
 import Button from "../button/Button";
 
 export default function PortfolioCard({img,title,content,link}) {
