@@ -2,6 +2,7 @@
 
 import classes from "./navBar.module.scss";
 import { useState , useEffect } from "react";
+import { HiLink } from "react-icons/hi2";
 import {Link} from 'react-router-dom'
 
 
@@ -45,14 +46,14 @@ export default function NavBar() {
 
   return (
     <section className={navbar ? `${classes.head} ${classes.head__active} `: classes.head}>
-      <a href="#home"
+      <Link to="/"
           onClick={() => setTab("home")}
           className={classes.logo }>
         {navbarLogo}
-      </a>
+      </Link>
       <nav className={classes.navbar}>
-        <a
-          href="#home"
+        <Link
+          to="/#home"
           onClick={() => setTab("home")}
           className={
             tab === "home"
@@ -62,7 +63,7 @@ export default function NavBar() {
         >
           {" "}
           Home
-        </a>
+        </Link>
         <a
           href="#about"
           onClick={() => setTab("about")}
