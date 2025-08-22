@@ -12,6 +12,8 @@ import Layout from './assets/layout/Layout.jsx';
 import HomePage from './pages/homePages/homePage.jsx';
 import ProjectPage from './pages/portfolio/ProjectPage.jsx';
 import ColorSwitch from './pages/portfolio/project/web/colorSwitch/СolorSwitch.jsx';
+import BullAndMoo from './pages/portfolio/project/games/bullsAndMoo/BullAndMoo.jsx';
+import TestComp from './assets/testcomp/TestComp.jsx';
 import NotFoundPage from './pages/NotFoundPage.jsx';
 
 const App = () => {
@@ -24,6 +26,8 @@ const App = () => {
                     <Route index element={<HomePage />} />
                     <Route path="Project" element={<ProjectPage />} />
                     <Route path="ColorSwitch" element={<ColorSwitch />} />
+                    <Route path="BullAndMoo" element={<BullAndMoo />} />
+                    <Route path="TestComp" element={<TestComp />} />
                     <Route path="*" element={<NotFoundPage />} />
                 </Route>
             </Routes>

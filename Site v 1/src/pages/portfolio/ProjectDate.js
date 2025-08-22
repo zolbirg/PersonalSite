@@ -1,27 +1,34 @@
 export const BullAndMoo = {
-    srcImg: "https://i.ytimg.com/vi/CdB4nDw8juQ/maxresdefault.jpg",
-    titleName:"Bull & Moo",
+    srcImg: 'https://i.ytimg.com/vi/CdB4nDw8juQ/maxresdefault.jpg',
+    titleName: 'Bull & Moo',
+    description:
+        'Интерективная игра где нужно угадать слово. подсказками будут быки и коровы',
+    srcLink: '/BullAndMoo',
+    stack: 'HTML, CSS, JS  ',
     price: 4,
-    description: "Интерективная игра где нужно угадать слово. подсказками будут быки и коровы",
-    srcLink: '#',
-    stack:"HTML, CSS, JS  ",
+    date:'01.05.2025',
+    git:'https://github.com/zolbirg/PersonalSite/tree/main/Site%20v%201/src/assets',
+};
+export const ColorSwitch = {
+    srcImg: 'src/assets/img/projects/ColorSwitch.png',
+    titleName: 'Color Switch',
+    description:
+        'Приложение позволяте подбирать сочетание цвета в Hex формате',
+    srcLink: '/ColorSwitch',
+    stack: 'jsx, react, scss  ',
+    price: "1 попугай",
+    date:'11.05.2024',
+    git:'https://github.com/zolbirg/PersonalSite/tree/main/Site%20v%201/src/assets',
     
-  };
-  export const nameProject2 = {
-    srcImg: "https://i.pinimg.com/originals/5d/e2/42/5de24294bad21ec99931f4c362354f22.jpg",
-    titleName:"ColorSwitch",
-    price: 3,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra ornare eros inimperdiet",
+};
+export const nameProject3 = {
+    srcImg: 'https://wallpapers.com/images/hd/pretty-nature-pictures-1920-x-1080-kk71sfo51ttbwz4x.jpg',
+    titleName: 'Название ',
+    description:
+        'Интерективная игра где нужно угадать слово. подсказками будут быки и коровы',
     srcLink: '#',
-    descriptionTitle:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra ornare eros inimperdiet",
-    
-  };
-  export const nameProject3 = {
-    srcImg: "https://wallpapers.com/images/hd/pretty-nature-pictures-1920-x-1080-kk71sfo51ttbwz4x.jpg",
-    titleName:"Название",
-    price: 5,
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra ornare eros inimperdiet",
-    srcLink: '#',
-    descriptionTitle:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus viverra ornare eros inimperdiet",
-    
-  };
+    stack: 'HTML, CSS, JS  ',
+    price: 4,
+    date:'01.05.2025',
+    git:'https://github.com/zolbirg/PersonalSite/tree/main/Site%20v%201/src/assets',
+};

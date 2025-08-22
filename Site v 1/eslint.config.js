@@ -10,8 +10,7 @@ export default [
     pluginJs.configs.recommended,
     ...tseslint.configs.recommended,
     pluginReact.configs.flat.recommended,
-];
-module.exports = [
+
     {
         files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
         plugins: {
@@ -25,6 +24,9 @@ module.exports = [
             },
             globals: {
                 ...globals.browser,
+                ...globals.es2025,
+                ...globals.node,
+                
             },
         },
         rules: {
