@@ -6,34 +6,21 @@ import pluginReact from 'eslint-plugin-react';
 /** @type {import('eslint').Linter.Config[]} */
 export default [
     { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
-    { languageOptions: { globals: globals.browser } },
-    pluginJs.configs.recommended,
-    ...tseslint.configs.recommended,
-    pluginReact.configs.flat.recommended,
-
     {
-        files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
-        plugins: {
-            react,
-        },
         languageOptions: {
+            globals: {
+                ...globals.browser,
+                ...globals.es2025,
+                ...globals.node,
+            },
             parserOptions: {
                 ecmaFeatures: {
                     jsx: true,
                 },
             },
-            globals: {
-                ...globals.browser,
-                ...globals.es2025,
-                ...globals.node,
-                
-            },
         },
-        rules: {
-            // ... any rules you want
-            'react/jsx-uses-react': 'error',
-            'react/jsx-uses-vars': 'error',
-        },
-        // ... others are omitted for brevity
     },
+    pluginJs.configs.recommended,
+    ...tseslint.configs.recommended,
+    pluginReact.configs.flat.recommended,
 ];

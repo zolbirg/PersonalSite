@@ -24,13 +24,9 @@ export default function Card({ text, cardId ,contentType,title}) {
           <Modal  active={modalActive} setActive={setModalActive} >
             <div className='modal__block'>
             <ul>
-            
-            <li>{contentType [0]}</li>
-            <li>{contentType [1]}</li>
-            <li>{contentType [2]}</li>
-            <li>{contentType [3]}</li>
-            <li>{contentType [4]}</li>
-            
+              {contentType?.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
             </ul>
             </div>
             <div>
@@ -45,4 +41,3 @@ export default function Card({ text, cardId ,contentType,title}) {
     </>
   );
 }
-4

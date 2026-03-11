@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Local environment files
+.npmrc
+install_log.txt
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

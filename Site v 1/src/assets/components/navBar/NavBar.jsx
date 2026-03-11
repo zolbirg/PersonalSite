@@ -2,7 +2,6 @@
 
 import classes from "./navBar.module.scss";
 import { useState , useEffect } from "react";
-import { HiLink } from "react-icons/hi2";
 import {Link} from 'react-router-dom'
 
 
@@ -32,17 +31,15 @@ export default function NavBar() {
 
   useEffect(() => {
     changeBackground()
-    // adding the event when scroll change background
     window.addEventListener("scroll", changeBackground)
-    
-  })
-
+    return () => window.removeEventListener("scroll", changeBackground)
+  }, [])
 
   useEffect(() => {
     changeLogo()
-    // adding the event when scroll change Logo
     window.addEventListener("scroll", changeLogo)
-  })
+    return () => window.removeEventListener("scroll", changeLogo)
+  }, [])
 
   return (
     <section className={navbar ? `${classes.head} ${classes.head__active} `: classes.head}>
