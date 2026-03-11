@@ -1,4 +1,4 @@
- import React from 'react';
+import { useState, useEffect } from 'react';
 import classes from'./home.module.scss'
 
 import { FaVk, FaArrowCircleDown } from "react-icons/fa";
@@ -13,14 +13,14 @@ const TEXTS = ['E N G I N E E R', 'WEB DEVELOPER', 'T R A V E L E R S'];
 
 export default function Home(){
   
-  const [index, setIndex] = React.useState(0);
+  const [index, setIndex] = useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const intervalId = setInterval(
       () => setIndex((index) => index + 1),
       3000, // every 3 seconds
     );
-    return () => clearTimeout(intervalId);
+    return () => clearInterval(intervalId);
   }, []);
 
     return (

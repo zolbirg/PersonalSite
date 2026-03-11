@@ -14,7 +14,7 @@ export default function NotFoundPage() {
                 </div>
                 <div className={classes.contant_box_404}>
                   <h3 className="h2">
-                    Страница потерялся!
+                    Страница потерялась!
                   </h3>
                   <p>
                     Твоя кнопку жмякать / моя новую тебе искать.

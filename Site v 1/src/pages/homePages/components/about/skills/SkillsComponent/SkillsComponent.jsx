@@ -49,21 +49,9 @@ export default function SkillsComponent({
           />
         </div>
 
-        {id == "Developer" && isActive === "Developer" ? (
-          <Developer />
-        ) : (
-          ""
-        )}
-        {id == "Engineer" && isActive === "Engineer" ? (
-          <Engineer />
-        ) : (
-          ""
-        )}
-        {id == "Travelers" && isActive === "Travelers" ? (
-          <Travelers />
-        ) : (
-          ""
-        )}
+        {id === "Developer" && isActive === "Developer" && <Developer />}
+        {id === "Engineer" && isActive === "Engineer" && <Engineer />}
+        {id === "Travelers" && isActive === "Travelers" && <Travelers />}
       </div>
     </>
   );
