@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Button from '../../../../../assets/components/button/Button';
+import projectClasses from '../../../ProjectPages.module.scss';
 import classes from './ColorSwitch.module.scss';
 
 export default function ColorSwitch() {
@@ -32,33 +33,66 @@ export default function ColorSwitch() {
         isBlock5 && setIsColor5(generateRandomColor());
     }
 
+    const titleRef = useRef(null);
+
+    useEffect(() => {
+        const el = titleRef.current;
+        if (!el) return;
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    el.classList.add(projectClasses['is-visible']);
+                    observer.unobserve(el);
+                }
+            },
+            { threshold: 0.1 }
+        );
+        observer.observe(el);
+        return () => observer.disconnect();
+    }, []);
+
     return (
-        <div className={`${classes.color__body} section`}>
-            <div className={classes.color__content}>
-                <div className={classes.col} style={{ background: isColor1 }}>
-                    <h2 className={classes.color__text}>{isColor1}</h2>
-                    <Button onClick={() => setIsBlock1(!isBlock1)}>Block</Button>
+        <section className={`${projectClasses.project__section} ${classes.sectionFullHeight} section`}>
+            <div className={projectClasses.bg__shapes} aria-hidden="true">
+                <div className={`${projectClasses.shape} ${projectClasses.shape__1}`} />
+                <div className={`${projectClasses.shape} ${projectClasses.shape__2}`} />
+                <div className={`${projectClasses.shape} ${projectClasses.shape__3}`} />
+            </div>
+
+            <h2
+                ref={titleRef}
+                className={`${projectClasses.project__title} ${projectClasses['animate-in']}`}
+            >
+                ColorSwitch
+            </h2>
+
+            <div className={`${projectClasses.project__container} container`}>
+                <div className={classes.color__content}>
+                    <div className={classes.col} style={{ background: isColor1 }}>
+                        <h2 className={classes.color__text}>{isColor1}</h2>
+                        <Button onClick={() => setIsBlock1(!isBlock1)}>Block</Button>
+                    </div>
+                    <div className={classes.col} style={{ background: isColor2 }}>
+                        <h2 className={classes.color__text}>{isColor2}</h2>
+                        <Button onClick={() => setIsBlock2(!isBlock2)}>Block</Button>
+                    </div>
+                    <div className={classes.col} style={{ background: isColor3 }}>
+                        <h2 className={classes.color__text}>{isColor3}</h2>
+                        <Button onClick={() => setIsBlock3(!isBlock3)}>Block</Button>
+                    </div>
+                    <div className={classes.col} style={{ background: isColor4 }}>
+                        <h2 className={classes.color__text}>{isColor4}</h2>
+                        <Button onClick={() => setIsBlock4(!isBlock4)}>Block</Button>
+                    </div>
+                    <div className={classes.col} style={{ background: isColor5 }}>
+                        <h2 className={classes.color__text}>{isColor5}</h2>
+                        <Button onClick={() => setIsBlock5(!isBlock5)}>Block</Button>
+                    </div>
                 </div>
-                <div className={classes.col} style={{ background: isColor2 }}>
-                    <h2 className={classes.color__text}>{isColor2}</h2>
-                    <Button onClick={() => setIsBlock2(!isBlock2)}>Block</Button>
-                </div>
-                <div className={classes.col} style={{ background: isColor3 }}>
-                    <h2 className={classes.color__text}>{isColor3}</h2>
-                    <Button onClick={() => setIsBlock3(!isBlock3)}>Block</Button>
-                </div>
-                <div className={classes.col} style={{ background: isColor4 }}>
-                    <h2 className={classes.color__text}>{isColor4}</h2>
-                    <Button onClick={() => setIsBlock4(!isBlock4)}>Block</Button>
-                </div>
-                <div className={classes.col} style={{ background: isColor5 }}>
-                    <h2 className={classes.color__text}>{isColor5}</h2>
-                    <Button onClick={() => setIsBlock5(!isBlock5)}>Block</Button>
+                <div className={classes.color__btn_block}>
+                    <Button onClick={onChangeColor}>Сменить цвет</Button>
                 </div>
             </div>
-            <div className={classes.color__btn_block}>
-                <Button onClick={onChangeColor}>Сменить цвет</Button>
-            </div>
-        </div>
+        </section>
     );
 }

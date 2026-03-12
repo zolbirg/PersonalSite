@@ -4,7 +4,7 @@ import Modal from '../Modal/Modal.jsx';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-export default function Card({ text, cardId, contentType, title, linkTo }) {
+export default function Card({ text, cardId, contentType, title, linkTo, backgroundImage }) {
   const [modalActive, setModalActive] = useState(false);
   const navigate = useNavigate();
 
@@ -37,15 +37,19 @@ export default function Card({ text, cardId, contentType, title, linkTo }) {
         role={linkTo ? 'button' : undefined}
         tabIndex={linkTo ? 0 : undefined}
       >
-        <div className={classes.card__logo}>
-          <h2 className={classes.card__title}>{cardId}</h2>
+        <div
+          className={classes.card__logo}
+          style={backgroundImage ? { backgroundImage: `url(${backgroundImage})` } : undefined}
+        >
+          <div className={classes.card__titleWrap}>
+            <h2 className={classes.card__title}>{cardId}</h2>
+          </div>
         </div>
         <div className={classes.card__body}>
           <div>
-            <h2>{title}</h2>
             <p className={classes.card__text}>{text}</p>
           </div>
-          <div>
+          <div className={classes.card__actions}>
             <Button onClick={handleDetailsClick}>
               {linkTo ? 'Подробнее' : 'Show more'}
             </Button>

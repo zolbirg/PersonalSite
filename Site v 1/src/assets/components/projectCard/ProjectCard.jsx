@@ -41,7 +41,13 @@ export default function ProjectCard({ srcImg, titleName, description, srcLink })
             <div className={classes.description}>
                 <p>{description}</p>
                 <Button className='button'>
-                    <Link to={srcLink}>Show more</Link>
+                    {srcLink.startsWith('http') ? (
+                        <a href={srcLink} target="_blank" rel="noopener noreferrer">
+                            Show more
+                        </a>
+                    ) : (
+                        <Link to={srcLink}>Show more</Link>
+                    )}
                 </Button>
             </div>
         </div>

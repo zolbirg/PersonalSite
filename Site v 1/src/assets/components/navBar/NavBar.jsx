@@ -1,14 +1,14 @@
 import { motion } from 'framer-motion';
 import classes from "./navBar.module.scss";
 import { useState, useEffect } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const NAV_ITEMS = [
-  { id: 'home',      label: 'Home',      type: 'link',   to: '/#home' },
-  { id: 'about',     label: 'Me',        type: 'anchor', href: '#about' },
-  { id: 'portfolio', label: 'Portfolio', type: 'anchor', href: '#portfolio' },
-  { id: 'Project',   label: 'Project',   type: 'link',   to: '/Project' },
-  { id: 'contact',   label: 'Contact',   type: 'anchor', href: '#contact' },
+  { id: 'home',      label: 'Home',      to: '/',           hash: null },
+  { id: 'about',     label: 'Me',        to: '/#about',     hash: 'about' },
+  { id: 'portfolio', label: 'Portfolio', to: '/#portfolio', hash: 'portfolio' },
+  { id: 'Project',   label: 'Project',   to: '/Project',    hash: null },
+  { id: 'contact',   label: 'Contact',   to: '/#contact',   hash: 'contact' },
 ];
 
 export default function NavBar() {
@@ -19,22 +19,55 @@ export default function NavBar() {
     if (typeof window === "undefined") return "dark";
     return localStorage.getItem("theme") === "light" ? "light" : "dark";
   });
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  const changeBackground = () => {
-    setNavbar(window.scrollY >= 66);
+  // Sync active tab with current route (handles back/forward navigation)
+  useEffect(() => {
+    if (location.pathname === '/Project') {
+      setTab('Project');
+    } else if (location.pathname === '/') {
+      const hashId = location.hash.slice(1);
+      setTab(hashId || 'home');
+    }
+  }, [location.pathname, location.hash]);
+
+  // Scroll to hash section after cross-page navigation
+  useEffect(() => {
+    if (!location.hash) return;
+    const id = location.hash.slice(1);
+    const timer = setTimeout(() => {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }, 50);
+    return () => clearTimeout(timer);
+  }, [location.pathname, location.hash]);
+
+  const handleNavClick = (e, item) => {
+    setTab(item.id);
+
+    if (item.id === 'home') {
+      if (location.pathname === '/') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      return;
+    }
+
+    if (item.hash) {
+      e.preventDefault();
+      if (location.pathname === '/') {
+        document.getElementById(item.hash)?.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        navigate(`/#${item.hash}`);
+      }
+    }
   };
 
-  const changeLogo = () => {
-    setNavbarLogo(window.scrollY >= 60 ? '.Kanin' : '');
-  };
+  const changeBackground = () => setNavbar(window.scrollY >= 66);
+  const changeLogo = () => setNavbarLogo(window.scrollY >= 60 ? '.Kanin' : '');
 
   useEffect(() => {
-    const root = document.documentElement;
-    if (theme === "light") {
-      root.classList.add("theme-light");
-    } else {
-      root.classList.remove("theme-light");
-    }
+    document.documentElement.classList.toggle("theme-light", theme === "light");
     localStorage.setItem("theme", theme);
   }, [theme]);
 
@@ -52,26 +85,21 @@ export default function NavBar() {
 
   return (
     <section className={navbar ? `${classes.head} ${classes.head__active}` : classes.head}>
-      <Link to="/" onClick={() => setTab("home")} className={classes.logo}>
+      <Link to="/" onClick={(e) => handleNavClick(e, NAV_ITEMS[0])} className={classes.logo}>
         {navbarLogo}
       </Link>
 
       <nav className={classes.navbar}>
-        {NAV_ITEMS.map(({ id, label, type, to, href }) => {
+        {NAV_ITEMS.map((item) => {
+          const { id, label, to } = item;
           const isActive = tab === id;
           const itemClass = isActive ? 'button button__active' : 'button';
 
           return (
             <span key={id} className={classes.nav__item}>
-              {type === 'link' ? (
-                <Link to={to} onClick={() => setTab(id)} className={itemClass}>
-                  {label}
-                </Link>
-              ) : (
-                <a href={href} onClick={() => setTab(id)} className={itemClass}>
-                  {label}
-                </a>
-              )}
+              <Link to={to} onClick={(e) => handleNavClick(e, item)} className={itemClass}>
+                {label}
+              </Link>
               {isActive && (
                 <motion.span
                   className={classes.nav__indicator}

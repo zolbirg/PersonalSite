@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import classes from './ProjectPages.module.scss';
-import { BullAndMoo, ColorSwitch, nameProject3 } from './ProjectDate.js';
+import { F1Bingo, BullAndMoo, ColorSwitch, nameProject3 } from './ProjectDate.js';
 import ProjectComponents from './projectComponents/projectComponents.jsx';
 
 export default function ProjectPage() {
@@ -38,9 +38,10 @@ export default function ProjectPage() {
             </h2>
 
             <div className={`${classes.project__container} container`}>
-                <ProjectComponents index={0} {...BullAndMoo} />
-                <ProjectComponents index={1} {...ColorSwitch} />
-                <ProjectComponents index={2} {...nameProject3} />
+                <ProjectComponents index={0} {...F1Bingo} />
+                <ProjectComponents index={1} {...BullAndMoo} />
+                <ProjectComponents index={2} {...ColorSwitch} />
+                <ProjectComponents index={3} {...nameProject3} />
             </div>
         </section>
     );
