@@ -1,27 +1,41 @@
+import { motion } from 'framer-motion';
 import classes from './achievements.module.scss';
 import { Developer, Engineer, Travelers } from './dataAchievements';
-
 import Card from '../../../../assets/components/card/Card';
+import ScrollReveal from '../../../../assets/components/animations/ScrollReveal.jsx';
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.15 } },
+};
+
+const cardVariants = {
+  hidden:  { opacity: 0, y: 40 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: 'easeOut' } },
+};
 
 export default function Achievements() {
-    return (
-        <>
-            <section className={`${classes.achievements__section} section`}>
-                <h2 className="section__title">Achievements</h2>
-                <div className={`${classes.achievements__container} container`}>
-                    <div className={classes.achievements__block}>
-                        <div className={classes.achievements__card}>
-                            <Card keys={Developer.cardId} {...Developer} />
-                        </div>
-                        <div className={classes.achievements__card}>
-                            <Card keys={Engineer.cardId} {...Engineer} />
-                        </div>
-                        <div className={classes.achievements__card}>
-                            <Card keys={Travelers.cardId} {...Travelers} />
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </>
-    );
+  return (
+    <section className={`${classes.achievements__section} section`}>
+      <div className={`${classes.achievements__container} container`}>
+        <motion.div
+          className={classes.achievements__block}
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+        >
+          <motion.div className={classes.achievements__card} variants={cardVariants}>
+            <Card keys={Developer.cardId} {...Developer} linkTo="/developer" />
+          </motion.div>
+          <motion.div className={classes.achievements__card} variants={cardVariants}>
+            <Card keys={Engineer.cardId} {...Engineer} linkTo="/engineer" />
+          </motion.div>
+          <motion.div className={classes.achievements__card} variants={cardVariants}>
+            <Card keys={Travelers.cardId} {...Travelers} linkTo="/travelers" />
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
+  );
 }

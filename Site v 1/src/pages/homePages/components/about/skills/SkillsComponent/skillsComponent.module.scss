@@ -1,49 +1,62 @@
 .skills__header {
-    display: flex;
-    align-items: center;
-    margin-bottom: .5rem;
-    cursor: pointer;
-    background: var(--bg-block-first);
-    padding: .1rem 1rem .1rem 2rem;
-    border-radius: 2rem;
-  }
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+  cursor: default;
+  background:
+    radial-gradient(circle at top left, rgba(44, 218, 160, 0.2), transparent 55%),
+    var(--bg-card);
+  padding: 0.85rem 1.35rem;
+  border-radius: 1.1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.5);
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    background 0.22s ease;
+}
+
+.skills__header:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
+  background:
+    radial-gradient(circle at top right, rgba(170, 235, 168, 0.28), transparent 55%),
+    var(--bg-card);
+}
+
 .skills__title {
-    font-size: var(--font-size-subtitle);
-   
-  }
+  font-size: var(--font-size-subtitle);
+}
 
-  .skills__subtitle {
-    font-size: var(--font-size-sm);
-    color: var(--color-white);
-  }
+.skills__subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-white);
+  opacity: 0.9;
+}
 
-  .skills__arrow {
-    margin-left: auto;
-    transition: 0.4s;
-    font-size: 2rem;
-    color:var(--color-active)
-  }
-  .skills__arrow:hover {
+.skills__arrow {
+  font-size: 1.4rem;
+  color: var(--color-title);
+}
 
-    transform: rotate(180deg);
-    transition: .5s;
-  }
+.skills__list {
+  padding: 0 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
+}
 
-  .skills__list {
-    padding: 0 5%;
-    margin-bottom: 1rem;
-  }
-  .skills__list h3 {
-    color: var(--color-white);
-  }
-  p{
-    color: var(--color-white);
-  }
-  
-  .skills__logo_fa {
-    font-size: var(--font-size-title);
-    padding: 0 15% 1rem;
-    color: var(--color-title);
-    display: flex;
-    justify-content: space-around;
-  }
+.skills__list h3 {
+  color: var(--color-white);
+}
+
+.skills__list p {
+  color: var(--color-white);
+}
+
+.skills__logo_fa {
+  font-size: var(--font-size-title);
+  padding: 0 15% 1rem;
+  color: var(--color-title);
+  display: flex;
+  justify-content: space-around;
+}

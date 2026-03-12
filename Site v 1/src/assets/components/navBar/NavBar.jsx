@@ -1,111 +1,96 @@
-// https://www.youtube.com/watch?v=qXAVnsPCOt4
-
+import { motion } from 'framer-motion';
 import classes from "./navBar.module.scss";
-import { useState , useEffect } from "react";
-import {Link} from 'react-router-dom'
+import { useState, useEffect } from "react";
+import { Link } from 'react-router-dom';
 
+const NAV_ITEMS = [
+  { id: 'home',      label: 'Home',      type: 'link',   to: '/#home' },
+  { id: 'about',     label: 'Me',        type: 'anchor', href: '#about' },
+  { id: 'portfolio', label: 'Portfolio', type: 'anchor', href: '#portfolio' },
+  { id: 'Project',   label: 'Project',   type: 'link',   to: '/Project' },
+  { id: 'contact',   label: 'Contact',   type: 'anchor', href: '#contact' },
+];
 
 export default function NavBar() {
   const [tab, setTab] = useState("home");
-  const [navbar, setNavbar] = useState(false)
-  const [navbarLogo, setNavbarLogo] = useState("")
+  const [navbar, setNavbar] = useState(false);
+  const [navbarLogo, setNavbarLogo] = useState("");
+  const [theme, setTheme] = useState(() => {
+    if (typeof window === "undefined") return "dark";
+    return localStorage.getItem("theme") === "light" ? "light" : "dark";
+  });
 
- 
-//navbar scroll changeBackground function
   const changeBackground = () => {
-   
-    if (window.scrollY >= 66) {
-      setNavbar(true)
-    } else {
-      setNavbar(false)
-    }
-  }
-  //logo scroll function
+    setNavbar(window.scrollY >= 66);
+  };
+
   const changeLogo = () => {
-    if (window.scrollY >= 60) {
-      setNavbarLogo('.Kanin')
-    } else{
-      setNavbarLogo('')
+    setNavbarLogo(window.scrollY >= 60 ? '.Kanin' : '');
+  };
+
+  useEffect(() => {
+    const root = document.documentElement;
+    if (theme === "light") {
+      root.classList.add("theme-light");
+    } else {
+      root.classList.remove("theme-light");
     }
-  }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
 
   useEffect(() => {
-    changeBackground()
-    window.addEventListener("scroll", changeBackground)
-    return () => window.removeEventListener("scroll", changeBackground)
-  }, [])
+    changeBackground();
+    window.addEventListener("scroll", changeBackground);
+    return () => window.removeEventListener("scroll", changeBackground);
+  }, []);
 
   useEffect(() => {
-    changeLogo()
-    window.addEventListener("scroll", changeLogo)
-    return () => window.removeEventListener("scroll", changeLogo)
-  }, [])
+    changeLogo();
+    window.addEventListener("scroll", changeLogo);
+    return () => window.removeEventListener("scroll", changeLogo);
+  }, []);
 
   return (
-    <section className={navbar ? `${classes.head} ${classes.head__active} `: classes.head}>
-      <Link to="/"
-          onClick={() => setTab("home")}
-          className={classes.logo }>
+    <section className={navbar ? `${classes.head} ${classes.head__active}` : classes.head}>
+      <Link to="/" onClick={() => setTab("home")} className={classes.logo}>
         {navbarLogo}
       </Link>
+
       <nav className={classes.navbar}>
-        <Link
-          to="/#home"
-          onClick={() => setTab("home")}
-          className={
-            tab === "home"
-              ? "button button__active "
-              : "button"
-          }
+        {NAV_ITEMS.map(({ id, label, type, to, href }) => {
+          const isActive = tab === id;
+          const itemClass = isActive ? 'button button__active' : 'button';
+
+          return (
+            <span key={id} className={classes.nav__item}>
+              {type === 'link' ? (
+                <Link to={to} onClick={() => setTab(id)} className={itemClass}>
+                  {label}
+                </Link>
+              ) : (
+                <a href={href} onClick={() => setTab(id)} className={itemClass}>
+                  {label}
+                </a>
+              )}
+              {isActive && (
+                <motion.span
+                  className={classes.nav__indicator}
+                  layoutId="nav-indicator"
+                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                />
+              )}
+            </span>
+          );
+        })}
+
+        <button
+          type="button"
+          onClick={() => setTheme((prev) => (prev === "light" ? "dark" : "light"))}
+          className={classes.themeToggle}
+          aria-label="Toggle theme"
         >
-          {" "}
-          Home
-        </Link>
-        <a
-          href="#about"
-          onClick={() => setTab("about")}
-          className={
-            tab === "about"
-              ? "button button__active "
-              : "button"
-          }
-        >
-          Me
-        </a>
-        <a
-          href="#portfolio"
-          onClick={() => setTab("portfolio")}
-          className={
-            tab === "portfolio"
-              ? "button button__active "
-              : "button"
-          }
-        >
-          Portfolio
-        </a>
-        <Link
-          to="/Project"
-          onClick={() => setTab("Project")}
-          className={
-            tab === "Project"
-              ? "button button__active "
-              : "button"
-          }
-        >
-          Project
-        </Link>
-        <a
-          href="#contact"
-          onClick={() => setTab("contact")}
-          className={
-            tab === "contact"
-              ? "button button__active "
-              : "button"
-          }
-        >
-          Contact
-        </a>
-        
+          <span className={classes.themeToggle__thumb} />
+        </button>
       </nav>
     </section>
   );

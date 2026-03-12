@@ -1,82 +1,134 @@
 import { useState, useEffect } from 'react';
-import classes from'./home.module.scss'
+import { motion, useReducedMotion } from 'framer-motion';
+import classes from './home.module.scss';
 
-import { FaVk, FaArrowCircleDown } from "react-icons/fa";
-import { FaGithub,FaTelegram } from "react-icons/fa6";
-import { MdAlternateEmail } from "react-icons/md";
-import { SiCodewars } from "react-icons/si";
-
+import { FaVk } from 'react-icons/fa';
+import { FaGithub, FaTelegram } from 'react-icons/fa6';
+import { MdAlternateEmail } from 'react-icons/md';
+import { SiCodewars } from 'react-icons/si';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import TextTransition, { presets } from 'react-text-transition';
-
 
 const TEXTS = ['E N G I N E E R', 'WEB DEVELOPER', 'T R A V E L E R S'];
 
-export default function Home(){
-  
+const TITLE = 'KANIN ROMAN';
+
+const containerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.055 } },
+};
+
+const charVariants = {
+  hidden:  { opacity: 0, y: 12 },
+  visible: { opacity: 1, y: 0, transition: { ease: 'easeOut', duration: 0.3 } },
+};
+
+const fadeUp = (delay) => ({
+  hidden:  { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, delay, ease: 'easeOut' } },
+});
+
+const socialItemVariants = {
+  hidden:  { opacity: 0, y: 16 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: 'easeOut' } },
+};
+
+const socialContainerVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08, delayChildren: 1.4 } },
+};
+
+export default function Home() {
   const [index, setIndex] = useState(0);
+  const shouldReduce = useReducedMotion();
 
   useEffect(() => {
-    const intervalId = setInterval(
-      () => setIndex((index) => index + 1),
-      3000, // every 3 seconds
-    );
+    const intervalId = setInterval(() => setIndex((i) => i + 1), 3000);
     return () => clearInterval(intervalId);
   }, []);
 
-    return (
-        <section className={` ${classes.hero__section} section`} id="home">
-        <div className="container">
-          <div className={classes.hero__content}>
-            <h1>KANIN ROMAN</h1>
-            <h2>
-              {/* https://www.npmjs.com/package/react-text-transition */}
-              <TextTransition  springConfig={presets.slow}>{TEXTS[index % TEXTS.length]}</TextTransition>
-            </h2>
-            <p>
-              Инженер и WEB разработчик, делаю вещи и заставляю их работать.
-              <br /> Воплощая ваши мечты в реальность.
-            </p>
-            <ul className={classes.social__link}>
-            <li>
-                <a href="https://t.me/zolbirg">
-                  {/* <https://react-icons.github.io/react-icons/ */}
-                  <FaTelegram />
-                </a>
-              </li>
-              <li>
-                <a href="https://vk.com/zolbirg">
-                <FaVk />
-                </a>
-              </li>
-              <li>
-                <a href="mailto:kaninroman@mail.ru">
-                <MdAlternateEmail />
-                </a>
-              </li> 
-              <li>
-                <a href="https://github.com/zolbirg">
-                <FaGithub />
-                </a>
-              </li>
-              <li>
-                <a href="https://www.codewars.com/users/Zolbirg">
-                <SiCodewars />
-                </a>
-              </li>
-             
-            </ul>
-          </div>
+  const titleChars = TITLE.split('').map((char, i) => (
+    <motion.span
+      key={i}
+      variants={shouldReduce ? { hidden: { opacity: 0 }, visible: { opacity: 1 } } : charVariants}
+      style={{ display: 'inline-block', whiteSpace: char === ' ' ? 'pre' : undefined }}
+    >
+      {char}
+    </motion.span>
+  ));
+
+  const socialLinks = [
+    { href: 'https://t.me/zolbirg',                     icon: <FaTelegram /> },
+    { href: 'https://vk.com/zolbirg',                   icon: <FaVk /> },
+    { href: 'mailto:kaninroman@mail.ru',                 icon: <MdAlternateEmail /> },
+    { href: 'https://github.com/zolbirg',               icon: <FaGithub /> },
+    { href: 'https://www.codewars.com/users/Zolbirg',   icon: <SiCodewars /> },
+  ];
+
+  return (
+    <section className={`${classes.hero__section} section`} id="home">
+      <div className="container">
+        <div className={classes.hero__content}>
+
+          <motion.h1
+            variants={shouldReduce ? { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.6 } } } : containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {titleChars}
+          </motion.h1>
+
+          <motion.h2
+            variants={fadeUp(shouldReduce ? 0.2 : 0.75)}
+            initial="hidden"
+            animate="visible"
+          >
+            <TextTransition springConfig={presets.slow}>
+              {TEXTS[index % TEXTS.length]}
+            </TextTransition>
+          </motion.h2>
+
+          <motion.p
+            variants={fadeUp(shouldReduce ? 0.3 : 1.0)}
+            initial="hidden"
+            animate="visible"
+          >
+            Инженер и frontend‑разработчик.
+            <br />
+            Помогаю переводить идеи в быстрые и понятные веб‑приложения.
+          </motion.p>
+
+          <motion.ul
+            className={classes.social__link}
+            variants={socialContainerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {socialLinks.map(({ href, icon }, i) => (
+              <motion.li
+                key={i}
+                variants={socialItemVariants}
+                whileHover={{ scale: 1.25, rotate: 8 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 12 }}
+              >
+                <a href={href}>{icon}</a>
+              </motion.li>
+            ))}
+          </motion.ul>
+
         </div>
-        <div className={classes.down__arrow}>
-          <a data-scroll="" href="#about" className={classes.arrow__animated}>
-          
-            <FaArrowCircleDown  className={`${classes.arrow__fa} button`}/>
-          </a>
-        </div>
-      </section>
-      
-    );
-  }
-  
-  
-  
+      </div>
+
+      <div className={classes.down__arrow}>
+        <a data-scroll="" href="#about">
+          <DotLottieReact
+            src="https://lottie.host/3c10e1d6-dc45-46b3-be7f-dcf149686794/n7M1q0mnR5.lottie"
+            loop
+            autoplay
+            className={classes.scroll__lottie}
+          />
+        </a>
+      </div>
+    </section>
+  );
+}

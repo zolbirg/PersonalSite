@@ -1,5 +1,114 @@
-.project__container{
+/* ===== Project Section ===== */
+.project__section {
+    position: relative;
+    overflow: hidden;
+    padding: 5rem 0 7rem;
+    background: linear-gradient(160deg, #0a110c 0%, #141616 50%, #0c1410 100%);
+}
+
+/* ===== Floating abstract background shapes ===== */
+.bg__shapes {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.18;
+}
+
+.shape__1 {
+    width: 560px;
+    height: 560px;
+    background: radial-gradient(circle, #2cdaa0, transparent 70%);
+    top: -180px;
+    right: -120px;
+    animation: shapeFloat1 20s ease-in-out infinite;
+}
+
+.shape__2 {
+    width: 380px;
+    height: 380px;
+    background: radial-gradient(circle, #9dd17a, transparent 70%);
+    bottom: 0;
+    left: -80px;
+    animation: shapeFloat2 26s ease-in-out infinite;
+}
+
+.shape__3 {
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, #aaeba8, transparent 70%);
+    top: 50%;
+    left: 52%;
+    opacity: 0.12;
+    animation: shapeFloat3 17s ease-in-out infinite;
+}
+
+@keyframes shapeFloat1 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    33%       { transform: translate(-30px, 50px) scale(1.06); }
+    66%       { transform: translate(25px, -15px) scale(0.96); }
+}
+
+@keyframes shapeFloat2 {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50%       { transform: translate(45px, -35px) scale(1.08); }
+}
+
+@keyframes shapeFloat3 {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-45px); }
+}
+
+/* ===== Section title ===== */
+.project__title {
+    position: relative;
+    z-index: 1;
+    font-size: var(--font-size-title-big);
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 0;
+    color: var(--color-text-strong);
+
+    &::after {
+        content: '';
+        display: block;
+        width: 64px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+        margin: 0.6rem auto 2.5rem;
+        border-radius: 2px;
+    }
+}
+
+/* ===== Glassmorphism container ===== */
+.project__container {
+    position: relative;
+    z-index: 1;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2.5rem;
+    background: rgba(12, 16, 13, 0.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(44, 218, 160, 0.08);
+    border-radius: 1.5rem;
+}
+
+/* ===== Scroll fade-in utility ===== */
+.animate-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+
+    &.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

@@ -1,0 +1,17 @@
+.pageWrapper {
+  position: relative;
+  overflow-x: hidden;
+}
+
+.heroGroup,
+.profileGroup,
+.workGroup,
+.contactGroup {
+  position: relative;
+  overflow: visible;
+}
+
+.groupContent {
+  position: relative;
+  z-index: 1;
+}
