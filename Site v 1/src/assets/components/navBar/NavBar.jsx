@@ -4,11 +4,10 @@ import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const NAV_ITEMS = [
-  { id: 'home',      label: 'Home',      to: '/',           hash: null },
-  { id: 'about',     label: 'Me',        to: '/#about',     hash: 'about' },
-  { id: 'portfolio', label: 'Portfolio', to: '/#portfolio', hash: 'portfolio' },
-  { id: 'Project',   label: 'Project',   to: '/Project',    hash: null },
-  { id: 'contact',   label: 'Contact',   to: '/#contact',   hash: 'contact' },
+  { id: 'home',      label: 'Home',      to: '/',          hash: null },
+  { id: 'about',     label: 'Me',        to: '/developer', hash: null },
+  { id: 'portfolio', label: 'Portfolio', to: '/Project',   hash: null },
+  { id: 'contact',   label: 'Contact',   to: '/#contact',  hash: 'contact' },
 ];
 
 export default function NavBar() {
@@ -25,7 +24,9 @@ export default function NavBar() {
   // Sync active tab with current route (handles back/forward navigation)
   useEffect(() => {
     if (location.pathname === '/Project') {
-      setTab('Project');
+      setTab('portfolio');
+    } else if (location.pathname === '/developer') {
+      setTab('about');
     } else if (location.pathname === '/') {
       const hashId = location.hash.slice(1);
       setTab(hashId || 'home');

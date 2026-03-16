@@ -55,7 +55,7 @@ export default function AboutComponent() {
 
                     <div>
                         <span className={classes.about__info_title}>
-                            <AnimatedCounter target={2} suffix="+" duration={1.0} />
+                            <AnimatedCounter target={3} suffix="+" duration={1.0} />
                         </span>
                         <span className={classes.about__info_name}>
                             лет <br /> Программирования

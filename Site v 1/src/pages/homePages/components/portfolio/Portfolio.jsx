@@ -4,7 +4,10 @@ import ScrollReveal from "../../../../assets/components/animations/ScrollReveal.
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
-import { projects } from "./portfolioData.js";
+import { Link } from "react-router-dom";
+import { F1Bingo, BullAndMoo, ColorSwitch, nameProject3 } from "../../../portfolio/ProjectDate.js";
+
+const projects = [F1Bingo, BullAndMoo, ColorSwitch, nameProject3];
 
 const sliderSettings = {
     dots: true,
@@ -36,6 +39,12 @@ export default function Portfolio() {
                             </div>
                         ))}
                     </Slider>
+                </ScrollReveal>
+
+                <ScrollReveal direction="up" delay={0.3} className={classes.portfolio__cta}>
+                    <Link to="/Project" className={classes.portfolio__button}>
+                        Узнать больше
+                    </Link>
                 </ScrollReveal>
             </div>
         </section>
