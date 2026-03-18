@@ -10,10 +10,18 @@ const NAV_ITEMS = [
   { id: 'contact',   label: 'Contact',   to: '/#contact',  hash: 'contact' },
 ];
 
+const MORE_ITEMS = [
+  { id: 'engineer', label: 'Engineer', to: '/engineer' },
+  { id: 'travelers', label: 'Travelers', to: '/travelers' },
+  { id: 'colorswitch', label: 'ColorSwitch', to: '/ColorSwitch' },
+  { id: 'bullandmoo', label: 'BullAndMoo', to: '/BullAndMoo' },
+];
+
 export default function NavBar() {
   const [tab, setTab] = useState("home");
   const [navbar, setNavbar] = useState(false);
   const [navbarLogo, setNavbarLogo] = useState("");
+  const [isMoreOpen, setIsMoreOpen] = useState(false);
   const [theme, setTheme] = useState(() => {
     if (typeof window === "undefined") return "dark";
     return localStorage.getItem("theme") === "light" ? "light" : "dark";
@@ -30,6 +38,9 @@ export default function NavBar() {
     } else if (location.pathname === '/') {
       const hashId = location.hash.slice(1);
       setTab(hashId || 'home');
+    } else {
+      const moreMatch = MORE_ITEMS.find((x) => x.to === location.pathname);
+      if (moreMatch) setTab(moreMatch.id);
     }
   }, [location.pathname, location.hash]);
 
@@ -45,6 +56,7 @@ export default function NavBar() {
 
   const handleNavClick = (e, item) => {
     setTab(item.id);
+    setIsMoreOpen(false);
 
     if (item.id === 'home') {
       if (location.pathname === '/') {
@@ -52,6 +64,17 @@ export default function NavBar() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
       return;
+    }
+
+    if (item.id === 'about') {
+      // Повторный заход/клик по "Me" иногда приводит к восстановлению scroll-состояния браузером.
+      // Сбрасываем позицию к началу, чтобы страница каждый раз начиналась сверху.
+      window.scrollTo(0, 0);
+    }
+
+    if (item.id === 'portfolio') {
+      // Повторный кликинг по пункту может не размонтировать компонент, а браузер/роутер восстанавливает scroll.
+      window.scrollTo(0, 0);
     }
 
     if (item.hash) {
@@ -84,6 +107,33 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", changeLogo);
   }, []);
 
+  useEffect(() => {
+    if (!isMoreOpen) return;
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setIsMoreOpen(false);
+    };
+
+    const onPointerDown = (e) => {
+      const target = e.target;
+      if (!(target instanceof Element)) return;
+      if (target.closest(`.${classes.more}`)) return;
+      setIsMoreOpen(false);
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    window.addEventListener('pointerdown', onPointerDown);
+    return () => {
+      window.removeEventListener('keydown', onKeyDown);
+      window.removeEventListener('pointerdown', onPointerDown);
+    };
+  }, [isMoreOpen]);
+
+  const handleMoreItemClick = (e, item) => {
+    setTab(item.id);
+    setIsMoreOpen(false);
+  };
+
   return (
     <section className={navbar ? `${classes.head} ${classes.head__active}` : classes.head}>
       <Link to="/" onClick={(e) => handleNavClick(e, NAV_ITEMS[0])} className={classes.logo}>
@@ -111,6 +161,39 @@ export default function NavBar() {
             </span>
           );
         })}
+
+        <div className={classes.more}>
+          <button
+            type="button"
+            className={classes.more__button}
+            onClick={() => setIsMoreOpen((v) => !v)}
+            aria-haspopup="menu"
+            aria-expanded={isMoreOpen}
+            aria-label="More pages"
+          >
+            <span className={classes.burger} aria-hidden="true">
+              <span />
+              <span />
+              <span />
+            </span>
+          </button>
+
+          {isMoreOpen && (
+            <div className={classes.more__menu} role="menu" aria-label="More pages menu">
+              {MORE_ITEMS.map((item) => (
+                <Link
+                  key={item.id}
+                  to={item.to}
+                  role="menuitem"
+                  className={classes.more__link}
+                  onClick={(e) => handleMoreItemClick(e, item)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          )}
+        </div>
 
         <button
           type="button"

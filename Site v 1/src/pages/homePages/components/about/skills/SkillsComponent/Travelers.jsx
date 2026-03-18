@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import classes from "./skillsComponent.module.scss";
 import { IoIosAirplane } from "react-icons/io";
-import { TbCamper } from "react-icons/tb";
+import { TbCamper, TbMap2 } from "react-icons/tb";
 import ProgressBar from "../../../../../../assets/components/progressBar/ProgressBar";
 
 const iconVariants = {
@@ -15,9 +16,6 @@ export default function Travelers() {
       <div className={`${classes.skills__list} grid`}>
         <div>
           <div className={classes.skills__list}>
-            <h3>
-              Более 120т.км на машине и еще больше самолетом
-            </h3>
             <motion.div
               className={classes.skills__logo_fa}
               initial="hidden"
@@ -32,7 +30,14 @@ export default function Travelers() {
               >
                 <TbCamper />
               </motion.span>
-              <span>---</span>
+              <motion.span
+                variants={iconVariants}
+                whileHover={{ scale: 1.35, color: 'var(--color-accent)' }}
+                transition={{ type: 'spring', stiffness: 400, damping: 12 }}
+                aria-hidden
+              >
+                <TbMap2 />
+              </motion.span>
               <motion.span
                 variants={iconVariants}
                 whileHover={{ scale: 1.35, color: 'var(--color-accent)' }}
@@ -45,11 +50,42 @@ export default function Travelers() {
           <ProgressBar percent={100} />
         </div>
         <div>
-          <p>
-            15 странии и бла бла бла
-            <br />
-            вствить флаги стран
-          </p>
+          <div className={classes.skills__statsBadges} role="list" aria-label="Статистика путешествий">
+            <span className={classes.skills__statsBadge} role="listitem">15 стран</span>
+            <span className={classes.skills__statsBadge} role="listitem">120 т.км</span>
+            <span className={classes.skills__statsBadge} role="listitem">3 года путешествий</span>
+          </div>
+          <div className={classes.skillsFlags} role="list" aria-label="Страны маршрута">
+            {[
+              { code: 'ru', name: 'Россия' },
+              { code: 'ge', name: 'Грузия' },
+              { code: 'tr', name: 'Турция' },
+              { code: 'cy', name: 'Северный Кипр' },
+              { code: 'bg', name: 'Болгария' },
+              { code: 'rs', name: 'Сербия' },
+              { code: 'me', name: 'Черногория' },
+              { code: 'ba', name: 'Босния' },
+              { code: 'kz', name: 'Казахстан' },
+              { code: 'kg', name: 'Киргизия' },
+              { code: 'uz', name: 'Узбекистан' },
+              { code: 'tj', name: 'Таджикистан' },
+            ].map(({ code, name }) => (
+              <span key={code} className={classes.skillsFlag} role="listitem" title={name}>
+                <img
+                  src={`https://flagcdn.com/w40/${code}.png`}
+                  srcSet={`https://flagcdn.com/w80/${code}.png 2x`}
+                  width={20}
+                  height={15}
+                  alt=""
+                  loading="lazy"
+                  className={classes.skillsFlagImg}
+                />
+              </span>
+            ))}
+          </div>
+          <Link to="/travelers" className={classes.skills__link}>
+            Подробнее о путешествиях →
+          </Link>
         </div>
       </div>
     </>

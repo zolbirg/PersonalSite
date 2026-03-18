@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import classes from "./skillsComponent.module.scss";
-import { SiAutocad, SiCoreldraw, SiAdobephotoshop } from "react-icons/si";
+import { SiAutocad, SiCoreldraw, SiAdobephotoshop, SiAdobelightroom, SiFigma, SiBlender } from "react-icons/si";
 import ProgressComponent from "../../../../../../assets/components/progressComponent/ProgressComponent";
 
 const iconContainerVariants = {
@@ -13,7 +13,14 @@ const iconVariants = {
   visible: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: 'easeOut' } },
 };
 
-const ICONS = [<SiAutocad />, <SiCoreldraw />, <SiAdobephotoshop />];
+const ICONS = [
+  <SiAutocad />,
+  <SiCoreldraw />,
+  <SiAdobephotoshop />,
+  <SiAdobelightroom />,
+  <SiFigma />,
+  <SiBlender />,
+];
 
 export default function Engineer() {
   return (

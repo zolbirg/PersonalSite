@@ -532,7 +532,7 @@ export default function BullAndMoo() {
                 Bull &amp; Moo
             </h2>
 
-            <div className={`${projectClasses.project__container} ${classes.projectContainerDark} container`}>
+            <div className={`${projectClasses.project__container} container`}>
                 <div className={classes.gameRoot}>
                     {screen === 'setup' && (
                         <GameSetup

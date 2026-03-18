@@ -26,7 +26,7 @@ const sliderSettings = {
 export default function Portfolio() {
     return (
         <section className={`${classes.portfolio__section} section`} id="portfolio">
-            <div className={`${classes.portfolio__container} container`}>
+            <div className={`${classes.portfolio__container} container sectionGlass`}>
                 <ScrollReveal direction="up" className={classes.portfolio__header}>
                     <h2 className={classes.portfolio__title}>My Projects</h2>
                 </ScrollReveal>

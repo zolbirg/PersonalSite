@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" fill="none" role="img" aria-label="Topography pattern">
+  <defs>
+    <pattern id="topo" width="240" height="160" patternUnits="userSpaceOnUse">
+      <path d="M-20 42C40 10 90 10 160 34C205 50 230 58 270 36" stroke="#7fe8be" stroke-width="1.2" opacity="0.55" />
+      <path d="M-20 78C30 55 78 52 138 68C190 82 220 88 270 74" stroke="#7fe8be" stroke-width="1" opacity="0.5" />
+      <path d="M-20 112C30 92 82 92 144 110C195 126 222 132 270 116" stroke="#7fe8be" stroke-width="1.1" opacity="0.45" />
+      <path d="M-20 138C40 118 96 118 166 136C208 147 235 150 270 134" stroke="#7fe8be" stroke-width="0.9" opacity="0.4" />
+
+      <path d="M10 -10C40 18 62 30 98 34C136 38 152 54 172 84C188 109 210 122 240 128" stroke="#7fe8be" stroke-width="0.9" opacity="0.38" />
+      <path d="M-10 12C22 30 50 34 78 30C110 24 126 32 142 58C160 90 186 104 222 108" stroke="#7fe8be" stroke-width="1" opacity="0.34" />
+      <path d="M30 158C54 140 84 132 116 136C148 140 166 130 186 104C204 80 220 70 252 62" stroke="#7fe8be" stroke-width="0.9" opacity="0.32" />
+
+      <path d="M70 20C96 10 132 10 160 20C190 31 214 44 238 60" stroke="#7fe8be" stroke-width="0.8" opacity="0.22" />
+      <path d="M78 44C108 34 136 34 166 44C198 54 220 64 240 76" stroke="#7fe8be" stroke-width="0.8" opacity="0.18" />
+      <path d="M86 68C118 58 142 58 172 68C202 78 222 88 240 100" stroke="#7fe8be" stroke-width="0.8" opacity="0.16" />
+    </pattern>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#topo)" />
+</svg>

@@ -17,7 +17,8 @@ const cardVariants = {
 export default function Achievements() {
   return (
     <section className={`${classes.achievements__section} section`}>
-      <div className={`${classes.achievements__container} container`}>
+      <div className={`${classes.achievements__container} container sectionGlass`}>
+        <h2 className={classes.achievements__title}>Hobby</h2>
         <motion.div
           className={classes.achievements__block}
           variants={containerVariants}

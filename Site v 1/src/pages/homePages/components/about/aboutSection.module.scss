@@ -1,45 +1,11 @@
 .about__container {
-  position: relative;
   max-width: 72rem;
   display: flex;
   justify-content: space-between;
   align-items: stretch;
   margin: 2.5rem auto 0;
   padding: 2.75rem 2.5rem;
-  border-radius: 28px;
-  background:
-    radial-gradient(circle at top left, rgba(44, 218, 160, 0.18), transparent 55%),
-    radial-gradient(circle at bottom right, rgba(170, 235, 168, 0.14), transparent 55%),
-    var(--bg-block);
-  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
-  overflow: hidden;
   gap: 2.5rem;
-}
-
-.about__container::before,
-.about__container::after {
-  content: "";
-  position: absolute;
-  border-radius: 999px;
-  filter: blur(38px);
-  opacity: 0.7;
-  pointer-events: none;
-}
-
-.about__container::before {
-  width: 220px;
-  height: 220px;
-  top: -70px;
-  right: -40px;
-  background: linear-gradient(135deg, rgba(44, 218, 160, 0.55), transparent 60%);
-}
-
-.about__container::after {
-  width: 260px;
-  height: 260px;
-  bottom: -120px;
-  left: -60px;
-  background: linear-gradient(135deg, rgba(170, 235, 168, 0.4), transparent 55%);
 }
 .about__toggle {
   display: flex;
@@ -121,7 +87,6 @@
   .about__container {
     margin: 1.5rem auto 0;
     padding: 1.75rem 1.25rem;
-    border-radius: 22px;
   }
 
   .about__toggle {

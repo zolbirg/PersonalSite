@@ -169,8 +169,8 @@
 
 /* Animated blob avatar */
 .hero__avatar {
-  width: 200px;
-  height: 200px;
+  width: clamp(200px, 20vw, 260px);
+  height: clamp(200px, 20vw, 260px);
   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
   background: radial-gradient(circle at 40% 40%, rgba(44, 218, 160, 0.18), rgba(157, 209, 122, 0.06));
   border: 2px solid rgba(44, 218, 160, 0.28);
@@ -181,6 +181,7 @@
   font-weight: 700;
   color: var(--color-primary);
   letter-spacing: -0.04em;
+  overflow: hidden;
   flex-shrink: 0;
   user-select: none;
   animation: avatarMorph 10s ease-in-out infinite;
@@ -190,6 +191,18 @@
   &:hover {
     box-shadow: 0 0 80px rgba(44, 218, 160, 0.22);
   }
+}
+
+.hero__avatarImg {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  /* приоритет — лицо/голова: обрезаем низ, а не верх */
+  object-position: 50% 0%;
+  /* чуть уменьшить и опустить, чтобы голова попадала полностью */
+  transform: translateY(10px) scale(0.92);
+  display: block;
 }
 
 @keyframes avatarMorph {
@@ -442,6 +455,10 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 1rem;
   padding: 1.75rem 1.5rem;
+  min-height: 260px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   position: relative;
   overflow: hidden;
   transition: transform 0.28s ease, box-shadow 0.28s ease;
@@ -486,6 +503,7 @@
   font-size: var(--font-size-main);
   color: var(--color-text);
   line-height: 1.7;
+  margin: 0;
 }
 
 .caseLink {

@@ -51,6 +51,12 @@
     }
 }
 
+/* light theme: приводим панель к светлому полупрозрачному фону */
+:global(html.theme-light) .project__description {
+    background: var(--bg-project-container);
+    border: var(--border-project-container);
+}
+
 /* ===== individual meta row ===== */
 .meta__item {
     display: flex;
@@ -100,6 +106,11 @@
     letter-spacing: 0.02em;
 }
 
+:global(html.theme-light) .badge {
+    background: rgba(22, 163, 74, 0.08);
+    border: 1px solid rgba(22, 163, 74, 0.22);
+}
+
 /* ===== GitHub button ===== */
 .git__btn {
     display: inline-flex;
@@ -130,5 +141,16 @@
 
     &:active {
         transform: scale(0.97);
+    }
+}
+
+:global(html.theme-light) .git__btn {
+    background: rgba(22, 163, 74, 0.07);
+    border: 1px solid rgba(22, 163, 74, 0.2);
+
+    &:hover {
+        background: rgba(22, 163, 74, 0.16);
+        box-shadow: 0 0 22px rgba(22, 163, 74, 0.28);
+        color: var(--color-accent);
     }
 }

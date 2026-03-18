@@ -13,8 +13,10 @@ import {
   SiSass,
 } from 'react-icons/si';
 import { FiMail, FiGithub, FiDownload, FiExternalLink, FiArrowRight } from 'react-icons/fi';
+import { useLayoutEffect } from 'react';
 
 import ScrollReveal from '../../assets/components/animations/ScrollReveal.jsx';
+import photo1 from '../../assets/img/personalFoto2.png';
 import classes from './developerPage.module.scss';
 
 // ── Static data ────────────────────────────────────────────────────────────────
@@ -125,6 +127,16 @@ const CASE_STEPS = [
 // ── Component ──────────────────────────────────────────────────────────────────
 
 export default function DeveloperPage() {
+  useLayoutEffect(() => {
+    if (typeof window === 'undefined') return;
+
+    // React Router + браузерная история могут восстанавливать позицию скролла.
+    // Нам нужно всегда начинать страницу с верха.
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+  }, []);
+
   return (
     <main className={classes.page}>
       {/* ── Hero ── */}
@@ -158,7 +170,7 @@ export default function DeveloperPage() {
                 <FiMail />
                 Написать мне
               </a>
-              <Link to="/#portfolio" className={`${classes.btn} ${classes['btn--ghost']}`}>
+              <Link to="/Project" className={`${classes.btn} ${classes['btn--ghost']}`}>
                 Портфолио
                 <FiArrowRight />
               </Link>
@@ -167,7 +179,13 @@ export default function DeveloperPage() {
         </div>
 
         <ScrollReveal direction="scale" delay={0.1}>
-          <div className={classes.hero__avatar} aria-hidden="true">KR</div>
+          <div className={classes.hero__avatar} aria-hidden="true">
+            <img
+              src={photo1}
+              alt="Канин Роман"
+              className={classes.hero__avatarImg}
+            />
+          </div>
         </ScrollReveal>
       </section>
 

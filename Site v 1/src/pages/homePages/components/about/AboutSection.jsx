@@ -16,7 +16,7 @@ export default function AboutSection() {
 
     return (
         <section className="section" id="about">
-            <div className={`${classes.about__container} container`}>
+            <div className={`${classes.about__container} container sectionGlass`}>
                 <ScrollReveal direction="left" className={classes.about__img_container}>
                     <img src={photo1} alt="" className={classes.about__img} />
                 </ScrollReveal>

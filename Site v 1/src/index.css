@@ -153,6 +153,27 @@ body{
   margin-right: auto;
 }
 
+.sectionGlass{
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(44, 218, 160, 0.15);
+  background:
+    radial-gradient(circle at top right, rgba(44, 218, 160, 0.08), transparent 52%),
+    rgba(51, 50, 47, 0.42);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.theme-light .sectionGlass{
+  border: 1px solid rgba(22, 163, 74, 0.18);
+  background:
+    radial-gradient(circle at top right, rgba(22, 163, 74, 0.07), transparent 52%),
+    rgba(255, 255, 255, 0.55);
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.12);
+}
+
 .grid {
   display: grid;
   gap: 1.5rem;
