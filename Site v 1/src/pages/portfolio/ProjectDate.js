@@ -1,3 +1,15 @@
+export const F1Bingo = {
+    srcImg: '/img/projects/f1-bingo-cover.png',
+    titleName: 'F1 Bingo',
+    description:
+        'Неофициальная интерактивная игра-бинго по Формуле 1 сезона 2026. Отмечай события гонок, собирай бинго и следи за календарём в браузере.',
+    srcLink: 'http://f1bingo.ru/',
+    stack: 'HTML, CSS, JS, Firebase',
+    price: 3,
+    date: '13.02.26',
+    git: 'https://github.com/zolbirg/f1-bingo',
+};
+
 export const BullAndMoo = {
     srcImg: 'https://i.ytimg.com/vi/CdB4nDw8juQ/maxresdefault.jpg',
     titleName: 'Bull & Moo',

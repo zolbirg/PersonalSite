@@ -12,14 +12,25 @@
 } 
 
 .card__logo {
-  background-image: url(../../img/fon1.jpg);
+  position: relative;
+  background-color: var(--bg-main);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
   width: 100%;
   height: 25vh;
   border-radius: 2rem;
-   
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card__titleWrap {
+  background: rgba(20, 22, 22, 0.7);
+  padding: 0.5rem 1.25rem;
+  border-radius: 0.75rem;
+  width: fit-content;
+  max-width: 90%;
 }
 
 
@@ -27,8 +38,8 @@
   display: grid;
   align-content: space-around;
   text-align: center;
-  height: 100%;
-  padding: .6rem;
+  height: 200px;
+  padding: 1.25rem 1.5rem 1.5rem;
  
 }
 
@@ -47,11 +58,16 @@
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-size: 4.6rem;
+  font-size: 2.75rem;
   font-weight: bold;
 }
 
-.card__text{
-  margin: 1rem;
+.card__text {
+  margin: 0;
+}
+
+.card__actions {
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 

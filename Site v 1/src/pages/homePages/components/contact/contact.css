@@ -1,17 +1,26 @@
 
  
-  .contact__block{
-    display: grid;
-    grid-template-columns: repeat(2 , 30%);
-    justify-content: space-around;
-    margin: 2rem;
+ .contact__block{
+   display: grid;
+   grid-template-columns: repeat(2 , minmax(0, 1fr));
+   gap: 1.5rem 3rem;
+   margin: 2rem auto 1.5rem;
+   width: 100%;
+ }
+
+  /* уменьшить нижний отступ последней секции,
+     чтобы не было лишнего пустого пространства */
+  #contact.section{
+    padding-bottom: 1.5rem;
   }
  
 
   
   .contact__information {
-    display: inline-flex;
-    margin: 2rem;
+    display: flex;
+    align-items: flex-start;
+    margin: 0.5rem 0;
+    min-width: 0;
   }
 
   .contact__icon{
@@ -33,7 +42,7 @@
   .social__link{
     display: inline-flex;
     font-size:var(--font-size-title);
-
+    margin-top: 0.5rem;
   }
   .social__link li a{
     margin-right: 3rem;
@@ -46,11 +55,17 @@
 
 
 
+@media (max-width: 1024px) {
+  .contact__block{
+    grid-template-columns: repeat(1, 100%);
+    justify-items: start;
+  }
+}
+
 @media (max-width: 768px) {
   .contact__block{
-    
-    grid-template-columns: repeat(1 , 100%);
-   justify-items: center;
+    grid-template-columns: repeat(1, 100%);
+    justify-items: center;
   }
 }
 

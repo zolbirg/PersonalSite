@@ -2,86 +2,117 @@
 @plugin "daisyui";
 :root {
 
-   /* ==============plate================ */
-   /* color green */
-   --green1:#33ffc2;
-   --green2:#33ff66;
-     --green3:#7af17a;
-     --green4:#dbf059;
-     --green5:#6cce88;
-     --green6:#2cdaa0;
-   --green7:#9dda43;
-   --green8:#B2FFC6;
-   --green9:#87F8AE;
-   --green10:#42D49C;
-     --green11:#01C38D;
-     --green12:#aaeba8;
-   --green13:#00A68A;
-   --green14:#aaafff;
-   --green15:#5c6b3d;
-   --green16:#3c5148;
-   --green17:#6b8e4e;
-   --green18:#b4ddb4;
+  /* ============== semantic colors (dark theme by default) ================ */
 
-   /* color gray */
-   --gray1:#6b6e70;
-     --gray2:#45484d;
-   --gray3:#23272A;
-   --gray4:#292F36;
-   --gray5:#1A1E23;
-   --gray6:#43454D;
-     --gray8:#4b4a4e;
-   --gray9: #9fa1ad;
-   --gray10:#5c5e60;
-   --gray11:#5b595b;
-     --gray12:#3e3d38;
+  /* base text */
+  --color-text: #8e958e;
+  --color-text-strong: #e0e9e7;
 
-/* ==============color================ */
+  /* accents */
+  --color-primary: #2cdaa0;
+  --color-primary-soft: #9dd17a;
+  --color-accent: #aaeba8;
+  --color-accent-hover: #a2f06e;
 
-    --color-main:#8e958e;
-    --color-white:#e0e9e7;
-    --color-title:#aaeba8;
-    --color-first:#2cdaa0;
-  --color-first2:#18d26e;
-  --color-second:#7af17a;
-
-  --color-btn:#9dd17a;
-  --color-active:#aaeba8;
-  --color-hover:#a2f06e;
-
-  --bg-main:#141616;
-  --bg-first:#15191e;
-  --bg-second:#1a1f24;
-  --bg-block:#33322fec;
-  --bg-navbar:#33322f91;
-  --bg-block-first:#3a3934f8;
-  --bg-shadow:rgba(11, 209, 126, 0.25);
+  /* surfaces */
+  --bg-main: #141616;
+  --bg-card: #33322fec;
+  --bg-card-soft: #3a3934f8;
+  --bg-navbar: #33322f91;
+  --bg-shadow: rgba(11, 209, 126, 0.25);
 
   --gr-progress: linear-gradient(#222518, #1b5cfd);
 
-/*========== Font and typography ==========*/
---body-font: "Poppins", sans-serif;
---font-home-title: "Poppins", sans-serif;
+  /* === page background (dark) === */
+  --bg-page-gradient: var(--bg-main);
 
---font-size-home-title: 6rem;
---font-size-title-big: 3rem;
---font-size-title:1.5rem;
---font-size-subtitle-big:2rem;
---font-size-subtitle:1.2rem;
-  --font-size-main:1rem;
---font-size-sm:.8rem;
---font-size-fa:1.7rem;
+  /* === project section (dark) === */
+  --bg-project-section: linear-gradient(160deg, #0a110c 0%, #141616 50%, #0c1410 100%);
+  --bg-project-container: rgba(12, 16, 13, 0.55);
+  --border-project-container: 1px solid rgba(44, 218, 160, 0.08);
 
+  /* === orb palette (dark) === */
+  --orb-1: rgba(12, 70, 34, 1);
+  --orb-2: rgba(15, 115, 72, 0.9);
+  --orb-3: rgba(18, 150, 115, 0.75);
+  --orb-4: rgba(24, 165, 140, 0.65);
+  --orb-5: rgba(42, 185, 165, 0.55);
+  --orb-6: rgba(62, 200, 185, 0.45);
 
-/*========== Font weight ==========*/
---font-medium: 500;
---font-semi-bold: 600;
+  /* legacy aliases (для существующих стилей) */
+  --color-main: var(--color-text);
+  --color-white: var(--color-text-strong);
+  --color-title: var(--color-accent);
+  --color-first: var(--color-primary);
+  --color-first2: var(--color-primary);
+  --color-second: var(--color-primary-soft);
 
+  --color-btn: var(--color-primary-soft);
+  --color-active: var(--color-accent);
+  --color-hover: var(--color-accent-hover);
 
-/*========== z index ==========*/
---z-tooltip: 10;
---z-fixed: 100;
---z-modal: 1000;
+  --bg-first: var(--bg-main);
+  --bg-second: var(--bg-main);
+  --bg-block: var(--bg-card);
+  --bg-block-first: var(--bg-card-soft);
+
+  /* spacing */
+  --section-padding: 3rem;
+
+  /*========== Font and typography ==========*/
+  --body-font: "Poppins", sans-serif;
+  --font-home-title: "Poppins", sans-serif;
+
+  --font-size-home-title: 4rem;
+  --font-size-title-big: 2.5rem;
+  --font-size-title: 1.5rem;
+  --font-size-subtitle-big: 2rem;
+  --font-size-subtitle: 1.2rem;
+  --font-size-main: 1rem;
+  --font-size-sm: 0.8rem;
+  --font-size-fa: 1.7rem;
+
+  /*========== Font weight ==========*/
+  --font-medium: 500;
+  --font-semi-bold: 600;
+
+  /*========== z index ==========*/
+  --z-tooltip: 10;
+  --z-fixed: 100;
+  --z-modal: 1000;
+}
+
+/* light theme overrides */
+.theme-light {
+  --color-text: #1f2933;
+  --color-text-strong: #111827;
+
+  --color-primary: #16a34a;
+  --color-primary-soft: #86efac;
+  --color-accent: #22c55e;
+  --color-accent-hover: #16a34a;
+
+  --bg-main: #e5e7eb;
+  --bg-card: #ffffff;
+  --bg-card-soft: #f1f5f9;
+  --bg-navbar: rgba(255, 255, 255, 0.9);
+  --bg-shadow: rgba(34, 197, 94, 0.25);
+
+  /* === page background (light) === */
+  --bg-page-gradient: var(--bg-main);
+
+  /* === project section (light) === */
+  --bg-project-section: linear-gradient(160deg, #ecfdf5 0%, #e5e7eb 50%, #d1fae5 100%);
+  --bg-project-container: rgba(255, 255, 255, 0.65);
+  --border-project-container: 1px solid rgba(22, 163, 74, 0.18);
+
+  /* === orb palette (light) === */
+  --orb-1: rgba(130, 215, 165, 0.55);
+  --orb-2: rgba(100, 205, 150, 0.45);
+  --orb-3: rgba(75, 220, 185, 0.36);
+  --orb-4: rgba(55, 228, 200, 0.28);
+  --orb-5: rgba(45, 235, 210, 0.2);
+  --orb-6: rgba(35, 242, 220, 0.13);
 }
 
 /*========== all ==========*/
@@ -98,27 +129,49 @@
 
  }
 
- html{
-    font-size: 80%;
-    overflow-x:hidden;
-    font-family: var(--body-font);
- }
+html{
+   font-size: 80%;
+   font-family: var(--body-font);
+}
 
- body{
-    background: var(--bg-main);
-    color: var(--color-main);
- }
+body{
+   margin: 0;
+   background-color: var(--bg-main);
+   color: var(--color-main);
+   overflow-x: hidden;
+}
 
 
  /*==================== LAYOUT ====================*/
  .section {
-  padding: 3rem 0;
+  padding: var(--section-padding) 0;
 }
 
 .container{
   max-width: 980px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.sectionGlass{
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(44, 218, 160, 0.15);
+  background:
+    radial-gradient(circle at top right, rgba(44, 218, 160, 0.08), transparent 52%),
+    rgba(51, 50, 47, 0.42);
+  box-shadow: 0 10px 34px rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.theme-light .sectionGlass{
+  border: 1px solid rgba(22, 163, 74, 0.18);
+  background:
+    radial-gradient(circle at top right, rgba(22, 163, 74, 0.07), transparent 52%),
+    rgba(255, 255, 255, 0.55);
+  box-shadow: 0 10px 30px rgba(17, 24, 39, 0.12);
 }
 
 .grid {
@@ -153,4 +206,26 @@ color:var( --color-active);
   text-align: center;
   height: 86%;
   margin: 1rem;
+}
+
+/* ==================== shared animations ==================== */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-28px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 8px rgba(44, 218, 160, 0.2); }
+  50%       { box-shadow: 0 0 26px rgba(44, 218, 160, 0.5); }
+}
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 300% 50%; }
 }

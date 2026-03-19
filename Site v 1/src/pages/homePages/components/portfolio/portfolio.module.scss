@@ -1,65 +1,87 @@
-.services__main {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  min-height: 100vh;
-  padding: 2rem 0;
-  background: url(../../../../assets/img/fon6.jpg) no-repeat center;
-  background-attachment: fixed;
-  background-size: cover;
+.portfolio__section {
+    width: 100%;
+    background: transparent;
 }
 
-.services__body {
-  display: inline-flex;
- 
-}
-.services__logo{
-display: flex;
-align-items: center;
-/* background-color: #33322fcb; */
-margin: 0 1%;
-
-}
-.services__story {
-  /* background: url("https://images.wallpaperscraft.com/image/single/smoke_wrinkles_gray_69138_1600x1200.jpg"); */
-  background: url("https://avatars.mds.yandex.net/i?id=0604ed7a2a62902a3ab8169728e3854e_l-4011747-images-thumbs&n=13");
-  background-size: cover;
-  font-size: 9vmax;
-  font-weight: bold;
- 
-  /* background: rgba(172, 255, 47, 0.39); */
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
- 
+.portfolio__container {
+    max-width: 72rem;
+    margin: 2.5rem auto 0;
+    padding: 2.75rem 2.5rem;
 }
 
-/* .services__content:hover{
-  box-shadow: -5px  5px 40px var(--color-first);
-} */
-.services__content{
-  display: flex;
-  align-items: center;
-  text-align: center;  
-  background-color: #33322fcb;
-  color: var(--color-title);
-  font-size:var(--font-size-subtitle);
-  border-radius: 2rem;
-  padding: 1%;
-  margin-right: 1.5%;
-  
+.portfolio__header {
+    margin-bottom: 2rem;
 }
 
-.services__clider{
-  margin-top: 3rem;
+.portfolio__title {
+    font-size: var(--font-size-title-big);
+    font-weight: bold;
+    color: var(--color-title);
 }
 
+.portfolio__slider {
+    position: relative;
+    z-index: 1;
 
-@media (min-width: 1900px) {
-  .services__story {
-  font-size: 14rem;
+    /* slick dots styling */
+    :global(.slick-dots) {
+        bottom: -2rem;
+
+        li button::before {
+            color: var(--color-primary);
+            opacity: 0.4;
+            font-size: 8px;
+        }
+
+        li.slick-active button::before {
+            color: var(--color-primary);
+            opacity: 1;
+        }
+    }
+
+    :global(.slick-prev),
+    :global(.slick-next) {
+        z-index: 2;
+
+        &::before {
+            color: var(--color-primary);
+        }
+    }
 }
 
+.portfolio__slide {
+    display: flex !important;
+    justify-content: center;
+    padding: 0.75rem 1rem 1rem;
 }
 
+.portfolio__cta {
+    margin-top: 3.25rem;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
 
+.portfolio__button {
+    display: inline-block;
+    background-color: var(--color-btn);
+    color: black;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: var(--normal-font-size);
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    z-index: var(--z-fixed);
+    transition: all 0.3s;
 
+    &:hover {
+        background-color: var(--color-hover);
+        color: black;
+    }
+
+    &.active {
+        background: var(--color-active);
+    }
+}

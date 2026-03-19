@@ -24,12 +24,130 @@
   transition: 0.3s;
 }
 
+.navbar {
+  display: inline-flex;
+  align-items: center;
+}
+
 .logo {
   font-size: 2.5rem;
   color: var(--color-title);
   font-weight: 600;
   cursor: default;
 
+}
+
+.more {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin-left: 1.5rem;
+}
+
+.more__button {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 0.7rem;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.more__button:hover {
+  border-color: var(--color-main);
+  background: var(--bg-card-soft);
+}
+
+.burger {
+  width: 1.25rem;
+  height: 1rem;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.burger span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  border-radius: 999px;
+  background: var(--color-main);
+}
+
+.more__menu {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  right: 0;
+  min-width: 12rem;
+  padding: 0.45rem;
+  border-radius: 0.9rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--bg-card);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  z-index: calc(var(--z-fixed) + 1);
+}
+
+.more__link {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  border-radius: 0.7rem;
+  color: var(--color-main);
+  text-decoration: none;
+  margin-left: 0; // override .navbar a margin
+}
+
+.more__link:hover {
+  background: var(--bg-card-soft);
+}
+
+.themeToggle {
+  margin-left: 2rem;
+  width: 3rem;
+  height: 1.6rem;
+  border-radius: 999px;
+  background: var(--bg-card-soft);
+  border: 1px solid var(--color-main);
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.2rem;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.themeToggle__thumb {
+  width: 1.2rem;
+  height: 1.2rem;
+  border-radius: 999px;
+  background: var(--color-accent);
+  transform: translateX(0);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+:global(html.theme-light) .themeToggle__thumb {
+  transform: translateX(1.2rem);
+}
+
+.nav__item {
+  position: relative;
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.nav__indicator {
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--color-primary);
 }
 
 

@@ -4,6 +4,7 @@ import photo1 from '../../../../assets/img/personalFoto2.png';
 import AboutComponent from './aboutComponent/AboutComponent.jsx';
 import Skills from './skills/Skills.jsx';
 import Qualification from './Qualification/Qualification.jsx';
+import ScrollReveal from '../../../../assets/components/animations/ScrollReveal.jsx';
 
 import { useState } from 'react';
 
@@ -15,13 +16,12 @@ export default function AboutSection() {
 
     return (
         <section className="section" id="about">
-            <h2 className="section__title">About Me</h2>
-            <div className={`${classes.about__container} container `}>
-                <div className={classes.about__img_container}>
+            <div className={`${classes.about__container} container sectionGlass`}>
+                <ScrollReveal direction="left" className={classes.about__img_container}>
                     <img src={photo1} alt="" className={classes.about__img} />
-                </div>
+                </ScrollReveal>
 
-                <div className={classes.about__data}>
+                <ScrollReveal direction="right" delay={0.1} className={classes.about__data}>
                     <div className={classes.about__toggle}>
                         <div
                             onClick={() => setTab('About')}
@@ -52,7 +52,7 @@ export default function AboutSection() {
                         {tab === 'Skills' && <Skills />}
                         {tab === 'Qualification' && <Qualification />}
                     </div>
-                </div>
+                </ScrollReveal>
             </div>
         </section>
     );
