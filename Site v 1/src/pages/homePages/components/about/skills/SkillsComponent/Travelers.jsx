@@ -50,6 +50,10 @@ export default function Travelers() {
           <ProgressBar percent={100} />
         </div>
         <div>
+          <p className={classes.skills__travelersDescription}>
+            За три года в дороге я выстроил устойчивую систему удаленной работы: планирование задач, приоритизация и дисциплина даже в постоянной смене локаций.
+            Такой ритм развил стрессоустойчивость, гибкость в принятии решений и навык быстро включаться в новые условия без потери качества результата.
+          </p>
           <div className={classes.skills__statsBadges} role="list" aria-label="Статистика путешествий">
             <span className={classes.skills__statsBadge} role="listitem">15 стран</span>
             <span className={classes.skills__statsBadge} role="listitem">120 т.км</span>

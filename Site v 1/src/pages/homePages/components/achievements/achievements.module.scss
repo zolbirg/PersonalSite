@@ -3,7 +3,7 @@
 
 .achievements__container {
   max-width: 72rem;
-  margin: 2.5rem auto 0;
+  margin: 2rem auto 0;
   padding: 2.5rem 2.25rem;
   display: flex;
   flex-direction: column;
@@ -17,7 +17,14 @@
   font-size: var(--font-size-title-big);
   font-weight: bold;
   color: var(--color-title);
-  margin: 0 0 0.5rem;
+  text-align: center;
+  margin: 0;
+}
+
+.achievements__subtitle {
+  text-align: center;
+  color: var(--color-main);
+  margin-bottom: 1rem;
 }
 
 .achievements__block {
@@ -31,6 +38,11 @@
 .achievements__card {
   flex: 1 1 18rem;
   max-width: 22rem;
+  transition: transform 0.25s ease;
+}
+
+.achievements__card:hover {
+  transform: translateY(-4px);
 }
 
 @keyframes achievementsFadeIn {

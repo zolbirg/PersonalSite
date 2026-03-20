@@ -4,14 +4,20 @@
    display: grid;
    grid-template-columns: repeat(2 , minmax(0, 1fr));
    gap: 1.5rem 3rem;
-   margin: 2rem auto 1.5rem;
+  margin: 0 auto;
    width: 100%;
  }
+
+.contact__panel {
+  max-width: 72rem;
+  margin: 2rem auto 0;
+  padding: 2rem;
+}
 
   /* уменьшить нижний отступ последней секции,
      чтобы не было лишнего пустого пространства */
   #contact.section{
-    padding-bottom: 1.5rem;
+    padding-bottom: 2rem;
   }
  
 
@@ -38,19 +44,53 @@
     font-size:var(--font-size-subtitle);
 
   }
-  
-  .social__link{
-    display: inline-flex;
-    font-size:var(--font-size-title);
+
+  .contact__link {
+    color: inherit;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 0.2em;
+    transition: text-decoration-color 0.2s ease, color 0.2s ease;
+  }
+
+  .contact__link:hover {
+    color: var(--color-hover);
+    text-decoration-color: var(--color-hover);
+  }
+
+  .contact__link:focus-visible {
+    outline: 2px solid var(--color-hover);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .social__nav {
     margin-top: 0.5rem;
   }
+
+  .social__link{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size:var(--font-size-title);
+  }
   .social__link li a{
-    margin-right: 3rem;
+    display: inline-flex;
     color:var(--color-main);
     font-size: 2rem;
 }
 .social__link li a:hover{
     color: var(--color-hover);
+}
+
+.social__link li a:focus-visible {
+  outline: 2px solid var(--color-hover);
+  outline-offset: 4px;
+  border-radius: 4px;
 }
 
 
@@ -63,6 +103,10 @@
 }
 
 @media (max-width: 768px) {
+  .contact__panel {
+    padding: 1.5rem 1.2rem;
+  }
+
   .contact__block{
     grid-template-columns: repeat(1, 100%);
     justify-items: center;

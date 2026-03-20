@@ -69,7 +69,6 @@ export default function Home() {
     <section className={`${classes.hero__section} section`} id="home">
       <div className="container">
         <div className={classes.hero__content}>
-
           <motion.h1
             variants={shouldReduce ? { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { duration: 0.6 } } } : containerVariants}
             initial="hidden"
@@ -98,6 +97,16 @@ export default function Home() {
             Помогаю переводить идеи в быстрые и понятные веб‑приложения.
           </motion.p>
 
+          <motion.div
+            className={classes.hero__cta}
+            variants={fadeUp(shouldReduce ? 0.4 : 1.15)}
+            initial="hidden"
+            animate="visible"
+          >
+            <a href="#portfolio" className={classes.hero__btnPrimary}>Смотреть проекты</a>
+            <a href="#contact" className={classes.hero__btnGhost}>Связаться</a>
+          </motion.div>
+
           <motion.ul
             className={classes.social__link}
             variants={socialContainerVariants}
@@ -115,7 +124,6 @@ export default function Home() {
               </motion.li>
             ))}
           </motion.ul>
-
         </div>
       </div>
 

@@ -7,11 +7,14 @@
     position:relative;
     display: flex;
     align-items: center;
+    overflow: hidden;
 }
 
 .hero__content{
+  position: relative;
+  z-index: 1;
   text-align:left;
-  padding-left:1rem ;
+  padding-left:1rem;
   max-width: 640px;
 }
 .hero__content h1{
@@ -35,9 +38,57 @@
 .hero__content p{
     max-width: 32rem;
     color: var(--color-white);
-    margin: 1rem 1rem 3rem 0;
+    margin: 1rem 1rem 2rem 0;
     font-size: var(--font-size-main);
     
+}
+
+.hero__cta {
+    display: flex;
+    gap: 1rem;
+    margin: 0 0 2rem;
+}
+
+.hero__btnPrimary,
+.hero__btnGhost {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.65rem;
+    font-size: var(--font-size-main);
+    font-weight: 600;
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* вторичный CTA: без заливки, мягкая обводка — не конкурирует с «Связаться» */
+.hero__btnPrimary {
+    background: transparent;
+    color: color-mix(in srgb, var(--color-title) 72%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-primary) 22%, transparent);
+    font-weight: 500;
+    box-shadow: none;
+}
+
+.hero__btnPrimary:hover {
+    color: var(--color-title);
+    border-color: color-mix(in srgb, var(--color-primary) 38%, transparent);
+    background: color-mix(in srgb, var(--color-primary) 6%, transparent);
+}
+
+.hero__btnPrimary:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--color-primary) 45%, transparent);
+    outline-offset: 3px;
+}
+
+.hero__btnGhost {
+    color: var(--color-title);
+    border: 1px solid rgba(44, 218, 160, 0.45);
+    background: rgba(44, 218, 160, 0.08);
+}
+
+.hero__btnGhost:hover {
+    background: rgba(44, 218, 160, 0.16);
 }
 
 .social__link li{
@@ -77,15 +128,22 @@
     filter: brightness(0) saturate(100%) invert(84%) sepia(17%) saturate(1000%) hue-rotate(95deg) brightness(102%) contrast(101%);
 }
 
-@media (max-width: 1000px) {
- 
-}
-
 @media (max-width: 768px) {
+    .hero__section {
+        min-height: auto;
+        padding-top: 6.5rem;
+    }
+
     .hero__content h1{
         font-size: 10vw;
     }
+
+    .hero__cta {
+        flex-wrap: wrap;
+    }
 }
 @media (max-width: 480px) {
-   
+   .hero__content {
+    padding-left: 0.25rem;
+   }
 }

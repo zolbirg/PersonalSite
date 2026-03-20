@@ -32,7 +32,7 @@
     }
 }
 
-/* ===== meta info panel ===== */
+/* ===== description panel ===== */
 .project__description {
     flex: 1;
     display: flex;
@@ -51,64 +51,16 @@
     }
 }
 
-/* light theme: приводим панель к светлому полупрозрачному фону */
 :global(html.theme-light) .project__description {
     background: var(--bg-project-container);
     border: var(--border-project-container);
 }
 
-/* ===== individual meta row ===== */
-.meta__item {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-}
-
-.meta__icon {
-    color: var(--color-primary);
-    font-size: 1rem;
-    margin-top: 0.15rem;
-    flex-shrink: 0;
-    opacity: 0.85;
-}
-
-.meta__label {
-    display: block;
-    font-size: 0.65rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    color: var(--color-text);
-    margin-bottom: 0.3rem;
-    font-weight: 600;
-}
-
-.meta__value {
+.description__text {
+    margin: 0;
     color: var(--color-text-strong);
-    font-size: 0.88rem;
-    font-weight: 500;
-}
-
-/* ===== tech stack badges ===== */
-.badge__group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.3rem;
-}
-
-.badge {
-    background: rgba(44, 218, 160, 0.08);
-    border: 1px solid rgba(44, 218, 160, 0.22);
-    color: var(--color-primary);
-    padding: 0.12rem 0.6rem;
-    border-radius: 999px;
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-}
-
-:global(html.theme-light) .badge {
-    background: rgba(22, 163, 74, 0.08);
-    border: 1px solid rgba(22, 163, 74, 0.22);
+    font-size: 0.92rem;
+    line-height: 1.55;
 }
 
 /* ===== GitHub button ===== */

@@ -69,6 +69,14 @@
   margin-bottom: 1rem;
 }
 
+.skills__travelersDescription {
+  margin: 0 0 0.75rem;
+  font-size: var(--font-size-sm);
+  color: var(--color-white);
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
 .skills__statsBadge {
   display: inline-flex;
   align-items: center;
