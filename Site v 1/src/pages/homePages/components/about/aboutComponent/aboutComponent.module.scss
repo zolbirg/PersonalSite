@@ -139,6 +139,14 @@
   box-shadow: 0 14px 28px rgba(0, 0, 0, 0.55);
 }
 
+.cvDownloadLink {
+  composes: button from '../../../../../assets/components/button/Button.module.scss';
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  font: inherit;
+}
+
 @media (max-width: 900px) {
   .about__data {
     max-width: 100%;

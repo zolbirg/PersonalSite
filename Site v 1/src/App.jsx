@@ -6,10 +6,12 @@ import ColorSwitch from './pages/portfolio/project/web/colorSwitch/ColorSwitch.j
 import BullAndMoo from './pages/portfolio/project/web/bullAndMoo/BullAndMoo.jsx';
 import MePage from './pages/hobbies/MePage.jsx';
 import NotFoundPage from './pages/NotFoundPage.jsx';
+import CvPrintPage from './pages/cv/CvPrintPage.jsx';
 
 const App = () => {
     return (
         <Routes>
+            <Route path="/cv" element={<CvPrintPage />} />
             <Route path="/" element={<Layout />}>
                 <Route index element={<HomePage />} />
                 <Route path="Project" element={<ProjectPage />} />
