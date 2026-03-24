@@ -28,13 +28,13 @@ export default function Achievements() {
           viewport={{ once: true, amount: 0.2 }}
         >
           <motion.div className={classes.achievements__card} variants={cardVariants}>
-            <Card keys={Engineer.cardId} {...Engineer} linkTo="/engineer" />
+            <Card keys={Engineer.cardId} {...Engineer} linkTo="/me?tab=engineer" />
           </motion.div>
           <motion.div className={classes.achievements__card} variants={cardVariants}>
-            <Card keys={Developer.cardId} {...Developer} linkTo="/developer" />
+            <Card keys={Developer.cardId} {...Developer} linkTo="/me?tab=developer" />
           </motion.div>
           <motion.div className={classes.achievements__card} variants={cardVariants}>
-            <Card keys={Travelers.cardId} {...Travelers} linkTo="/travelers" />
+            <Card keys={Travelers.cardId} {...Travelers} linkTo="/me?tab=travelers" />
           </motion.div>
         </motion.div>
       </div>

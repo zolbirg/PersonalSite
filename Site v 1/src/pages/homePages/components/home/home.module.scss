@@ -1,13 +1,18 @@
+/* без вертикальных отступов .section — иначе hero не заполняет экран */
+.hero__section.section {
+    padding-block: 0;
+}
 
-
-.hero__section{
+.hero__section {
     background: transparent;
     width: 100%;
     min-height: 100vh;
-    position:relative;
+    min-height: 100svh;
+    position: relative;
     display: flex;
     align-items: center;
     overflow: hidden;
+    box-sizing: border-box;
 }
 
 .hero__content{
@@ -91,10 +96,39 @@
     background: rgba(44, 218, 160, 0.16);
 }
 
-.social__link li{
-    display: inline-block;
-    margin: 0 1rem 0 0;
+.socialRow {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem 1rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
+
+.social__link li {
+    display: inline-flex;
+    margin: 0;
+}
+
+.socialDivider {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0 0.1rem;
+    list-style: none;
+    pointer-events: none;
+}
+
+.socialDividerBar {
+    display: block;
+    width: 1px;
+    height: 1.35em;
+    background: color-mix(in srgb, var(--color-primary) 35%, transparent);
+    border-radius: 1px;
+}
+
 .social__link li a{
     display: inline-block;
     color:var(--color-main);
@@ -107,18 +141,25 @@
 .down__arrow {
     position: absolute;
     left: 50%;
-    bottom: 2.5rem;
+    bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
     transform: translateX(-50%);
+    z-index: 2;
 }
 
 .down__arrow a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .scroll__lottie {
     width: 65px;
     height: 65px;
+    max-width: 100%;
     /* convert to primary green (#2cdaa0) */
     filter: brightness(0) saturate(100%) invert(73%) sepia(42%) saturate(461%) hue-rotate(117deg) brightness(99%) contrast(91%);
     transition: filter 0.3s ease;
@@ -130,20 +171,38 @@
 
 @media (max-width: 768px) {
     .hero__section {
-        min-height: auto;
-        padding-top: 6.5rem;
+        /* вся высота экрана под фиксированную шапку + safe area */
+        min-height: 100svh;
+        min-height: 100dvh;
+        padding-top: calc(5.5rem + env(safe-area-inset-top, 0px));
+        padding-bottom: calc(5.25rem + env(safe-area-inset-bottom, 0px));
     }
 
-    .hero__content h1{
+    .hero__content h1 {
         font-size: 10vw;
     }
 
     .hero__cta {
         flex-wrap: wrap;
     }
+
+    .down__arrow {
+        bottom: calc(0.85rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    .scroll__lottie {
+        width: 56px;
+        height: 56px;
+    }
 }
+
 @media (max-width: 480px) {
-   .hero__content {
-    padding-left: 0.25rem;
-   }
+    .hero__content {
+        padding-left: 0.25rem;
+    }
+
+    .scroll__lottie {
+        width: 52px;
+        height: 52px;
+    }
 }

@@ -1,4 +1,25 @@
-/* ===== Project Section ===== */
+/* Страница /Project — в одном стиле с блоком портфолио на главной */
+.projectPageSection {
+    /* под фиксированную шапку с env(safe-area-inset-top) */
+    padding-top: calc(5.5rem + env(safe-area-inset-top, 0px));
+    background: transparent;
+}
+
+.projectList {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+@media (max-width: 768px) {
+    .projectList {
+        gap: 2rem;
+    }
+}
+
+/* ===== Project Section (отдельные страницы игр) ===== */
 .project__section {
     position: relative;
     overflow: hidden;

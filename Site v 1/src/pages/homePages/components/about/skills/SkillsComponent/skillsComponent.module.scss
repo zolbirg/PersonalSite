@@ -2,8 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0.65rem;
   margin-bottom: 0.75rem;
   cursor: default;
+  min-width: 0;
   background:
     radial-gradient(circle at top left, rgba(44, 218, 160, 0.2), transparent 55%),
     var(--bg-card);
@@ -25,19 +27,41 @@
     var(--bg-card);
 }
 
+.skills__header > div:first-child {
+  min-width: 0;
+}
+
 .skills__title {
   font-size: var(--font-size-subtitle);
+  overflow-wrap: break-word;
 }
 
 .skills__subtitle {
   font-size: var(--font-size-sm);
   color: var(--color-white);
   opacity: 0.9;
+  overflow-wrap: break-word;
 }
 
 .skills__arrow {
   font-size: 1.4rem;
   color: var(--color-title);
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .skills__header {
+    align-items: flex-start;
+  }
+
+  .skills__title {
+    font-size: clamp(1rem, 4vw, var(--font-size-subtitle));
+  }
+
+  .skills__statsBadge {
+    white-space: normal;
+    text-align: center;
+  }
 }
 
 .skills__list {

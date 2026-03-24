@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import classes from './aboutSection.module.scss';
 import photo1 from '../../../../assets/img/personalFoto2.png';
 
@@ -7,6 +8,12 @@ import Qualification from './Qualification/Qualification.jsx';
 import ScrollReveal from '../../../../assets/components/animations/ScrollReveal.jsx';
 
 import { useState } from 'react';
+
+const ABOUT_TABS = [
+    { id: 'About', label: 'About' },
+    { id: 'Skills', label: 'Skills' },
+    { id: 'Qualification', label: 'Qualification' },
+];
 
 export default function AboutSection() {
     const [tab, setTab] = useState('About');
@@ -22,30 +29,38 @@ export default function AboutSection() {
                 </ScrollReveal>
 
                 <ScrollReveal direction="right" delay={0.1} className={classes.about__data}>
-                    <div className={classes.about__toggle}>
-                        <div
-                            onClick={() => setTab('About')}
-                            className={tab === 'About' ? active : noActive}
-                        >
-                            {' '}
-                            About
-                        </div>
-
-                        <div
-                            onClick={() => setTab('Skills')}
-                            className={tab === 'Skills' ? active : noActive}
-                        >
-                            Skills
-                        </div>
-
-                        <div
-                            onClick={() => setTab('Qualification')}
-                            className={
-                                tab === 'Qualification' ? active : noActive
-                            }
-                        >
-                            Qualification
-                        </div>
+                    <div
+                        className={classes.about__toggle}
+                        role="tablist"
+                        aria-label="Раздел «Обо мне»"
+                    >
+                        {ABOUT_TABS.map(({ id, label }) => {
+                            const isActive = tab === id;
+                            return (
+                                <span key={id} className={classes.about__toggle_item}>
+                                    <div
+                                        role="tab"
+                                        aria-selected={isActive}
+                                        tabIndex={isActive ? 0 : -1}
+                                        onClick={() => setTab(id)}
+                                        className={isActive ? active : noActive}
+                                    >
+                                        {label}
+                                    </div>
+                                    {isActive && (
+                                        <motion.span
+                                            className={classes.about__toggle_indicator}
+                                            layoutId="about-tabs-indicator"
+                                            transition={{
+                                                type: 'spring',
+                                                stiffness: 380,
+                                                damping: 30,
+                                            }}
+                                        />
+                                    )}
+                                </span>
+                            );
+                        })}
                     </div>
                     <div className="cont">
                         {tab === 'About' && <AboutComponent />}

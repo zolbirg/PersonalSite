@@ -1,32 +1,122 @@
+$nav-breakpoint: 768px;
+
 .head {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 5%;
+  min-height: 3.5rem;
   background: none;
- 
+
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 1% 9% ;
-  z-index: var(--z-fixed);
-  
-}
-.head__active{
-  background: var(--bg-navbar)
+  gap: 0.75rem;
+  padding: 0.65rem clamp(0.75rem, 3vw, 2.5rem);
+  padding-top: calc(0.65rem + env(safe-area-inset-top, 0px));
+  padding-left: calc(clamp(0.75rem, 3vw, 2.5rem) + env(safe-area-inset-left, 0px));
+  padding-right: calc(clamp(0.75rem, 3vw, 2.5rem) + env(safe-area-inset-right, 0px));
+  z-index: calc(var(--z-fixed) + 1);
 }
 
-.navbar a {
+.head__brand {
+  flex: 0 0 auto;
+}
+
+.head__center {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+.head__center_hiddenMobile {
+  @media (max-width: ($nav-breakpoint - 0.02px)) {
+    display: none;
+  }
+}
+
+.meInlineTabs {
+  pointer-events: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.45rem;
+  max-width: min(100%, 36rem);
+}
+
+.meInlineTab {
+  font-size: clamp(0.7rem, 1.65vw, 1rem);
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+  text-decoration: none;
+  margin-left: 0;
+  white-space: nowrap;
+  border: 1px solid var(--color-accent);
+  color: var(--color-accent-hover);
+  background: color-mix(in srgb, var(--color-accent) 24%, transparent);
+  box-shadow:
+    0 0 14px color-mix(in srgb, var(--color-accent) 40%, transparent),
+    inset 0 0 0 1px color-mix(in srgb, var(--color-accent) 20%, transparent);
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.meInlineTab:hover {
+  background: color-mix(in srgb, var(--color-accent) 42%, transparent);
+  border-color: var(--color-accent-hover);
+  box-shadow:
+    0 0 18px color-mix(in srgb, var(--color-accent-hover) 45%, transparent),
+    inset 0 0 0 1px color-mix(in srgb, var(--color-accent-hover) 25%, transparent);
+}
+
+.meInlineTab_active {
+  color: var(--bg-main);
+  background: var(--color-accent);
+  border-color: var(--color-primary);
+  font-weight: 700;
+  box-shadow:
+    0 0 20px color-mix(in srgb, var(--color-accent) 65%, transparent),
+    0 0 28px color-mix(in srgb, var(--color-primary) 35%, transparent);
+}
+
+:global(html.theme-light) .meInlineTab_active {
+  color: #fff;
+}
+
+.head__active {
+  background: var(--bg-navbar);
+}
+
+.head__toolbar {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  margin-left: auto;
+
+  @media (min-width: $nav-breakpoint) {
+    gap: 2rem;
+  }
+}
+
+.navbarDesktop {
+  flex: 0 0 auto;
+  display: none;
+  align-items: center;
+  gap: 1.5rem;
+
+  @media (min-width: $nav-breakpoint) {
+    display: inline-flex;
+  }
+}
+
+.navbarDesktop a {
   font-size: 1.3rem;
   color: var(--color-main);
-  margin-left: 1.5rem;
   transition: 0.3s;
-}
-
-.navbar {
-  display: inline-flex;
-  align-items: center;
 }
 
 .logo {
@@ -35,78 +125,12 @@
   font-weight: 600;
   cursor: default;
 
-}
-
-.more {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  margin-left: 1.5rem;
-}
-
-.more__button {
-  width: 2.4rem;
-  height: 2.4rem;
-  border-radius: 0.7rem;
-  background: transparent;
-  border: 1px solid transparent;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-
-.more__button:hover {
-  border-color: var(--color-main);
-  background: var(--bg-card-soft);
-}
-
-.burger {
-  width: 1.25rem;
-  height: 1rem;
-  display: inline-flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.burger span {
-  display: block;
-  height: 2px;
-  width: 100%;
-  border-radius: 999px;
-  background: var(--color-main);
-}
-
-.more__menu {
-  position: absolute;
-  top: calc(100% + 0.6rem);
-  right: 0;
-  min-width: 12rem;
-  padding: 0.45rem;
-  border-radius: 0.9rem;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  background: var(--bg-card);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
-  z-index: calc(var(--z-fixed) + 1);
-}
-
-.more__link {
-  display: block;
-  padding: 0.6rem 0.8rem;
-  border-radius: 0.7rem;
-  color: var(--color-main);
-  text-decoration: none;
-  margin-left: 0; // override .navbar a margin
-}
-
-.more__link:hover {
-  background: var(--bg-card-soft);
+  @media (max-width: ($nav-breakpoint - 0.02px)) {
+    font-size: 1.65rem;
+  }
 }
 
 .themeToggle {
-  margin-left: 2rem;
   width: 3rem;
   height: 1.6rem;
   border-radius: 999px;
@@ -118,6 +142,7 @@
   cursor: pointer;
   position: relative;
   transition: background 0.2s ease, border-color 0.2s ease;
+  flex-shrink: 0;
 }
 
 .themeToggle__thumb {
@@ -150,6 +175,158 @@
   background: var(--color-primary);
 }
 
+.burger {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 2.75rem;
+  min-width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border-radius: 0.35rem;
+  border: 1px solid color-mix(in srgb, var(--color-main) 45%, transparent);
+  background: color-mix(in srgb, var(--bg-card-soft) 80%, transparent);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
 
+  @media (min-width: $nav-breakpoint) {
+    display: none;
+  }
+}
 
+.burger:hover,
+.burger:focus-visible {
+  border-color: var(--color-accent);
+  background: color-mix(in srgb, var(--color-accent) 12%, transparent);
+}
 
+.burgerLine {
+  display: block;
+  width: 1.2rem;
+  height: 2px;
+  border-radius: 1px;
+  background: var(--color-title);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.burger_open .burgerLine:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.burger_open .burgerLine:nth-child(2) {
+  opacity: 0;
+}
+
+.burger_open .burgerLine:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobileBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: calc(var(--z-fixed) - 1);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+
+  @media (min-width: $nav-breakpoint) {
+    display: none;
+  }
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-fixed);
+  width: min(19rem, 88vw);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding: 1rem 1.1rem 1.5rem;
+  /* шапка выше по z-index; отступ ≈ высота .head + safe area */
+  padding-top: calc(1rem + env(safe-area-inset-top, 0px) + 3.5rem);
+  padding-bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));
+  padding-left: calc(1.1rem + env(safe-area-inset-left, 0px));
+  padding-right: calc(1.1rem + env(safe-area-inset-right, 0px));
+  background: var(--bg-navbar);
+  border-left: 1px solid rgba(44, 218, 160, 0.15);
+  box-shadow: -8px 0 28px rgba(0, 0, 0, 0.35);
+  overflow-y: auto;
+  transform: translateX(0);
+  animation: drawerIn 0.22s ease-out;
+
+  @media (min-width: $nav-breakpoint) {
+    display: none;
+  }
+}
+
+@keyframes drawerIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0.85;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.drawerSection {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.drawerSectionTitle {
+  margin: 0;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 85%, transparent);
+}
+
+.drawerTabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.drawerNav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.drawerLink {
+  display: block;
+  padding: 0.75rem 0.5rem;
+  font-size: 1.15rem;
+  font-weight: var(--font-medium);
+  color: var(--color-main);
+  border-radius: 0.45rem;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.drawerLink:hover,
+.drawerLink:focus-visible {
+  color: var(--color-hover);
+  background: color-mix(in srgb, var(--color-accent) 10%, transparent);
+}
+
+.drawerLink_active {
+  color: var(--color-active);
+}
+
+.drawerItem {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}

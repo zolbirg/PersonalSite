@@ -4,6 +4,8 @@
   padding: 5rem 1.5rem 4rem;
   max-width: 980px;
   margin: 0 auto;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .section {
@@ -31,6 +33,7 @@
   line-height: 1.6;
   max-width: 42rem;
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 .divider {
@@ -127,6 +130,7 @@
   line-height: 1.8;
   max-width: 36rem;
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 .hero__imageWrap {
@@ -254,6 +258,7 @@
   line-height: 1.65;
   max-width: 38rem;
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 .twoCol {
@@ -347,6 +352,7 @@
   line-height: 1.8;
   max-width: 60ch;
   margin: 0;
+  overflow-wrap: break-word;
 }
 
 .operations__stats {
@@ -407,16 +413,19 @@
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
+  min-width: 0;
 
   span {
     display: inline-flex;
     color: var(--color-primary);
+    flex-shrink: 0;
   }
 
   p {
     margin: 0;
     color: var(--color-text-strong);
     font-weight: 600;
+    overflow-wrap: break-word;
   }
 }
 
@@ -562,6 +571,7 @@
   font-size: var(--font-size-subtitle);
   color: var(--color-text);
   line-height: 1.75;
+  overflow-wrap: break-word;
 }
 
 .closing__mail {
@@ -598,6 +608,15 @@
   .caseGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .skillRow {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+
+    strong {
+      text-align: left;
+    }
+  }
 }
 
 @media (max-width: 860px) {
@@ -621,15 +640,6 @@
   .twoCol {
     grid-template-columns: 1fr;
   }
-
-  .skillRow {
-    grid-template-columns: 1fr;
-    gap: 0.55rem;
-
-    strong {
-      text-align: left;
-    }
-  }
 }
 
 @media (max-width: 680px) {
@@ -643,5 +653,66 @@
   .caseGrid,
   .gallery {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 3.5rem 0.75rem 2.5rem;
+    padding-bottom: calc(2.5rem + env(safe-area-inset-bottom, 0px));
+  }
+
+  .section {
+    padding: 2.5rem 0;
+  }
+
+  .sectionHead {
+    margin-bottom: 2rem;
+  }
+
+  .sectionTitle {
+    font-size: clamp(1.35rem, 5vw, var(--font-size-title-big));
+  }
+
+  .hero {
+    padding: 1.5rem 0 2.25rem;
+  }
+
+  .hero__title {
+    font-size: clamp(1.45rem, 6vw, 2.2rem);
+  }
+
+  .metricCard {
+    padding: 1rem 0.85rem;
+  }
+
+  .metricCard__label {
+    font-size: var(--font-size-sm);
+    line-height: 1.45;
+  }
+
+  .timeline__item {
+    padding-left: 2.35rem;
+  }
+
+  .decorSection {
+    padding: 1.35rem 1rem;
+  }
+
+  .pipeline__item {
+    min-height: 0;
+  }
+
+  .caseCard,
+  .storyCard {
+    padding: 1.15rem 1rem;
+  }
+
+  .galleryCard img {
+    height: min(190px, 42vw);
+  }
+
+  .closing {
+    padding: 2.5rem 0 1.5rem;
   }
 }

@@ -2,12 +2,11 @@ import { useState, useEffect } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import classes from './home.module.scss';
 
-import { FaVk } from 'react-icons/fa';
-import { FaGithub, FaTelegram } from 'react-icons/fa6';
-import { MdAlternateEmail } from 'react-icons/md';
-import { SiCodewars } from 'react-icons/si';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
-import TextTransition, { presets } from 'react-text-transition';
+import {
+  SOCIAL_LINKS_CONTACT,
+  SOCIAL_LINKS_NETWORKS,
+} from '../../../../constants/socialLinks.jsx';
 
 const TEXTS = ['E N G I N E E R', 'WEB DEVELOPER', 'T R A V E L E R S'];
 
@@ -57,14 +56,6 @@ export default function Home() {
     </motion.span>
   ));
 
-  const socialLinks = [
-    { href: 'https://t.me/zolbirg',                     icon: <FaTelegram /> },
-    { href: 'https://vk.com/zolbirg',                   icon: <FaVk /> },
-    { href: 'mailto:kaninroman@mail.ru',                 icon: <MdAlternateEmail /> },
-    { href: 'https://github.com/zolbirg',               icon: <FaGithub /> },
-    { href: 'https://www.codewars.com/users/Zolbirg',   icon: <SiCodewars /> },
-  ];
-
   return (
     <section className={`${classes.hero__section} section`} id="home">
       <div className="container">
@@ -82,9 +73,14 @@ export default function Home() {
             initial="hidden"
             animate="visible"
           >
-            <TextTransition springConfig={presets.slow}>
+            <motion.span
+              key={index % TEXTS.length}
+              initial={shouldReduce ? { opacity: 1 } : { opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.35, ease: 'easeOut' }}
+            >
               {TEXTS[index % TEXTS.length]}
-            </TextTransition>
+            </motion.span>
           </motion.h2>
 
           <motion.p
@@ -108,19 +104,40 @@ export default function Home() {
           </motion.div>
 
           <motion.ul
-            className={classes.social__link}
+            className={`${classes.social__link} ${classes.socialRow}`}
             variants={socialContainerVariants}
             initial="hidden"
             animate="visible"
           >
-            {socialLinks.map(({ href, icon }, i) => (
+            {SOCIAL_LINKS_CONTACT.map(({ href, Icon, ariaLabel }) => (
               <motion.li
-                key={i}
+                key={href}
                 variants={socialItemVariants}
                 whileHover={{ scale: 1.25, rotate: 8 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 12 }}
               >
-                <a href={href}>{icon}</a>
+                <a href={href} aria-label={ariaLabel}>
+                  <Icon />
+                </a>
+              </motion.li>
+            ))}
+            <motion.li
+              className={classes.socialDivider}
+              variants={socialItemVariants}
+              aria-hidden
+            >
+              <span className={classes.socialDividerBar} />
+            </motion.li>
+            {SOCIAL_LINKS_NETWORKS.map(({ href, Icon, ariaLabel }) => (
+              <motion.li
+                key={href}
+                variants={socialItemVariants}
+                whileHover={{ scale: 1.25, rotate: 8 }}
+                transition={{ type: 'spring', stiffness: 400, damping: 12 }}
+              >
+                <a href={href} aria-label={ariaLabel}>
+                  <Icon />
+                </a>
               </motion.li>
             ))}
           </motion.ul>
@@ -128,7 +145,7 @@ export default function Home() {
       </div>
 
       <div className={classes.down__arrow}>
-        <a data-scroll="" href="#about">
+        <a data-scroll="" href="#about" aria-label="Прокрутить к разделу About">
           <DotLottieReact
             src="https://lottie.host/3c10e1d6-dc45-46b3-be7f-dcf149686794/n7M1q0mnR5.lottie"
             loop

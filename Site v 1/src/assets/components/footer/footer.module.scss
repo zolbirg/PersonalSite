@@ -1,0 +1,124 @@
+.footer {
+  margin-top: auto;
+  padding: 1.5rem 0 2rem;
+  background: var(--bg-navbar);
+  border-top: 1px solid rgba(44, 218, 160, 0.12);
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  text-align: center;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    text-align: left;
+  }
+}
+
+.copy {
+  margin: 0;
+  order: 3;
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  opacity: 0.85;
+
+  @media (min-width: 768px) {
+    order: 0;
+    flex: 0 0 auto;
+  }
+}
+
+.nav {
+  width: 100%;
+  order: 1;
+
+  @media (min-width: 768px) {
+    width: auto;
+    flex: 1 1 auto;
+    order: 1;
+  }
+}
+
+.navList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+}
+
+.navLink {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-accent);
+    outline: none;
+  }
+}
+
+.socialRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem 0.85rem;
+  order: 2;
+
+  @media (min-width: 768px) {
+    order: 2;
+    flex: 0 0 auto;
+    justify-content: flex-end;
+  }
+}
+
+.socialGroup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.socialDivider {
+  flex-shrink: 0;
+  width: 1px;
+  height: 1.35rem;
+  align-self: center;
+  background: color-mix(in srgb, var(--color-primary) 35%, transparent);
+  border-radius: 1px;
+}
+
+.socialLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: var(--color-text);
+  transition: color 0.2s ease, transform 0.2s ease;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-accent-hover);
+    outline: none;
+    transform: translateY(-2px);
+  }
+}

@@ -87,7 +87,7 @@ export default function Travelers() {
               </span>
             ))}
           </div>
-          <Link to="/travelers" className={classes.skills__link}>
+          <Link to="/me?tab=travelers" className={classes.skills__link}>
             Подробнее о путешествиях →
           </Link>
         </div>

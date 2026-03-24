@@ -111,28 +111,26 @@ export default function TravelersPageContent() {
   ];
 
   return (
-    <div className={classes.wrapper}>
-      <div className={classes.contentFrame}>
-        <TravelersHero years={years} days={days} />
-        <ScrollReveal direction="up" delay={0.1}>
-          <VanSummary days={days} />
-        </ScrollReveal>
-        <ScrollReveal direction="up" delay={0.1}>
-          <TravelTimeline stages={travelStages} years={years} />
-        </ScrollReveal>
-        <ScrollReveal direction="up" delay={0.1}>
-          <RouteMapSection years={years} />
-        </ScrollReveal>
-        <ScrollReveal direction="up" delay={0.1}>
-          <PhotoGallery images={galleryImages} />
-        </ScrollReveal>
-        <ScrollReveal direction="up" delay={0.1}>
-          <StatsStrip stats={stats} />
-        </ScrollReveal>
-        <ScrollReveal direction="up" delay={0.1}>
-          <ReflectionSection years={years} />
-        </ScrollReveal>
-      </div>
+    <div className={classes.page}>
+      <TravelersHero years={years} days={days} />
+      <ScrollReveal direction="up" delay={0.1}>
+        <VanSummary days={days} />
+      </ScrollReveal>
+      <ScrollReveal direction="up" delay={0.1}>
+        <TravelTimeline stages={travelStages} years={years} />
+      </ScrollReveal>
+      <ScrollReveal direction="up" delay={0.1}>
+        <RouteMapSection years={years} />
+      </ScrollReveal>
+      <ScrollReveal direction="up" delay={0.1}>
+        <PhotoGallery images={galleryImages} />
+      </ScrollReveal>
+      <ScrollReveal direction="up" delay={0.1}>
+        <StatsStrip stats={stats} />
+      </ScrollReveal>
+      <ScrollReveal direction="up" delay={0.1}>
+        <ReflectionSection years={years} />
+      </ScrollReveal>
     </div>
   );
 }

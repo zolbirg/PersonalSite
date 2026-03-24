@@ -1,46 +1,70 @@
 import { motion } from 'framer-motion';
+import { createPortal } from 'react-dom';
 import classes from "./navBar.module.scss";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Link, useNavigate, useLocation } from 'react-router-dom';
+import { ME_TABBAR_VISIBILITY_EVENT } from '../../../pages/hobbies/meProfileNavEvents.js';
 
 const NAV_ITEMS = [
   { id: 'home',      label: 'Home',      to: '/',          hash: null },
-  { id: 'about',     label: 'Me',        to: '/developer', hash: null },
-  { id: 'portfolio', label: 'Portfolio', to: '/Project',   hash: null },
+  { id: 'about',     label: 'Me',        to: '/me?tab=developer', hash: null },
+  { id: 'portfolio', label: 'Project', to: '/Project',   hash: null },
   { id: 'contact',   label: 'Contact',   to: '/#contact',  hash: 'contact' },
 ];
 
-const MORE_ITEMS = [
-  { id: 'engineer', label: 'Engineer', to: '/engineer' },
-  { id: 'travelers', label: 'Travelers', to: '/travelers' },
-  { id: 'colorswitch', label: 'ColorSwitch', to: '/ColorSwitch' },
-  { id: 'bullandmoo', label: 'BullAndMoo', to: '/BullAndMoo' },
+const ME_INLINE_TABS = [
+  { id: 'engineer', label: 'Engineer', tab: 'engineer' },
+  { id: 'developer', label: 'Developer', tab: 'developer' },
+  { id: 'travelers', label: 'Traveler', tab: 'travelers' },
 ];
+
+const COMPACT_QUERY = '(max-width: 767.98px)';
+
+function useMatchMedia(query) {
+  const [matches, setMatches] = useState(() =>
+    typeof window !== 'undefined' ? window.matchMedia(query).matches : false
+  );
+
+  useEffect(() => {
+    const mql = window.matchMedia(query);
+    const onChange = () => setMatches(mql.matches);
+    mql.addEventListener('change', onChange);
+    setMatches(mql.matches);
+    return () => mql.removeEventListener('change', onChange);
+  }, [query]);
+
+  return matches;
+}
 
 export default function NavBar() {
   const [tab, setTab] = useState("home");
   const [navbar, setNavbar] = useState(false);
   const [navbarLogo, setNavbarLogo] = useState("");
-  const [isMoreOpen, setIsMoreOpen] = useState(false);
+  const [meTabBarVisible, setMeTabBarVisible] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [theme, setTheme] = useState(() => {
     if (typeof window === "undefined") return "dark";
     return localStorage.getItem("theme") === "light" ? "light" : "dark";
   });
   const navigate = useNavigate();
   const location = useLocation();
+  const isCompact = useMatchMedia(COMPACT_QUERY);
+
+  const closeMenu = useCallback(() => setMenuOpen(false), []);
 
   // Sync active tab with current route (handles back/forward navigation)
   useEffect(() => {
     if (location.pathname === '/Project') {
       setTab('portfolio');
-    } else if (location.pathname === '/developer') {
+    } else if (location.pathname === '/me') {
       setTab('about');
     } else if (location.pathname === '/') {
       const hashId = location.hash.slice(1);
       setTab(hashId || 'home');
-    } else {
-      const moreMatch = MORE_ITEMS.find((x) => x.to === location.pathname);
-      if (moreMatch) setTab(moreMatch.id);
+    } else if (location.pathname === '/ColorSwitch') {
+      setTab('colorswitch');
+    } else if (location.pathname === '/BullAndMoo') {
+      setTab('bullandmoo');
     }
   }, [location.pathname, location.hash]);
 
@@ -54,9 +78,50 @@ export default function NavBar() {
     return () => clearTimeout(timer);
   }, [location.pathname, location.hash]);
 
+  useEffect(() => {
+    if (location.pathname !== '/me') {
+      setMeTabBarVisible(true);
+      return;
+    }
+
+    const onVisibility = (e) => {
+      if (e instanceof CustomEvent && typeof e.detail?.visible === 'boolean') {
+        setMeTabBarVisible(e.detail.visible);
+      }
+    };
+
+    window.addEventListener(ME_TABBAR_VISIBILITY_EVENT, onVisibility);
+    return () => window.removeEventListener(ME_TABBAR_VISIBILITY_EVENT, onVisibility);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (!isCompact) closeMenu();
+  }, [isCompact, closeMenu]);
+
+  useEffect(() => {
+    closeMenu();
+  }, [location.pathname, location.search, location.hash, closeMenu]);
+
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, [menuOpen]);
+
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const onKey = (e) => {
+      if (e.key === 'Escape') closeMenu();
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [menuOpen, closeMenu]);
+
   const handleNavClick = (e, item) => {
     setTab(item.id);
-    setIsMoreOpen(false);
 
     if (item.id === 'home') {
       if (location.pathname === '/') {
@@ -67,13 +132,10 @@ export default function NavBar() {
     }
 
     if (item.id === 'about') {
-      // Повторный заход/клик по "Me" иногда приводит к восстановлению scroll-состояния браузером.
-      // Сбрасываем позицию к началу, чтобы страница каждый раз начиналась сверху.
       window.scrollTo(0, 0);
     }
 
     if (item.id === 'portfolio') {
-      // Повторный кликинг по пункту может не размонтировать компонент, а браузер/роутер восстанавливает scroll.
       window.scrollTo(0, 0);
     }
 
@@ -85,6 +147,11 @@ export default function NavBar() {
         navigate(`/#${item.hash}`);
       }
     }
+  };
+
+  const handleNavClickCompact = (e, item) => {
+    handleNavClick(e, item);
+    closeMenu();
   };
 
   const changeBackground = () => setNavbar(window.scrollY >= 66);
@@ -107,103 +174,190 @@ export default function NavBar() {
     return () => window.removeEventListener("scroll", changeLogo);
   }, []);
 
-  useEffect(() => {
-    if (!isMoreOpen) return;
+  const meQueryTab =
+    location.pathname === '/me' ? new URLSearchParams(location.search).get('tab') : null;
 
-    const onKeyDown = (e) => {
-      if (e.key === 'Escape') setIsMoreOpen(false);
-    };
+  const meActiveTab =
+    meQueryTab && ['engineer', 'developer', 'travelers'].includes(meQueryTab)
+      ? meQueryTab
+      : 'developer';
 
-    const onPointerDown = (e) => {
-      const target = e.target;
-      if (!(target instanceof Element)) return;
-      if (target.closest(`.${classes.more}`)) return;
-      setIsMoreOpen(false);
-    };
+  const showMeInlineTabs = location.pathname === '/me' && !meTabBarVisible;
+  const showMeTabsInDrawer = isCompact && showMeInlineTabs;
 
-    window.addEventListener('keydown', onKeyDown);
-    window.addEventListener('pointerdown', onPointerDown);
-    return () => {
-      window.removeEventListener('keydown', onKeyDown);
-      window.removeEventListener('pointerdown', onPointerDown);
-    };
-  }, [isMoreOpen]);
+  const mobileOverlay = isCompact && menuOpen && typeof document !== 'undefined'
+    ? createPortal(
+        <>
+          <button
+            type="button"
+            className={classes.mobileBackdrop}
+            aria-label="Закрыть меню"
+            onClick={closeMenu}
+          />
+          <aside
+            id="site-nav-drawer"
+            className={classes.drawer}
+            role="navigation"
+            aria-label="Основная навигация"
+          >
+            {showMeTabsInDrawer && (
+              <div className={classes.drawerSection}>
+                <p className={classes.drawerSectionTitle}>Профиль</p>
+                <div className={classes.drawerTabs}>
+                  {ME_INLINE_TABS.map(({ id, label, tab }) => {
+                    const isActive = meActiveTab === tab;
+                    return (
+                      <Link
+                        key={id}
+                        to={`/me?tab=${tab}`}
+                        className={
+                          isActive
+                            ? `${classes.meInlineTab} ${classes.meInlineTab_active}`
+                            : classes.meInlineTab
+                        }
+                        onClick={() => {
+                          window.scrollTo(0, 0);
+                          closeMenu();
+                        }}
+                      >
+                        {label}
+                      </Link>
+                    );
+                  })}
+                </div>
+              </div>
+            )}
 
-  const handleMoreItemClick = (e, item) => {
-    setTab(item.id);
-    setIsMoreOpen(false);
-  };
+            <div className={classes.drawerSection}>
+              <p className={classes.drawerSectionTitle}>Разделы</p>
+              <nav className={classes.drawerNav} aria-label="Разделы сайта">
+                {NAV_ITEMS.map((item) => {
+                  const { id, label, to } = item;
+                  const isActive = tab === id;
+                  const itemClass = isActive
+                    ? `${classes.drawerLink} ${classes.drawerLink_active}`
+                    : classes.drawerLink;
+
+                  return (
+                    <span key={id} className={classes.drawerItem}>
+                      <Link
+                        to={to}
+                        className={itemClass}
+                        onClick={(e) => handleNavClickCompact(e, item)}
+                      >
+                        {label}
+                      </Link>
+                      {isActive && (
+                        <motion.span
+                          className={classes.nav__indicator}
+                          layoutId="nav-indicator-mobile"
+                          transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                        />
+                      )}
+                    </span>
+                  );
+                })}
+              </nav>
+            </div>
+          </aside>
+        </>,
+        document.body
+      )
+    : null;
 
   return (
     <section className={navbar ? `${classes.head} ${classes.head__active}` : classes.head}>
-      <Link to="/" onClick={(e) => handleNavClick(e, NAV_ITEMS[0])} className={classes.logo}>
-        {navbarLogo}
-      </Link>
+      <div className={classes.head__brand}>
+        <Link to="/" onClick={(e) => handleNavClick(e, NAV_ITEMS[0])} className={classes.logo}>
+          {navbarLogo}
+        </Link>
+      </div>
 
-      <nav className={classes.navbar}>
-        {NAV_ITEMS.map((item) => {
-          const { id, label, to } = item;
-          const isActive = tab === id;
-          const itemClass = isActive ? 'button button__active' : 'button';
-
-          return (
-            <span key={id} className={classes.nav__item}>
-              <Link to={to} onClick={(e) => handleNavClick(e, item)} className={itemClass}>
-                {label}
-              </Link>
-              {isActive && (
-                <motion.span
-                  className={classes.nav__indicator}
-                  layoutId="nav-indicator"
-                  transition={{ type: 'spring', stiffness: 380, damping: 30 }}
-                />
-              )}
-            </span>
-          );
-        })}
-
-        <div className={classes.more}>
-          <button
-            type="button"
-            className={classes.more__button}
-            onClick={() => setIsMoreOpen((v) => !v)}
-            aria-haspopup="menu"
-            aria-expanded={isMoreOpen}
-            aria-label="More pages"
+      <div
+        className={
+          showMeInlineTabs && !isCompact
+            ? classes.head__center
+            : `${classes.head__center} ${classes.head__center_hiddenMobile}`
+        }
+        aria-hidden={!showMeInlineTabs || isCompact}
+      >
+        {showMeInlineTabs && !isCompact && (
+          <div
+            className={classes.meInlineTabs}
+            role="tablist"
+            aria-label="Профиль — вкладки"
           >
-            <span className={classes.burger} aria-hidden="true">
-              <span />
-              <span />
-              <span />
-            </span>
-          </button>
-
-          {isMoreOpen && (
-            <div className={classes.more__menu} role="menu" aria-label="More pages menu">
-              {MORE_ITEMS.map((item) => (
+            {ME_INLINE_TABS.map(({ id, label, tab }) => {
+              const isActive = meActiveTab === tab;
+              return (
                 <Link
-                  key={item.id}
-                  to={item.to}
-                  role="menuitem"
-                  className={classes.more__link}
-                  onClick={(e) => handleMoreItemClick(e, item)}
+                  key={id}
+                  to={`/me?tab=${tab}`}
+                  role="tab"
+                  aria-selected={isActive}
+                  className={
+                    isActive
+                      ? `${classes.meInlineTab} ${classes.meInlineTab_active}`
+                      : classes.meInlineTab
+                  }
+                  onClick={() => window.scrollTo(0, 0)}
                 >
-                  {item.label}
+                  {label}
                 </Link>
-              ))}
-            </div>
-          )}
-        </div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
+      <div className={classes.head__toolbar}>
+        <nav className={classes.navbarDesktop} aria-label="Основная навигация">
+          {NAV_ITEMS.map((item) => {
+            const { id, label, to } = item;
+            const isActive = tab === id;
+            const itemClass = isActive ? 'button button__active' : 'button';
+
+            return (
+              <span key={id} className={classes.nav__item}>
+                <Link to={to} onClick={(e) => handleNavClick(e, item)} className={itemClass}>
+                  {label}
+                </Link>
+                {isActive && (
+                  <motion.span
+                    className={classes.nav__indicator}
+                    layoutId="nav-indicator"
+                    transition={{ type: 'spring', stiffness: 380, damping: 30 }}
+                  />
+                )}
+              </span>
+            );
+          })}
+        </nav>
 
         <button
           type="button"
           onClick={() => setTheme((prev) => (prev === "light" ? "dark" : "light"))}
           className={classes.themeToggle}
-          aria-label="Toggle theme"
+          aria-label="Переключить тему"
         >
           <span className={classes.themeToggle__thumb} />
         </button>
-      </nav>
+
+        <button
+          type="button"
+          className={`${classes.burger} ${menuOpen ? classes.burger_open : ''}`}
+          aria-label={menuOpen ? 'Закрыть меню' : 'Открыть меню'}
+          aria-expanded={menuOpen}
+          aria-controls="site-nav-drawer"
+          onClick={() => setMenuOpen((o) => !o)}
+        >
+          <span className={classes.burgerLine} />
+          <span className={classes.burgerLine} />
+          <span className={classes.burgerLine} />
+        </button>
+      </div>
+
+      {mobileOverlay}
     </section>
   );
 }
