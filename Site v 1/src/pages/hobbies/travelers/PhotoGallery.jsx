@@ -1,10 +1,10 @@
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import classes from './travelers.module.scss';
 import { FALLBACK_IMAGE } from './travelImages.js';
 
 const FILTERS = [
   { id: 'all', label: 'Все' },
-  { id: 'Кавказ', label: 'Кавказ' },
+  { id: 'Грузия', label: 'Грузия' },
   { id: 'Турция', label: 'Турция и Кипр' },
   { id: 'Балканы', label: 'Балканы' },
   { id: 'Средняя Азия', label: 'Средняя Азия' },
@@ -13,11 +13,52 @@ const FILTERS = [
 
 export default function PhotoGallery({ images }) {
   const [activeFilter, setActiveFilter] = useState('all');
+  const [activeImageId, setActiveImageId] = useState(null);
+  const [visibleRows, setVisibleRows] = useState(5);
+  const [columns, setColumns] = useState(1);
 
-  const filteredImages =
-    activeFilter === 'all'
-      ? images
-      : images.filter((image) => image.tag === activeFilter);
+  const filteredImages = useMemo(
+    () =>
+      activeFilter === 'all'
+        ? images
+        : images.filter((image) => image.tag === activeFilter),
+    [activeFilter, images]
+  );
+
+  useEffect(() => {
+    setVisibleRows(5);
+  }, [activeFilter]);
+
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)');
+    const update = () => setColumns(mq.matches ? 3 : 1);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
+
+  const visibleCount = Math.max(1, visibleRows) * Math.max(1, columns);
+  const visibleImages = useMemo(
+    () => filteredImages.slice(0, visibleCount),
+    [filteredImages, visibleCount]
+  );
+  const hasMore = filteredImages.length > visibleImages.length;
+
+  const activeImage = useMemo(
+    () => filteredImages.find((img) => img.id === activeImageId) ?? null,
+    [activeImageId, filteredImages]
+  );
+
+  useEffect(() => {
+    if (!activeImage) return;
+
+    const onKeyDown = (e) => {
+      if (e.key === 'Escape') setActiveImageId(null);
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [activeImage]);
 
   return (
     <section className="section">
@@ -48,10 +89,16 @@ export default function PhotoGallery({ images }) {
           </div>
         </header>
         <div className={classes.galleryGrid}>
-          {filteredImages.map((image) => (
-            <div key={image.id} className={classes.galleryItem}>
+          {visibleImages.map((image) => (
+            <button
+              key={image.id}
+              type="button"
+              className={classes.galleryItem}
+              onClick={() => setActiveImageId(image.id)}
+              aria-label={`Открыть фото: ${image.alt}`}
+            >
               <img
-                src={image.src}
+                src={encodeURI(image.src)}
                 alt={image.alt}
                 className={classes.galleryItemImg}
                 onError={(e) => {
@@ -59,10 +106,52 @@ export default function PhotoGallery({ images }) {
                   e.target.src = FALLBACK_IMAGE;
                 }}
               />
-            </div>
+            </button>
           ))}
         </div>
+
+        {hasMore && (
+          <div className={classes.galleryMore}>
+            <button
+              type="button"
+              className={classes.galleryMoreBtn}
+              onClick={() => setVisibleRows((r) => r + 5)}
+            >
+              Показать ещё
+            </button>
+          </div>
+        )}
       </div>
+
+      {activeImage && (
+        <div
+          className={classes.galleryLightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Просмотр фотографии"
+          onMouseDown={(e) => {
+            if (e.target === e.currentTarget) setActiveImageId(null);
+          }}
+        >
+          <button
+            type="button"
+            className={classes.galleryLightboxClose}
+            onClick={() => setActiveImageId(null)}
+            aria-label="Закрыть"
+          >
+            ×
+          </button>
+          <img
+            className={classes.galleryLightboxImg}
+            src={encodeURI(activeImage.src)}
+            alt={activeImage.alt}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = FALLBACK_IMAGE;
+            }}
+          />
+        </div>
+      )}
     </section>
   );
 }

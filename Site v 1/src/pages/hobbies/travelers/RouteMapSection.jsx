@@ -19,16 +19,11 @@ export default function RouteMapSection({ years } = {}) {
           </header>
           <div className={classes.mapFrame}>
             <img
-              src="/images/travel/route-map.png"
+              src="/images/travel/common/route-map.png"
               alt="Схематичная карта маршрута: Россия → Кавказ → Турция/Кипр → Балканы → Россия → Казахстан/Киргизия/Узбекистан/Таджикистан/Памир → обратно в Россию, Петербург"
               className={classes.mapImage}
             />
           </div>
-          <footer className={classes.mapFooter}>
-            Полный маршрут за {safeYears} {pluralizeRu(safeYears, ['год', 'года', 'лет'])}: десятки тысяч
-            километров и десятки границ.
-            Точные цифры можно добавить отдельно, когда они будут подсчитаны.
-          </footer>
         </div>
       </div>
     </section>

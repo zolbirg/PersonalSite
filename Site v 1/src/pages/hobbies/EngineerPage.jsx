@@ -152,7 +152,7 @@ export default function EngineerPage() {
           </ScrollReveal>
           <ScrollReveal direction="left" delay={0.1}>
             <h1 className={classes.hero__title}>
-              От монтажника дверей до полного цикла: проектирование, производство, люди
+              От монтажника дверей до fullstack‑руководителя: проектирование, производство, управление
             </h1>
           </ScrollReveal>
           <ScrollReveal direction="up" delay={0.2}>

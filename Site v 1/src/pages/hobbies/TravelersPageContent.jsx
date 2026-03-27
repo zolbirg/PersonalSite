@@ -9,6 +9,7 @@ import ReflectionSection from './travelers/ReflectionSection.jsx';
 import classes from './travelers/travelers.module.scss';
 import { TRAVEL_IMAGES } from './travelers/travelImages.js';
 import { useTravelDuration } from './travelers/useTravelDuration.js';
+import { GALLERY_IMAGES } from './travelers/galleryImages.js';
 
 const travelStages = [
   {
@@ -52,7 +53,8 @@ const travelStages = [
     notes:
       'Этот период показал, что дом на колёсах может быть не только про движение, но и про устойчивый ритм жизни в одном регионе.',
     photos: [
-      { id: 's3-1', src: TRAVEL_IMAGES.winterCoast, alt: 'Зимний пейзаж у моря' },
+      { id: 's3-1', src: '/images/travel/russia/sochi-sunset-1.png', alt: 'Закат и силуэт на юге' },
+      { id: 's3-2', src: '/images/travel/russia/sochi-sunset-2.png', alt: 'Закатная набережная' },
     ],
   },
   {
@@ -81,20 +83,12 @@ const travelStages = [
     notes:
       'Это не финал истории, а точка с запятой. Просто одна большая петля по планете замкнулась в стартовой точке.',
     photos: [
-      { id: 's5-1', src: TRAVEL_IMAGES.highway, alt: 'Трасса на Урале' },
+      { id: 's5-1', src: '/images/travel/russia/P1010149.JPG', alt: 'Трасса на Урале' },
     ],
   },
 ];
 
-const galleryImages = [
-  { id: 'g-1', stageId: 'stage-1', tag: 'Кавказ', src: TRAVEL_IMAGES.nightMountains, alt: 'Ночёвка в горах Кавказа' },
-  { id: 'g-2', stageId: 'stage-1', tag: 'Турция', src: TRAVEL_IMAGES.coastTurkey, alt: 'Стоянка у моря в Турции' },
-  { id: 'g-3', stageId: 'stage-2', tag: 'Балканы', src: TRAVEL_IMAGES.balkanMountains, alt: 'Узкая дорога в горах Балкан' },
-  { id: 'g-4', stageId: 'stage-3', tag: 'Россия', src: TRAVEL_IMAGES.hero, alt: 'Автодом у моря' },
-  { id: 'g-5', stageId: 'stage-4', tag: 'Средняя Азия', src: TRAVEL_IMAGES.roadMountains, alt: 'Высокогорная дорога Памира' },
-  { id: 'g-6', stageId: 'stage-4', tag: 'Средняя Азия', src: TRAVEL_IMAGES.lakeKyrgyz, alt: 'Стоянка у озера в Киргизии' },
-  { id: 'g-7', stageId: 'stage-5', tag: 'Россия', src: TRAVEL_IMAGES.mountainsRussia, alt: 'Трасса в горах России' },
-];
+const galleryImages = GALLERY_IMAGES;
 
 export default function TravelersPageContent() {
   const { years, days } = useTravelDuration();
